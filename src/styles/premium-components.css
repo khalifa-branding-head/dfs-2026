@@ -1,1 +1,97 @@
-/* premium-components.css - Placeholder for Gate 5E */
+/* premium-components.css - UI components visual polish layer */
+
+/* 1. Primary Buttons Glow and Shadows */
+.dfs-button--primary {
+  transition: background-color var(--dfs-motion-time-fast) var(--dfs-ease-hover),
+              box-shadow var(--dfs-motion-time-fast) var(--dfs-ease-hover),
+              transform var(--dfs-motion-time-fast) var(--dfs-ease-hover) !important;
+}
+
+.dfs-button--primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(40, 116, 252, 0.35) !important;
+}
+
+.dfs-button--primary:active {
+  transform: translateY(0) scale(1.0);
+}
+
+/* Accent Buttons Polish */
+.dfs-button--accent {
+  background-color: var(--dfs-color-accent-cyan) !important;
+  color: var(--dfs-color-black) !important;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(18, 233, 233, 0.2);
+  transition: background-color var(--dfs-motion-time-fast) var(--dfs-ease-hover),
+              box-shadow var(--dfs-motion-time-fast) var(--dfs-ease-hover),
+              transform var(--dfs-motion-time-fast) var(--dfs-ease-hover) !important;
+}
+
+.dfs-button--accent:hover {
+  background-color: var(--dfs-color-white) !important;
+  color: var(--dfs-color-black) !important;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(18, 233, 233, 0.4) !important;
+}
+
+/* 2. Cards Elevation & Borders */
+.dfs-card {
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+  transition: transform var(--dfs-motion-time-normal) var(--dfs-ease-primary),
+              box-shadow var(--dfs-motion-time-normal) var(--dfs-ease-primary),
+              border-color var(--dfs-motion-time-normal) var(--dfs-ease-primary) !important;
+}
+
+.dfs-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(2, 3, 129, 0.06) !important;
+  border-color: rgba(40, 116, 252, 0.2) !important;
+}
+
+/* 3. Navigation Links Slide Underlines */
+.dfs-nav__link::after {
+  background-color: var(--dfs-color-accent-cyan) !important;
+  height: 2px !important;
+  transition: transform var(--dfs-motion-time-fast) var(--dfs-ease-hover) !important;
+}
+
+/* 4. Form inputs focus glow */
+.dfs-input:focus,
+.dfs-select:focus,
+.dfs-textarea:focus {
+  border-color: var(--dfs-color-primary-blue) !important;
+  box-shadow: 0 0 0 4px rgba(40, 116, 252, 0.1) !important;
+}
+
+/* 5. Tabs Day navigations line curves */
+.dfs-tabs__btn {
+  font-family: 'Lufga', sans-serif !important;
+  transition: color var(--dfs-motion-time-fast) var(--dfs-ease-hover) !important;
+}
+
+.dfs-tabs__btn::after {
+  background-color: var(--dfs-color-primary-blue) !important;
+  height: 2px !important;
+  transition: transform var(--dfs-motion-time-fast) var(--dfs-ease-hover) !important;
+}
+
+/* 6. FAQ Accordion panel transition curve */
+.dfs-accordion__panel {
+  transition: max-height var(--dfs-motion-time-normal) var(--dfs-ease-primary) !important;
+}
+
+.dfs-accordion__trigger {
+  font-family: 'Lufga', sans-serif !important;
+  transition: color var(--dfs-motion-time-fast) var(--dfs-ease-hover) !important;
+}
+
+/* 7. Footer divider and link highlights */
+.dfs-footer {
+  background-color: #01021a !important; /* Richer Midnight Black-Blue */
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.dfs-footer__link {
+  transition: color var(--dfs-motion-time-fast) var(--dfs-ease-hover) !important;
+}
