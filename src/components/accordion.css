@@ -1,0 +1,62 @@
+/* accordion.css - FAQ listings and folding detail modules */
+
+.dfs-accordion {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--dfs-color-border-gray);
+}
+
+.dfs-accordion__item {
+  border-bottom: 1px solid var(--dfs-color-border-gray);
+}
+
+.dfs-accordion__trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  padding: var(--dfs-space-lg) 0;
+  font-family: 'Lufga', sans-serif;
+  font-size: var(--dfs-font-size-body);
+  font-weight: 500;
+  color: var(--dfs-color-text-dark);
+  min-height: 44px;
+  transition: color var(--dfs-motion-duration-fast) var(--dfs-motion-ease-in-out);
+}
+
+.dfs-accordion__trigger:hover {
+  color: var(--dfs-color-primary-blue);
+}
+
+/* Accordion caret icon rotation */
+.dfs-accordion__icon {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  transition: transform var(--dfs-motion-duration-normal) var(--dfs-motion-ease-in-out);
+}
+
+.dfs-accordion__trigger[aria-expanded="true"] .dfs-accordion__icon {
+  transform: rotate(180deg);
+}
+
+.dfs-accordion__panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--dfs-motion-duration-normal) var(--dfs-motion-ease-in-out);
+}
+
+.dfs-accordion__trigger[aria-expanded="true"] + .dfs-accordion__panel {
+  max-height: 500px; /* Large enough boundary to fit FAQ rich texts */
+}
+
+.dfs-accordion__content {
+  padding-bottom: var(--dfs-space-lg);
+  font-size: var(--dfs-font-size-body);
+  color: var(--dfs-color-text-muted);
+  line-height: var(--dfs-line-height-body);
+}

@@ -1,0 +1,42 @@
+/* grid.css - Standardized multi-column responsive layout grids */
+
+.dfs-grid {
+  display: grid;
+  gap: var(--dfs-space-xl); /* Default 32px gap spacing */
+}
+
+/* 4-Columns Desktop Grid */
+.dfs-grid--cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* 3-Columns Desktop Grid */
+.dfs-grid--cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* 2-Columns Desktop Grid */
+.dfs-grid--cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Tablet viewport adaptation (690px to 999px) */
+@media (min-width: 690px) and (max-width: 999px) {
+  .dfs-grid {
+    gap: var(--dfs-space-lg);
+  }
+  
+  .dfs-grid--cols-4,
+  .dfs-grid--cols-3,
+  .dfs-grid--cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile viewport adaptation (< 690px) */
+@media (max-width: 689px) {
+  .dfs-grid {
+    gap: var(--dfs-space-md);
+    grid-template-columns: 1fr !important; /* All columns collapse to a single stack */
+  }
+}

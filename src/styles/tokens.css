@@ -1,0 +1,81 @@
+/* design-tokens.css - Dubai FinTech Summit 2026 */
+
+:root {
+  /* Spacing Scale (8px Grid system) */
+  --dfs-space-xs: 4px;
+  --dfs-space-sm: 8px;
+  --dfs-space-md: 16px;
+  --dfs-space-lg: 24px;
+  --dfs-space-xl: 32px;
+  --dfs-space-xxl: 48px;
+  --dfs-space-3xl: 64px;
+  --dfs-space-4xl: 96px;
+
+  /* Border Radii */
+  --dfs-radius-none: 0;
+  --dfs-radius-sm: 4px;
+  --dfs-radius-md: 8px;
+  --dfs-radius-lg: 12px;
+  --dfs-radius-xl: 16px;
+  --dfs-radius-full: 9999px;
+
+  /* Color Palette (DFS Brand Identity) */
+  --dfs-color-white: #ffffff;
+  --dfs-color-black: #000000;
+  --dfs-color-bg-dark: #020381; /* Midnight Blue */
+  --dfs-color-accent-cyan: #12E9E9; /* Accent Cyan/Teal */
+  --dfs-color-primary-blue: #2874fc; /* Electric Blue */
+  --dfs-color-border-gray: #eeeeee;
+  --dfs-color-text-dark: #000000;
+  --dfs-color-text-light: #ffffff;
+  --dfs-color-text-muted: #555555;
+  --dfs-color-primary-gradient: linear-gradient(135deg, #020381 0%, #2874fc 100%);
+  --dfs-color-purple-gradient: linear-gradient(135deg, #0693e3 0%, #9b51e0 100%);
+
+  /* Drop Shadows */
+  --dfs-shadow-none: none;
+  --dfs-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --dfs-shadow-md: 6px 6px 9px rgba(0, 0, 0, 0.15);
+  --dfs-shadow-lg: 12px 12px 50px rgba(0, 0, 0, 0.30);
+
+  /* Motion & Animations */
+  --dfs-motion-duration-fast: 150ms;
+  --dfs-motion-duration-normal: 250ms;
+  --dfs-motion-duration-slow: 400ms;
+  --dfs-motion-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dfs-motion-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --dfs-motion-ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+  /* Typography Scales - Desktop Defaults */
+  --dfs-font-size-h1: 64px;
+  --dfs-font-size-h2: 42px;
+  --dfs-font-size-h3: 36px;
+  --dfs-font-size-body: 16px;
+  --dfs-font-size-caption: 13px;
+
+  --dfs-line-height-heading: 1.1;
+  --dfs-line-height-body: 1.5;
+  --dfs-line-height-caption: 1.3;
+
+  /* Typography Scale - Mobile Adaptations (CSS override in media queries) */
+  --dfs-container-max-width: 1300px;
+}
+
+/* Mobile Typographic Scaling & Margins Overrides */
+@media (max-width: 689px) {
+  :root {
+    --dfs-font-size-h1: 36px;
+    --dfs-font-size-h2: 26px;
+    --dfs-font-size-h3: 22px;
+    --dfs-font-size-body: 15px;
+  }
+}
+
+/* Tablet Typographic Scaling Overrides */
+@media (min-width: 690px) and (max-width: 999px) {
+  :root {
+    --dfs-font-size-h1: 46px;
+    --dfs-font-size-h2: 32px;
+    --dfs-font-size-h3: 28px;
+  }
+}

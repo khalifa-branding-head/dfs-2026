@@ -1,0 +1,74 @@
+/* art-direction.css - Presentation surfaces, background lighting, and premium material shadows */
+
+/* Material 1: Ambient Light source highlights */
+.dfs-ambient-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.dfs-ambient-bg::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 30%;
+  width: 60%;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(18, 233, 233, 0.04) 0%, rgba(40, 116, 252, 0.02) 50%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Material 2: Frosted Glass (Header overlay) */
+.dfs-header--scrolled {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Material 3: Soft Shadows & Card Surfaces */
+.dfs-card {
+  background-color: var(--dfs-color-white);
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.02) !important;
+  border-radius: var(--dfs-radius-md) !important;
+}
+
+/* Material 4: Elevated Surface on Hover */
+.dfs-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05) !important;
+  border-color: rgba(18, 233, 233, 0.4) !important;
+}
+
+/* Premium Metal (Buttons background transitions overlay) */
+.dfs-button--primary {
+  background: var(--dfs-color-primary-gradient) !important;
+  border: none;
+  box-shadow: 0 4px 14px rgba(2, 3, 129, 0.15);
+}
+
+.dfs-button--primary:hover {
+  box-shadow: 0 6px 20px rgba(22, 233, 233, 0.25);
+}
+
+/* Premium Image crops & alignments */
+.dfs-card__image-wrapper {
+  aspect-ratio: 1 / 1 !important; /* Editorial square portraits for speakers */
+  background-color: #fafafa;
+}
+
+.dfs-card__image {
+  filter: grayscale(100%); /* Grayscale portraits for institutional consistency */
+  mix-blend-mode: multiply;
+  opacity: 0.95;
+  transition: filter var(--dfs-motion-duration-normal) var(--dfs-motion-ease-in-out),
+              transform var(--dfs-motion-duration-normal) var(--dfs-motion-ease-in-out),
+              opacity var(--dfs-motion-duration-normal) var(--dfs-motion-ease-in-out);
+}
+
+.dfs-card:hover .dfs-card__image {
+  filter: grayscale(0%); /* Dynamic return to color on hover */
+  opacity: 1.0;
+}

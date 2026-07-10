@@ -1,0 +1,74 @@
+/* tabs.css - Calendar day toggles and horizontal selection panels */
+
+.dfs-tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.dfs-tabs__nav {
+  display: flex;
+  border-bottom: 1px solid var(--dfs-color-border-gray);
+  gap: var(--dfs-space-xl);
+  margin-bottom: var(--dfs-space-xl);
+}
+
+.dfs-tabs__btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Lufga', sans-serif;
+  font-size: var(--dfs-font-size-h3);
+  font-weight: 500;
+  color: var(--dfs-color-text-muted);
+  padding: var(--dfs-space-md) 0;
+  position: relative;
+  min-height: 44px;
+  transition: color var(--dfs-motion-duration-fast) var(--dfs-motion-ease-in-out);
+}
+
+.dfs-tabs__btn:hover {
+  color: var(--dfs-color-text-dark);
+}
+
+/* Active Day Indicator underline */
+.dfs-tabs__btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--dfs-color-primary-blue);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--dfs-motion-duration-fast) var(--dfs-motion-ease-in-out);
+}
+
+.dfs-tabs__btn--active {
+  color: var(--dfs-color-text-dark);
+  font-weight: 700;
+}
+
+.dfs-tabs__btn--active::after {
+  transform: scaleX(1);
+}
+
+.dfs-tabs__panel {
+  display: none;
+}
+
+.dfs-tabs__panel--active {
+  display: block;
+  animation: dfsFadeIn var(--dfs-motion-duration-normal) var(--dfs-motion-ease-out);
+}
+
+@keyframes dfsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,69 @@
+/* button.css - Visual specifications for all buttons and CTAs */
+
+.dfs-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--dfs-font-size-body);
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--dfs-radius-md);
+  padding: var(--dfs-space-md) var(--dfs-space-xl);
+  min-height: 44px; /* Touch target minimum constraint */
+  cursor: pointer;
+  background: none;
+  color: var(--dfs-color-text-dark);
+  transition: background-color var(--dfs-motion-duration-fast) var(--dfs-motion-ease-in-out),
+              border-color var(--dfs-motion-duration-fast) var(--dfs-motion-ease-in-out),
+              color var(--dfs-motion-duration-fast) var(--dfs-motion-ease-in-out),
+              transform var(--dfs-motion-duration-fast) var(--dfs-motion-ease-in-out),
+              box-shadow var(--dfs-motion-duration-fast) var(--dfs-motion-ease-in-out);
+}
+
+.dfs-button:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.dfs-button:active {
+  transform: translateY(0) scale(1.0);
+}
+
+.dfs-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Primary Button (Midnight Blue to Electric Blue gradient backdrop) */
+.dfs-button--primary {
+  background: var(--dfs-color-primary-gradient);
+  color: var(--dfs-color-white);
+  box-shadow: var(--dfs-shadow-sm);
+}
+
+.dfs-button--primary:hover {
+  box-shadow: var(--dfs-shadow-md);
+}
+
+/* Secondary Button (Thin border outline) */
+.dfs-button--secondary {
+  border-color: var(--dfs-color-border-gray);
+  color: var(--dfs-color-text-dark);
+}
+
+.dfs-button--secondary:hover {
+  background-color: var(--dfs-color-border-gray);
+}
+
+/* Accent Button (Teal background, dark text for high visibility) */
+.dfs-button--accent {
+  background-color: var(--dfs-color-accent-cyan);
+  color: var(--dfs-color-black);
+}
+
+.dfs-button--accent:hover {
+  background-color: var(--dfs-color-primary-blue);
+  color: var(--dfs-color-white);
+}

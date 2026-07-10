@@ -1,0 +1,133 @@
+/* global.css - Global resets, grids, and accessibility configurations */
+
+/* Load Plus Jakarta Sans (as a high-fidelity local development fallback for Lufga) and Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* Map display typography alias 'Lufga' to local/imported Plus Jakarta Sans */
+@font-face {
+  font-family: 'Lufga';
+  font-weight: 700;
+  font-style: normal;
+  src: local('Plus Jakarta Sans Bold'), local('PlusJakartaSans-Bold'), url('https://fonts.gstatic.com/s/plusjakartasans/v8/L0x5DFM5ur1gGr17tTBh3FkJheRvQb96L6nwObF78g.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lufga';
+  font-weight: 500;
+  font-style: normal;
+  src: local('Plus Jakarta Sans Medium'), local('PlusJakartaSans-Medium'), url('https://fonts.gstatic.com/s/plusjakartasans/v8/L0x5DFM5ur1gGr17tTBh3FkJheRvQb96L6nwM7t78g.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* CSS resets and standard layout baseline rules */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--dfs-font-size-body);
+  line-height: var(--dfs-line-height-body);
+  color: var(--dfs-color-text-dark);
+  background-color: var(--dfs-color-white);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typographic Headings and Displays */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lufga', 'Open Sans', sans-serif;
+  color: var(--dfs-color-text-dark);
+  line-height: var(--dfs-line-height-heading);
+}
+
+h1 {
+  font-size: var(--dfs-font-size-h1);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--dfs-font-size-h2);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--dfs-font-size-h3);
+  font-weight: 500;
+}
+
+p {
+  max-width: 720px; /* Constrained column width for scannable lines */
+}
+
+/* Structural Layout container */
+.dfs-container {
+  width: 100%;
+  max-width: var(--dfs-container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--dfs-space-xl);
+  padding-right: var(--dfs-space-xl);
+}
+
+@media (max-width: 689px) {
+  .dfs-container {
+    padding-left: var(--dfs-space-md);
+    padding-right: var(--dfs-space-md);
+  }
+}
+
+/* Accessibility Focus States and Keyboard Outlines */
+a, button, input, select, textarea {
+  transition: outline var(--dfs-motion-duration-fast) var(--dfs-motion-ease-in-out);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--dfs-color-accent-cyan);
+  outline-offset: 3px;
+}
+
+/* Skip to main content accessibility link */
+.dfs-skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background-color: var(--dfs-color-bg-dark);
+  color: var(--dfs-color-white);
+  padding: var(--dfs-space-sm) var(--dfs-space-md);
+  border-radius: var(--dfs-radius-sm);
+  text-decoration: none;
+  font-size: var(--dfs-font-size-caption);
+  font-weight: 600;
+  z-index: 9999;
+  transition: top var(--dfs-motion-duration-fast) var(--dfs-motion-ease-out);
+}
+
+.dfs-skip-link:focus {
+  top: 20px;
+  outline: 3px solid var(--dfs-color-accent-cyan);
+}
+
+/* OS prefers-reduced-motion fallback configuration */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}
