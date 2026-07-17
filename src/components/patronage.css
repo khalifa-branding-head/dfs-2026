@@ -1,0 +1,106 @@
+/* patronage.css - Premium Standalone Patronage Section Component */
+
+.dfs-patronage {
+  background: radial-gradient(circle at center, #081e35 0%, #030814 100%);
+  padding: var(--dfs-space-4xl) 0;
+  border-top: 1px solid rgba(18, 233, 233, 0.12);
+  border-bottom: 1px solid rgba(18, 233, 233, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle micro-animation glow overlay */
+.dfs-patronage::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(18, 233, 233, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.dfs-patronage__grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: var(--dfs-space-3xl);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.dfs-patronage__left {
+  text-align: left;
+}
+
+.dfs-patronage__right {
+  text-align: left;
+  border-left: 1px solid rgba(18, 233, 233, 0.15);
+  padding-left: var(--dfs-space-3xl);
+}
+
+.dfs-patronage__label {
+  font-size: var(--dfs-font-size-caption);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: var(--dfs-space-md);
+  display: block;
+}
+
+.dfs-patronage__title {
+  font-family: 'Lufga', var(--dfs-font-family-sans);
+  font-size: 1.75rem; /* 28px — reduced for tighter vertical fit */
+  font-weight: 700;
+  color: var(--dfs-color-accent-cyan);
+  margin: 0;
+  line-height: 1.285; /* 36px at 28px base */
+  letter-spacing: -0.01em;
+}
+
+.dfs-patronage__subtitle {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ffffff; /* High contrast white */
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 992px) {
+  .dfs-patronage__grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--dfs-space-2xl);
+  }
+  .dfs-patronage__right {
+    padding-left: var(--dfs-space-2xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .dfs-patronage {
+    padding: var(--dfs-space-2xl) 0;
+  }
+  
+  .dfs-patronage__grid {
+    grid-template-columns: 1fr;
+    gap: var(--dfs-space-xl);
+  }
+  
+  .dfs-patronage__right {
+    border-left: none;
+    padding-left: 0;
+    margin-top: var(--dfs-space-xs);
+  }
+  
+  .dfs-patronage__title {
+    font-size: 1.375rem; /* ~22px on mobile */
+  }
+  
+  .dfs-patronage__subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}

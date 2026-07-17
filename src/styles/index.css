@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-midnight: #020381;
+  --color-brand-electric: #2874fc;
+  --color-brand-teal: #12E9E9;
+  --color-brand-cyan: #08bdf4;
+  --color-brand-dark: #031116;
+  --color-text-muted: #8fa8b5;
+  
+  --font-sans: "Lufga", "Inter", system-ui, -apple-system, sans-serif;
+  
+  --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.03);
+  --shadow-premium-hover: 0 30px 60px rgba(0, 0, 0, 0.08);
+  
+  --animate-fade-in: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-up: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Custom CSS variables for theme compatibility with old assets */
+:root {
+  --dfs-color-bg-dark: #031116;
+  --dfs-color-accent-cyan: #12E9E9;
+  --dfs-color-primary-blue: #08BDF4;
+  --dfs-color-text-muted: #8fa8b5;
+  --dfs-color-white: #ffffff;
+  --dfs-color-black: #000000;
+  
+  --dfs-space-xs: 4px;
+  --dfs-space-sm: 8px;
+  --dfs-space-md: 16px;
+  --dfs-space-lg: 24px;
+  --dfs-space-xl: 32px;
+  --dfs-space-xxl: 48px;
+  --dfs-space-3xl: 64px;
+  --dfs-space-4xl: 96px;
+  
+  --dfs-radius-sm: 4px;
+  --dfs-radius-md: 8px;
+  --dfs-radius-lg: 12px;
+  --dfs-radius-xl: 16px;
+}
+
+/* Skip link styling for accessibility compliance */
+.dfs-skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: #12E9E9;
+  color: #031116;
+  padding: 8px 16px;
+  z-index: 9999;
+  font-weight: bold;
+  border-radius: 0 0 4px 0;
+  transition: top 0.2s ease;
+}
+
+.dfs-skip-link:focus {
+  top: 0;
+  outline: 3px solid #12E9E9;
+  outline-offset: 3px;
+}
+
+/* Keyboard navigation focus states */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid #12E9E9;
+  outline-offset: 3px;
+}
+
+body {
+  background-color: #031116;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* GPU Hardware Acceleration Guardrail */
+.video-hero-layer {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}

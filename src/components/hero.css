@@ -1,0 +1,537 @@
+/* hero.css - Refreshed Centered Hero Layout Component (Option 1: Sovereign Midnight Frost) */
+
+.dfs-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  color: var(--dfs-color-white);
+  background-color: var(--dfs-color-bg-dark);
+  overflow: hidden;
+}
+
+/* Background video coverage */
+.dfs-hero__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Option 1: Sovereign Midnight Frost - Gradient Overlay */
+.dfs-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: 
+    linear-gradient(
+      185deg, 
+      rgba(3, 17, 22, 0.6) 0%, 
+      rgba(8, 32, 40, 0.6) 45%, 
+      rgba(3, 17, 22, 0.95) 100%
+    );
+  pointer-events: none;
+}
+
+/* Continuous Patronage Transition (Soft lower gradient) */
+.dfs-hero__overlay::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 220px;
+  background: linear-gradient(
+    to bottom, 
+    rgba(4, 14, 18, 0) 0%, 
+    rgba(4, 14, 18, 0.18) 40%, 
+    rgba(4, 14, 18, 0.85) 90%, 
+    rgba(4, 14, 18, 1) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Fluid Side Geometric Framing (Option 1 Glass Chevrons) */
+.dfs-hero__frame {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  pointer-events: none; /* Pointer clicks pass through to content */
+  width: 18vw; /* Fluid width scaling */
+  min-width: 130px;
+  max-width: 340px;
+  opacity: 0.95;
+  transition: width var(--dfs-motion-slow) var(--dfs-ease-premium);
+}
+
+.dfs-hero__frame--left {
+  left: 0;
+}
+
+.dfs-hero__frame--right {
+  right: 0;
+}
+
+.dfs-hero__chevron-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Layout container */
+.dfs-hero__layout {
+  position: relative;
+  z-index: 3;
+  box-sizing: border-box;
+  padding-top: var(--dfs-header-height); /* Safe space below fixed navbar */
+  padding-bottom: var(--dfs-space-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  overflow: visible;
+  min-height: 0;
+}
+
+/* Safe Content Zone centered container */
+.dfs-hero__container {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 620px; /* Constrained content width for editorial column */
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: clamp(18vh, 22vh, 24vh); /* Fluid vertical optical positioning */
+  padding-bottom: clamp(12vh, 14vh, 16vh);
+  box-sizing: border-box;
+}
+
+/* Diagonal slash decorative background element */
+.dfs-hero::before {
+  content: '';
+  position: absolute;
+  top: 15%;
+  right: 8%;
+  width: 380px;
+  height: 380px;
+  background-image: url('https://dubaifintechsummit.com/wp-content/uploads/2026/01/Blue_Diagonal_Slash_Graphic.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 1;
+  transform: rotate(-15deg);
+}
+
+/* Stacked Logo lockup inside Hero content */
+.dfs-hero__logo-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--dfs-space-md); /* Whitespace above logo */
+}
+
+.dfs-hero__center-logo {
+  width: clamp(100px, 18%, 124px); /* Optically scaled to ~18% of headline width */
+  height: auto;
+  display: block;
+}
+
+/* Subtitle / Date Eyebrow */
+.dfs-hero__date-eyebrow {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--dfs-color-accent-cyan);
+  margin-bottom: var(--dfs-space-md);
+  opacity: 0.95;
+  text-shadow: 0 2px 10px rgba(18, 233, 233, 0.25);
+}
+
+/* Centered Title styling */
+.dfs-hero__title {
+  font-family: 'Lufga', 'Plus Jakarta Sans', sans-serif;
+  font-size: var(--dfs-hero-title); /* Fluid typography scaling */
+  font-weight: 700;
+  line-height: var(--dfs-lh-display);
+  letter-spacing: var(--dfs-tracking-display);
+  color: var(--dfs-color-white);
+  margin-bottom: var(--dfs-space-xl); /* Whitespace below headline */
+  margin-top: 0;
+  max-width: 100%;
+  text-shadow: 0 4px 30px rgba(3, 17, 22, 0.85);
+}
+
+/* CTA buttons inside Hero layout */
+.dfs-hero__actions {
+  display: flex;
+  gap: 24px; /* Increased gap spacing */
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: var(--dfs-space-xxl); /* rhythm space */
+  width: auto;
+}
+
+.dfs-hero__actions .dfs-button {
+  width: auto; /* Desktop / Tablet Auto Width default */
+  min-height: 48px; /* Touch target minimum height */
+  padding: 14px 36px !important; /* Premium elongated padding proportions */
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  transition: background-color var(--dfs-motion-fast) var(--dfs-ease-premium),
+              border-color var(--dfs-motion-fast) var(--dfs-ease-premium),
+              box-shadow var(--dfs-motion-fast) var(--dfs-ease-premium),
+              transform var(--dfs-motion-fast) var(--dfs-ease-premium) !important;
+}
+
+.dfs-hero__actions .dfs-button--secondary {
+  color: var(--dfs-color-white) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important; /* Softer subtle border */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+.dfs-hero__actions .dfs-button--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important; /* Softer hover */
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.dfs-hero__actions .dfs-button--accent {
+  background-color: var(--dfs-color-accent-cyan) !important;
+  color: var(--dfs-color-bg-dark) !important;
+  border-color: var(--dfs-color-accent-cyan) !important;
+  box-shadow: 0 4px 12px rgba(18, 233, 233, 0.15) !important;
+}
+
+.dfs-hero__actions .dfs-button--accent:hover {
+  background-color: var(--dfs-color-white) !important;
+  color: var(--dfs-color-bg-dark) !important;
+  border-color: var(--dfs-color-white) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Sovereign Badges centered bottom strip */
+.dfs-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.dfs-hero__badge-org {
+  height: 18px; /* Optically aligned height */
+  width: auto;
+  display: block;
+  transform: translateY(1.5px); /* Optical baseline alignment fix */
+}
+
+.dfs-hero__badge-divider {
+  width: 1px;
+  height: 14px;
+  min-height: 14px;
+  background-color: rgba(255, 255, 255, 0.2); /* Reduced opacity divider */
+  flex-shrink: 0;
+}
+
+.dfs-hero__badge-part {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+
+/* Subtle inline scroll indicator */
+.dfs-hero__scroll-indicator-inline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.45;
+  margin-top: var(--dfs-space-xl);
+  pointer-events: none;
+}
+
+.dfs-hero__scroll-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--dfs-color-white);
+}
+
+.dfs-hero__scroll-arrow {
+  font-size: 14px;
+  color: var(--dfs-color-white);
+  animation: scrollBounce 2s infinite var(--dfs-ease-premium);
+}
+
+@keyframes scrollBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* Integrated baseline patronage wrapper (Full-Width Frosted-Glass Drawer) */
+.dfs-hero__patronage {
+  position: relative;
+  z-index: 3;
+  background: rgba(4, 14, 18, 0.95); /* Richer glass shade matching soft gradient */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(18, 233, 233, 0.12);
+  padding: var(--dfs-space-xl) 0;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Orchestrated Understated Entrance Motion Sequence */
+.dfs-header {
+  opacity: 0;
+  transform: translateY(-8px); /* Micro translation */
+  animation: heroFadeIn 800ms var(--dfs-ease-premium) forwards;
+  animation-delay: var(--dfs-motion-slow);
+}
+
+.dfs-hero__logo-lockup {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: heroFadeInUp var(--dfs-motion-slow) var(--dfs-ease-premium) forwards;
+  animation-delay: calc(var(--dfs-motion-slow) + 100ms);
+}
+
+.dfs-hero__title {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: heroFadeInUp var(--dfs-motion-slow) var(--dfs-ease-premium) forwards;
+  animation-delay: calc(var(--dfs-motion-slow) + 250ms);
+}
+
+.dfs-hero__actions {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: heroFadeInUp var(--dfs-motion-slow) var(--dfs-ease-premium) forwards;
+  animation-delay: calc(var(--dfs-motion-slow) + 400ms);
+}
+
+.dfs-hero__badge {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: heroFadeInUp var(--dfs-motion-slow) var(--dfs-ease-premium) forwards;
+  animation-delay: calc(var(--dfs-motion-slow) + 550ms);
+}
+
+.dfs-hero__scroll-indicator-inline {
+  opacity: 0;
+  animation: heroFadeInUp var(--dfs-motion-slow) var(--dfs-ease-premium) forwards;
+  animation-delay: calc(var(--dfs-motion-slow) + 700ms);
+}
+
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* GPU Optimization */
+.dfs-header,
+.dfs-hero__logo-lockup,
+.dfs-hero__title,
+.dfs-hero__actions,
+.dfs-hero__badge,
+.dfs-hero__scroll-indicator-inline {
+  will-change: transform, opacity;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+
+/* Laptop responsive scaling (Width under 1440px or Height under 850px) */
+@media (max-width: 1440px) or (max-height: 850px) {
+  .dfs-hero {
+    min-height: 500px;
+  }
+
+  .dfs-hero__layout {
+    padding-top: 80px;
+    padding-bottom: 0;
+    justify-content: flex-start;
+  }
+
+  .dfs-hero__container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: var(--dfs-space-md);
+    padding-bottom: 0;
+  }
+
+  .dfs-hero__logo-lockup {
+    margin-bottom: var(--dfs-space-sm);
+  }
+
+  .dfs-hero__center-logo {
+    height: 36px;
+  }
+
+  .dfs-hero__title {
+    margin-bottom: var(--dfs-space-md);
+  }
+
+  .dfs-hero__actions {
+    margin-bottom: var(--dfs-space-lg);
+  }
+
+  .dfs-hero__badge {
+    margin-top: var(--dfs-space-sm);
+    margin-bottom: 0;
+  }
+
+  .dfs-hero__badge-org {
+    height: 14px;
+  }
+  .dfs-hero__badge-part {
+    height: 18px;
+  }
+
+  .dfs-hero__patronage {
+    padding: var(--dfs-space-sm) 0;
+  }
+
+  .dfs-patronage__title {
+    font-size: 1.125rem;
+    line-height: 1.35;
+  }
+
+  .dfs-patronage__subtitle {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+}
+
+/* Foldables and Tablets (row alignment for buttons $\ge 600px$) */
+@media (min-width: 600px) and (max-width: 768px) {
+  .dfs-hero__actions {
+    flex-direction: row;
+    width: auto;
+    gap: 16px;
+  }
+  .dfs-hero__actions .dfs-button {
+    width: auto !important;
+  }
+}
+
+/* Mobile & Folded Foldables responsive scaling ($<600px$) */
+@media (max-width: 599px) {
+  .dfs-hero {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dfs-hero__layout {
+    padding-top: 90px;
+    padding-bottom: var(--dfs-space-xl);
+  }
+
+  .dfs-hero__container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: var(--dfs-space-md);
+    padding-bottom: var(--dfs-space-md);
+  }
+
+  .dfs-hero__frame {
+    display: none; /* Hide fluid chevrons on mobile */
+  }
+
+  .dfs-hero__actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .dfs-hero__actions .dfs-button {
+    width: 100% !important; /* Stack CTAs vertically on mobile/folded foldable */
+  }
+
+  .dfs-hero__badge {
+    margin-top: var(--dfs-space-lg);
+    margin-bottom: 0;
+  }
+
+  .dfs-hero__title {
+    font-size: clamp(28px, 8vw, 42px);
+    margin-bottom: 12px;
+  }
+
+  .dfs-hero__title br {
+    display: none;
+  }
+
+  .dfs-hero__patronage {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    background: #030814;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: var(--dfs-space-xl) 0;
+    border-top: 1px solid rgba(18, 233, 233, 0.12);
+  }
+}
+
+/* Accessibility prefers-reduced-motion safe support (Instant fades, no stagger/float) */
+@media (prefers-reduced-motion: reduce) {
+  .dfs-header,
+  .dfs-hero__logo-lockup,
+  .dfs-hero__title,
+  .dfs-hero__actions,
+  .dfs-hero__badge,
+  .dfs-hero__scroll-indicator-inline,
+  .dfs-hero__scroll-arrow {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

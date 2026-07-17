@@ -9,7 +9,7 @@
   --dfs-space-massive: 144px;   /* Large margins for hero containers, breathers */
 
   /* Typography Intents - Desktop Scale */
-  --dfs-font-size-display: 88px;   /* Flagship display titles */
+  --dfs-font-size-display: 96px;   /* Flagship display titles */
   --dfs-font-size-heading: 42px;   /* Standard section headlines */
   --dfs-font-size-lead: 22px;      /* Lead introductions, executive summaries */
   --dfs-font-size-quote: 24px;     /* Testimonials, spotlight quotes */
@@ -36,6 +36,13 @@
   --dfs-measure-quote: 800px;
 }
 
+/* Responsive Scaling Adaptations - Laptop Viewports */
+@media (min-width: 1000px) and (max-width: 1199px) {
+  :root {
+    --dfs-font-size-display: 88px;
+  }
+}
+
 /* Responsive Scaling Adaptations - Tablet Viewports */
 @media (min-width: 690px) and (max-width: 999px) {
   :root {
@@ -56,7 +63,7 @@
     --dfs-space-section: 56px;
     --dfs-space-massive: 72px;
 
-    --dfs-font-size-display: 38px;
+    --dfs-font-size-display: 40px;
     --dfs-font-size-heading: 26px;
     --dfs-font-size-quote: 18px;
     --dfs-font-size-stat: 48px;

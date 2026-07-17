@@ -20,9 +20,9 @@
 
 /* Material 2: Frosted Glass (Header overlay) */
 .dfs-header--scrolled {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  backdrop-filter: blur(12px) saturate(180%);
-  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(18px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(160%) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02) !important;
 }
@@ -46,7 +46,7 @@
 .dfs-button--primary {
   background: var(--dfs-color-primary-gradient) !important;
   border: none;
-  box-shadow: 0 4px 14px rgba(2, 3, 129, 0.15);
+  box-shadow: 0 4px 14px rgba(8, 32, 40, 0.15); /* Dark Teal shadow */
 }
 
 .dfs-button--primary:hover {

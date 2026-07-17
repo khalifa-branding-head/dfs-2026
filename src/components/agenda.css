@@ -1,0 +1,248 @@
+/* agenda.css - Premium Luxury Agenda Timeline CSS */
+
+.dfs-agenda-section {
+  background: radial-gradient(circle at top center, #061e26 0%, #030814 100%);
+  padding: var(--dfs-space-4xl) 0;
+  min-height: 100vh;
+}
+
+/* Tabs Switcher Layout */
+.dfs-agenda-tabs {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.dfs-agenda-tabs__nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--dfs-space-md);
+  margin-bottom: var(--dfs-space-3xl);
+  border-bottom: 1px solid rgba(18, 233, 233, 0.1);
+  padding-bottom: var(--dfs-space-lg);
+}
+
+.dfs-agenda-tabs__btn {
+  background: transparent;
+  border: 1px solid rgba(18, 233, 233, 0.15);
+  color: var(--dfs-color-white);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: var(--dfs-space-sm) var(--dfs-space-xxl);
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dfs-agenda-tabs__btn:hover {
+  background: rgba(18, 233, 233, 0.06);
+  border-color: rgba(18, 233, 233, 0.4);
+}
+
+.dfs-agenda-tabs__btn--active {
+  background: var(--dfs-color-accent-cyan) !important;
+  border-color: var(--dfs-color-accent-cyan) !important;
+  color: var(--dfs-color-bg-dark) !important;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(18, 233, 233, 0.25);
+}
+
+/* Panel Switcher */
+.dfs-agenda-tabs__panel {
+  display: none;
+  flex-direction: column;
+  gap: var(--dfs-space-xl);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.dfs-agenda-tabs__panel--active {
+  display: flex;
+  opacity: 1;
+}
+
+/* Session Card Layout */
+.dfs-session-card {
+  display: flex;
+  gap: var(--dfs-space-xl);
+  padding: var(--dfs-space-xl);
+  background: rgba(8, 32, 40, 0.3);
+  border: 1px solid rgba(18, 233, 233, 0.06);
+  border-radius: var(--dfs-radius-lg);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+.dfs-session-card:hover {
+  border-color: rgba(18, 233, 233, 0.2);
+  background: rgba(8, 32, 40, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(8, 32, 40, 0.5);
+}
+
+/* Left Time Block */
+.dfs-session-card__time-block {
+  min-width: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--dfs-space-xs);
+}
+
+.dfs-session-card__time {
+  font-family: 'Lufga', var(--dfs-font-family-sans);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--dfs-color-accent-cyan);
+  line-height: 1.2;
+}
+
+.dfs-session-card__duration {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Right Detail Column */
+.dfs-session-card__details {
+  flex-grow: 1;
+  border-left: 2px solid rgba(18, 233, 233, 0.15);
+  padding-left: var(--dfs-space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--dfs-space-sm);
+  text-align: left;
+}
+
+.dfs-session-card__track {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--dfs-color-accent-cyan);
+  letter-spacing: 0.08em;
+}
+
+.dfs-session-card__title {
+  font-family: 'Lufga', var(--dfs-font-family-sans);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--dfs-color-white);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.dfs-session-card__desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.98rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Presenter Metadata Section */
+.dfs-session-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--dfs-space-md);
+  margin-top: var(--dfs-space-xs);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: var(--dfs-space-md);
+}
+
+.dfs-session-card__speakers {
+  display: flex;
+  align-items: center;
+  gap: var(--dfs-space-md);
+}
+
+.dfs-session-card__speaker-group {
+  display: flex;
+  align-items: center;
+  gap: var(--dfs-space-sm);
+}
+
+.dfs-session-card__speaker-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(18, 233, 233, 0.4);
+  object-fit: cover;
+}
+
+.dfs-session-card__speaker-name {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  color: var(--dfs-color-white);
+  font-weight: 600;
+}
+
+.dfs-session-card__venue {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dfs-session-card__venue-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--dfs-color-accent-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--dfs-color-accent-cyan);
+}
+
+/* Responsive Scaling */
+@media (max-width: 768px) {
+  .dfs-agenda-section {
+    padding: var(--dfs-space-2xl) 0;
+  }
+  .dfs-agenda-tabs__nav {
+    gap: var(--dfs-space-sm);
+    margin-bottom: var(--dfs-space-xl);
+  }
+  .dfs-agenda-tabs__btn {
+    font-size: 0.9rem;
+    padding: var(--dfs-space-sm) var(--dfs-space-lg);
+    width: 50%;
+    text-align: center;
+  }
+  .dfs-session-card {
+    flex-direction: column;
+    gap: var(--dfs-space-md);
+    padding: var(--dfs-space-lg);
+  }
+  .dfs-session-card__time-block {
+    min-width: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--dfs-space-md);
+  }
+  .dfs-session-card__details {
+    border-left: none;
+    padding-left: 0;
+  }
+  .dfs-session-card__title {
+    font-size: 1.25rem;
+  }
+  .dfs-session-card__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--dfs-space-sm);
+  }
+  .dfs-session-card__venue {
+    margin-left: 0;
+  }
+}

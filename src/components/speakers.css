@@ -1,0 +1,198 @@
+/* speakers.css - Premium Speaker Cards and Interactivity Filtering CSS */
+
+.dfs-speakers-section {
+  background: radial-gradient(circle at top center, #061e26 0%, #030814 100%);
+  padding: var(--dfs-space-4xl) 0;
+  min-height: 100vh;
+}
+
+/* Category Filter Layout */
+.dfs-filter-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--dfs-space-md);
+  margin-bottom: var(--dfs-space-3xl);
+}
+
+.dfs-filter-btn {
+  background: transparent;
+  border: 1px solid rgba(18, 233, 233, 0.15);
+  color: var(--dfs-color-white);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: var(--dfs-space-sm) var(--dfs-space-xl);
+  border-radius: 30px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dfs-filter-btn:hover {
+  background: rgba(18, 233, 233, 0.06);
+  border-color: rgba(18, 233, 233, 0.5);
+  transform: translateY(-2px);
+}
+
+.dfs-filter-btn--active {
+  background: var(--dfs-color-accent-cyan) !important;
+  border-color: var(--dfs-color-accent-cyan) !important;
+  color: var(--dfs-color-bg-dark) !important;
+  box-shadow: 0 4px 15px rgba(18, 233, 233, 0.3);
+}
+
+/* Grid & Responsive Configurations */
+.dfs-speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--dfs-space-xl);
+  opacity: 1;
+  transition: opacity 0.30s ease-in-out;
+}
+
+/* Speaker Card Component styling */
+.dfs-speaker-card {
+  background: rgba(8, 32, 40, 0.3);
+  border: 1px solid rgba(18, 233, 233, 0.08);
+  border-radius: var(--dfs-radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.dfs-speaker-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(18, 233, 233, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.dfs-speaker-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(18, 233, 233, 0.25);
+  box-shadow: 0 15px 35px rgba(3, 17, 22, 0.9), 0 0 20px rgba(18, 233, 233, 0.06);
+}
+
+/* Avatar Image Container */
+.dfs-speaker-card__avatar-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Square crop */
+  overflow: hidden;
+  background: #031116;
+  border-bottom: 1px solid rgba(18, 233, 233, 0.06);
+}
+
+.dfs-speaker-card__avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dfs-speaker-card:hover .dfs-speaker-card__avatar {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+/* Diagonal layout overlay accent line on card hover */
+.dfs-speaker-card__avatar-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--dfs-color-accent-cyan), transparent);
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.4s ease;
+}
+
+.dfs-speaker-card:hover .dfs-speaker-card__avatar-wrapper::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Card Content Details */
+.dfs-speaker-card__content {
+  padding: var(--dfs-space-xl);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dfs-speaker-card__name {
+  font-family: 'Lufga', var(--dfs-font-family-sans);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--dfs-color-white);
+  margin-bottom: var(--dfs-space-xs);
+  line-height: 1.25;
+  transition: color 0.3s ease;
+}
+
+.dfs-speaker-card:hover .dfs-speaker-card__name {
+  color: var(--dfs-color-accent-cyan);
+}
+
+.dfs-speaker-card__role {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  margin-bottom: var(--dfs-space-md);
+}
+
+.dfs-speaker-card__company {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--dfs-color-accent-cyan);
+  letter-spacing: 0.08em;
+  margin-top: auto; /* Push to bottom of content block */
+}
+
+/* Filter Visibility Transition Class */
+.dfs-speaker-card--hidden {
+  display: none !important;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .dfs-speakers-section {
+    padding: var(--dfs-space-2xl) 0;
+  }
+  .dfs-filter-wrapper {
+    gap: var(--dfs-space-sm);
+    margin-bottom: var(--dfs-space-xl);
+  }
+  .dfs-filter-btn {
+    font-size: 0.85rem;
+    padding: var(--dfs-space-xs) var(--dfs-space-lg);
+  }
+  .dfs-speaker-card__content {
+    padding: var(--dfs-space-lg);
+  }
+  .dfs-speaker-card__name {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dfs-speakers-grid {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}

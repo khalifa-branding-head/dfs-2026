@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" width="100%" height="100%">
+  <g fill="none" stroke-width="2.5" transform="translate(10, 8)">
+    <path d="M 4 36 L 4 8 L 38 8 L 38 36 L 21 44 Z" stroke="#12E9E9"/>
+    <path d="M 12 16 L 30 16 L 30 32 L 21 38 L 12 32 Z" fill="#08BDF4"/>
+    <line x1="21" y1="8" x2="21" y2="38" stroke="#FFFFFF" stroke-width="2"/>
+  </g>
+  <text x="65" y="32" font-family="Inter, system-ui, sans-serif" font-weight="800" font-size="24" fill="#FFFFFF" letter-spacing="0.1em">DIFC</text>
+  <text x="65" y="47" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="8" fill="#6D8794" letter-spacing="0.12em">HOST ENTITY</text>
+</svg>

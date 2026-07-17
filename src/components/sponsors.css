@@ -1,0 +1,98 @@
+/* sponsors.css - Trust & Sponsor Ecosystem Band Component */
+
+.dfs-sponsor-band {
+  background-color: var(--dfs-color-bg-dark);
+  padding: var(--dfs-space-3xl) 0;
+  border-bottom: 1px solid rgba(18, 233, 233, 0.1);
+  position: relative;
+}
+
+.dfs-sponsor-band__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.dfs-sponsor-band__eyebrow {
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--dfs-font-size-caption);
+  font-weight: 700;
+  color: var(--dfs-color-accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--dfs-space-sm);
+  display: block;
+}
+
+.dfs-sponsor-band__title {
+  font-family: 'Lufga', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--dfs-color-white);
+  margin-top: 0;
+  margin-bottom: var(--dfs-space-sm);
+}
+
+.dfs-sponsor-band__subtitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: var(--dfs-color-text-muted);
+  max-width: 600px;
+  margin-top: 0;
+  margin-bottom: var(--dfs-space-xl);
+  line-height: 1.5;
+}
+
+/* Spacious breathable logos grid */
+.dfs-sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--dfs-space-xl);
+  width: 100%;
+  max-width: var(--dfs-container-max-width);
+  margin-top: var(--dfs-space-lg);
+  justify-items: center;
+  align-items: center;
+}
+
+.dfs-sponsor-logo {
+  max-height: 38px;
+  max-width: 120px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.55;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dfs-sponsor-logo:hover {
+  opacity: 1.0;
+  transform: translateY(-3px);
+  filter: brightness(0) invert(1) drop-shadow(0 0 6px var(--dfs-color-accent-cyan));
+}
+
+/* Responsive Grid Scaling */
+@media (max-width: 768px) {
+  .dfs-sponsor-band {
+    padding: var(--dfs-space-2xl) 0;
+  }
+
+  .dfs-sponsor-band__title {
+    font-size: 20px;
+  }
+
+  .dfs-sponsor-band__subtitle {
+    font-size: 14px;
+    margin-bottom: var(--dfs-space-lg);
+  }
+
+  .dfs-sponsors-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--dfs-space-md);
+  }
+
+  .dfs-sponsor-logo {
+    max-height: 28px;
+    max-width: 90px;
+  }
+}

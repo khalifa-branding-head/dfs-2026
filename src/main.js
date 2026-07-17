@@ -14,6 +14,11 @@ import './components/footer.css';
 import './components/forms.css';
 import './components/tabs.css';
 import './components/accordion.css';
+import './components/hero.css';
+import './components/patronage.css';
+import './components/speakers.css';
+import './components/agenda.css';
+import './components/sponsors.css';
 
 /* Load Phase 5 Creative Polish overrides layer */
 import './styles/phase5.css';
@@ -32,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dynamic Header transparent-to-scrolled background transition
   if (header) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 60) {
         header.classList.remove('dfs-header--transparent');
         header.classList.add('dfs-header--scrolled');
       } else {
@@ -93,6 +98,75 @@ document.addEventListener('DOMContentLoaded', () => {
             panel.style.maxHeight = null;
           }
         }
+      });
+    });
+  }
+
+  // Hero Video Fade-In transition on autoplay start (prevents blank black flashes)
+  const heroVideo = document.getElementById('hero-video');
+  if (heroVideo) {
+    if (heroVideo.readyState >= 3) {
+      heroVideo.classList.add('dfs-hero__video--playing');
+    } else {
+      heroVideo.addEventListener('playing', () => {
+        heroVideo.classList.add('dfs-hero__video--playing');
+      });
+    }
+  }
+
+  // Agenda Day Tabs Switcher
+  const agendaTabs = document.querySelectorAll('.dfs-agenda-tabs__btn');
+  const agendaPanels = document.querySelectorAll('.dfs-agenda-tabs__panel');
+  if (agendaTabs.length > 0) {
+    agendaTabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const day = btn.getAttribute('data-day');
+        agendaTabs.forEach(b => b.classList.remove('dfs-agenda-tabs__btn--active'));
+        agendaPanels.forEach(p => p.classList.remove('dfs-agenda-tabs__panel--active'));
+        
+        btn.classList.add('dfs-agenda-tabs__btn--active');
+        const targetPanel = document.getElementById(`${day}-panel`);
+        if (targetPanel) {
+          targetPanel.classList.add('dfs-agenda-tabs__panel--active');
+        }
+      });
+    });
+  }
+
+  // Speakers Category Filter
+  const filterBtns = document.querySelectorAll('.dfs-filter-btn');
+  const speakerCards = document.querySelectorAll('.dfs-speaker-card');
+  const speakersGrid = document.getElementById('speakers-grid');
+  
+  if (filterBtns.length > 0 && speakerCards.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filterVal = btn.getAttribute('data-filter');
+        
+        // Update active button state
+        filterBtns.forEach(b => b.classList.remove('dfs-filter-btn--active'));
+        btn.classList.add('dfs-filter-btn--active');
+        
+        // Temporarily fade out grid for smooth animation transition
+        if (speakersGrid) {
+          speakersGrid.style.opacity = '0';
+        }
+        
+        setTimeout(() => {
+          speakerCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            if (filterVal === 'all' || category === filterVal) {
+              card.classList.remove('dfs-speaker-card--hidden');
+            } else {
+              card.classList.add('dfs-speaker-card--hidden');
+            }
+          });
+          
+          // Fade back in
+          if (speakersGrid) {
+            speakersGrid.style.opacity = '1';
+          }
+        }, 150);
       });
     });
   }

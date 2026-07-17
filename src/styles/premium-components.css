@@ -8,12 +8,12 @@
 }
 
 .dfs-button--primary:hover {
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px) !important;
   box-shadow: 0 8px 24px rgba(40, 116, 252, 0.35) !important;
 }
 
 .dfs-button--primary:active {
-  transform: translateY(0) scale(1.0);
+  transform: translateY(0) !important;
 }
 
 /* Accent Buttons Polish */
@@ -30,7 +30,7 @@
 .dfs-button--accent:hover {
   background-color: var(--dfs-color-white) !important;
   color: var(--dfs-color-black) !important;
-  transform: translateY(-2px) scale(1.02);
+  transform: translateY(-2px) !important;
   box-shadow: 0 8px 20px rgba(18, 233, 233, 0.4) !important;
 }
 
@@ -45,7 +45,7 @@
 
 .dfs-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(2, 3, 129, 0.06) !important;
+  box-shadow: 0 20px 40px rgba(8, 32, 40, 0.06) !important; /* Dark Teal shadow */
   border-color: rgba(40, 116, 252, 0.2) !important;
 }
 
@@ -88,7 +88,7 @@
 
 /* 7. Footer divider and link highlights */
 .dfs-footer {
-  background-color: #01021a !important; /* Richer Midnight Black-Blue */
+  background-color: #041014 !important; /* Richer Dark Teal */
   border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
 

@@ -22,15 +22,15 @@
   /* Color Palette (DFS Brand Identity) */
   --dfs-color-white: #ffffff;
   --dfs-color-black: #000000;
-  --dfs-color-bg-dark: #020381; /* Midnight Blue */
-  --dfs-color-accent-cyan: #12E9E9; /* Accent Cyan/Teal */
-  --dfs-color-primary-blue: #2874fc; /* Electric Blue */
-  --dfs-color-border-gray: #eeeeee;
-  --dfs-color-text-dark: #000000;
+  --dfs-color-bg-dark: #031116; /* Deep Midnight Teal (Primary Background) */
+  --dfs-color-accent-cyan: #12E9E9; /* Electric Turquoise (Primary Brand Accent) */
+  --dfs-color-primary-blue: #08BDF4; /* Accent Blue (Secondary Brand Accent) */
+  --dfs-color-border-gray: #12E9E9;
+  --dfs-color-text-dark: #031116;
   --dfs-color-text-light: #ffffff;
-  --dfs-color-text-muted: #555555;
-  --dfs-color-primary-gradient: linear-gradient(135deg, #020381 0%, #2874fc 100%);
-  --dfs-color-purple-gradient: linear-gradient(135deg, #0693e3 0%, #9b51e0 100%);
+  --dfs-color-text-muted: #8fa8b5; /* Slate Grey (Muted typography) */
+  --dfs-color-primary-gradient: linear-gradient(135deg, #031116 0%, #08BDF4 100%);
+  --dfs-color-purple-gradient: linear-gradient(135deg, #08BDF4 0%, #12E9E9 100%);
 
   /* Drop Shadows */
   --dfs-shadow-none: none;
@@ -56,6 +56,26 @@
   --dfs-line-height-heading: 1.1;
   --dfs-line-height-body: 1.5;
   --dfs-line-height-caption: 1.3;
+
+  /* Refined Display & Eyebrow tokens */
+  --dfs-lh-display: 1.1;
+  --dfs-lh-body: 1.6;
+  --dfs-tracking-display: -0.02em;
+  --dfs-font-size-eyebrow: 11px;
+  --dfs-tracking-eyebrow: 0.15em;
+
+  /* Global Fluid Design Tokens */
+  --dfs-header-height: clamp(80px, 6vw, 88px);
+  --dfs-container-padding: clamp(16px, 2.5vw, 40px);
+  --dfs-hero-title: clamp(2.25rem, 5vw, 4.5rem);
+  --dfs-nav-gap: clamp(16px, 2vw, 28px);
+  --dfs-cta-gap: clamp(8px, 1.5vw, 16px);
+
+  /* Premium Motion Tokens */
+  --dfs-motion-fast: 250ms;
+  --dfs-motion-base: 500ms;
+  --dfs-motion-slow: 800ms;
+  --dfs-ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Typography Scale - Mobile Adaptations (CSS override in media queries) */
   --dfs-container-max-width: 1300px;

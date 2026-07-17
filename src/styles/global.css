@@ -36,17 +36,18 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: var(--dfs-font-size-body);
   line-height: var(--dfs-line-height-body);
-  color: var(--dfs-color-text-dark);
-  background-color: var(--dfs-color-white);
+  color: var(--dfs-color-white);
+  background-color: var(--dfs-color-bg-dark);
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Typographic Headings and Displays */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Lufga', 'Open Sans', sans-serif;
-  color: var(--dfs-color-text-dark);
+  color: var(--dfs-color-white);
   line-height: var(--dfs-line-height-heading);
 }
 

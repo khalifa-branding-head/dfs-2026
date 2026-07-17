@@ -1,31 +1,42 @@
-/* header.css - Header layout and top utility bar components */
+/* header.css - Refreshed Header Component (Option 1: Sovereign Midnight Frost) */
 
 .dfs-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
-  background-color: var(--dfs-color-white);
-  border-bottom: 1px solid var(--dfs-color-border-gray);
+  height: var(--dfs-header-height);
+  background-color: var(--dfs-color-bg-dark);
+  border-bottom: 1px solid rgba(18, 233, 233, 0.12);
   display: flex;
   align-items: center;
   z-index: 1000;
-  transition: background-color var(--dfs-motion-duration-normal) var(--dfs-motion-ease-in-out),
-              border-color var(--dfs-motion-duration-normal) var(--dfs-motion-ease-in-out),
-              box-shadow var(--dfs-motion-duration-normal) var(--dfs-motion-ease-in-out);
+  transition: background-color var(--dfs-motion-base) var(--dfs-ease-premium),
+              border-color var(--dfs-motion-base) var(--dfs-ease-premium),
+              box-shadow var(--dfs-motion-base) var(--dfs-ease-premium);
 }
 
 /* Transparent Overlay Variant (Home Hero Banner) */
 .dfs-header--transparent {
   background-color: transparent;
   border-bottom-color: rgba(255, 255, 255, 0.1);
+  --dfs-logo-color: #ffffff;
+  --dfs-logo-accent: #12E9E9;
+  --dfs-nav-link-color: rgba(255, 255, 255, 0.85);
 }
 
+/* Scroll Blur Active State (>60px scroll) */
 .dfs-header--scrolled {
-  background-color: var(--dfs-color-white);
-  border-bottom-color: var(--dfs-color-border-gray);
-  box-shadow: var(--dfs-shadow-sm);
+  background-color: rgba(3, 17, 22, 0.85) !important; /* 85% opaque Midnight Teal */
+  backdrop-filter: blur(16px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(140%) !important;
+  border-bottom-color: rgba(18, 233, 233, 0.15) !important;
+  box-shadow: 0 4px 30px rgba(3, 8, 20, 0.15);
+  
+  /* Retain pure white logo paths per guidelines */
+  --dfs-logo-color: #ffffff;
+  --dfs-logo-accent: #12E9E9;
+  --dfs-nav-link-color: rgba(255, 255, 255, 0.9);
 }
 
 .dfs-header__container {
@@ -33,15 +44,131 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding-left: var(--dfs-container-padding);
+  padding-right: var(--dfs-container-padding);
 }
 
 .dfs-header__logo-wrapper {
   display: flex;
   align-items: center;
   min-height: 44px; /* Touch target minimum */
+  flex: 0 0 auto;
 }
 
 .dfs-header__logo {
-  height: 40px;
+  height: 44px;
   width: auto;
+  display: block;
+}
+
+/* Split navigation alignments */
+.dfs-nav {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  margin-left: 36px;
+  margin-right: 36px;
+}
+
+.dfs-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--dfs-cta-gap);
+  flex: 0 0 auto;
+}
+
+/* Vector paths dynamic styling */
+.dfs-header__logo .dfs-logo__text path,
+.dfs-header__logo .dfs-logo__text rect,
+.dfs-header__logo .dfs-logo__text polygon,
+.dfs-header__logo .dfs-logo__text polyline {
+  fill: var(--dfs-logo-color, #ffffff);
+  transition: fill var(--dfs-motion-base) var(--dfs-ease-premium);
+}
+
+.dfs-header__logo .dfs-logo__accent path {
+  fill: var(--dfs-logo-accent, #12E9E9);
+  transition: fill var(--dfs-motion-base) var(--dfs-ease-premium);
+}
+
+/* Refreshed Action Buttons (Touch Target 48px Height) */
+.dfs-header__actions .dfs-button {
+  padding: 12px 28px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  min-height: 48px !important; /* Enforce 48px Touch Target */
+  height: 48px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  border-radius: 8px !important; /* Softer 8px corner radius */
+  text-transform: none !important;
+  transition: background-color var(--dfs-motion-fast) var(--dfs-ease-premium),
+              border-color var(--dfs-motion-fast) var(--dfs-ease-premium),
+              box-shadow var(--dfs-motion-fast) var(--dfs-ease-premium),
+              transform var(--dfs-motion-fast) var(--dfs-ease-premium) !important;
+}
+
+/* Transparent State (Home Page Hero Load) */
+.dfs-header--transparent .dfs-header__btn-enquire {
+  border: 1px solid rgba(255, 255, 255, 0.18) !important; /* Thinner subtle border */
+  color: var(--dfs-color-white) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+.dfs-header--transparent .dfs-header__btn-enquire:hover {
+  background: rgba(255, 255, 255, 0.08) !important; /* Softer hover */
+  border-color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.dfs-header--transparent .dfs-header__btn-buy {
+  background: var(--dfs-color-white) !important;
+  color: var(--dfs-color-bg-dark) !important;
+  border-color: var(--dfs-color-white) !important;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05) !important;
+}
+.dfs-header--transparent .dfs-header__btn-buy:hover {
+  background: var(--dfs-color-accent-cyan) !important;
+  color: var(--dfs-color-bg-dark) !important;
+  border-color: var(--dfs-color-accent-cyan) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(18, 233, 233, 0.25) !important;
+}
+
+/* Scrolled & Solid Page States */
+.dfs-header--scrolled .dfs-header__btn-enquire,
+.dfs-header:not(.dfs-header--transparent) .dfs-header__btn-enquire {
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: var(--dfs-color-white) !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+.dfs-header--scrolled .dfs-header__btn-enquire:hover,
+.dfs-header:not(.dfs-header--transparent) .dfs-header__btn-enquire:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.dfs-header--scrolled .dfs-header__btn-buy,
+.dfs-header:not(.dfs-header--transparent) .dfs-header__btn-buy {
+  background: var(--dfs-color-accent-cyan) !important;
+  color: var(--dfs-color-bg-dark) !important;
+  border-color: var(--dfs-color-accent-cyan) !important;
+}
+.dfs-header--scrolled .dfs-header__btn-buy:hover,
+.dfs-header:not(.dfs-header--transparent) .dfs-header__btn-buy:hover {
+  background: var(--dfs-color-white) !important;
+  color: var(--dfs-color-bg-dark) !important;
+  border-color: var(--dfs-color-white) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Responsive configurations - Collapse Navigation Menu to Mobile hamburger at 1250px */
+@media (max-width: 1250px) {
+  .dfs-nav {
+    flex: 0 0 auto;
+    order: 2; /* Position hamburger toggle on the right */
+  }
+  
+  .dfs-header__actions {
+    margin-right: var(--dfs-space-md);
+  }
 }
