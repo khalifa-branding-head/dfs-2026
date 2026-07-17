@@ -105,33 +105,50 @@ export default function FeaturedSpeakers() {
               {/* Dynamic Internal Hover Specular Highlight */}
               <div className="absolute inset-0 bg-gradient-to-b from-[#12E9E9]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-              {/* Portrait Display Frame with Floating Brand Aura */}
-              <div className="w-full h-[62%] bg-gradient-to-b from-[#0c2730]/10 to-[#082028]/80 relative overflow-hidden flex items-end justify-center border-b border-white/[0.04]">
+              {/* Upgraded Portrait Window: Merges Native Photo Layer with Custom Brand SVG Backing Elements */}
+              <div className="w-full h-[62%] bg-gradient-to-b from-[#0c2730]/60 to-[#082028]/95 relative overflow-hidden flex items-end justify-center border-b border-white/[0.04]">
                 
-                {/* 
-                  - SLOW DRIFTING BRAND AURA BACKGROUND:
-                  - Runs seamlessly behind portrait vectors.
-                  - Matches each respective speaker's primary brand theme glow.
-                */}
-                <div className="absolute inset-0 z-0 flex items-center justify-center select-none opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500">
+                {/* ==================== 1. CUSTOM BRAND SVG BACKGROUND GRID ==================== */}
+                {/* This custom SVG handles background continuity, drawing attention away from the original image backing */}
+                <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-35 transition-opacity duration-500 pointer-events-none flex items-center justify-center">
+                  <svg 
+                    className="w-full h-full p-4 text-[#12E9E9] stroke-current" 
+                    viewBox="0 0 100 100" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs>
+                      <linearGradient id="svgGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#12E9E9" stopOpacity="0.8" />
+                        <stop offset="100%" stopColor="#08BDF4" stopOpacity="0" />
+                      </linearGradient>
+                    </defs>
+                    {/* Dynamic Fintech Global Network Web Lines */}
+                    <circle cx="50" cy="50" r="40" strokeDasharray="4 4" className="animate-[spin_120s_linear_infinite]" style={{ transformOrigin: 'center' }} />
+                    <circle cx="50" cy="50" r="25" strokeDasharray="2 2" className="animate-[spin_60s_linear_infinite_reverse]" style={{ transformOrigin: 'center' }} />
+                    <path d="M10 50 H90 M50 10 V90" strokeWidth="0.2" opacity="0.3" />
+                    <path d="M20 20 L80 80 M80 20 L20 80" strokeWidth="0.1" opacity="0.2" />
+                  </svg>
+                </div>
+
+                {/* ==================== 2. SLOW-PULSING BRAND AURA ENGINES ==================== */}
+                <div className="absolute inset-0 z-10 flex items-center justify-center select-none opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500">
                   <motion.div 
                     variants={auraAnimationVariants}
                     animate="animate"
-                    className={`absolute w-48 h-48 bg-gradient-to-tr ${speaker.glowColor} blur-2xl`}
-                  />
-                  <motion.div 
-                    variants={auraAnimationVariants}
-                    animate="animate"
-                    className="absolute w-44 h-44 bg-gradient-to-br from-[#12E9E9]/20 to-transparent blur-2xl"
-                    style={{ animationDirection: 'reverse', animationDelay: '-4s' }}
+                    className={`absolute w-44 h-44 bg-gradient-to-tr ${speaker.glowColor} blur-2xl`}
                   />
                 </div>
 
-                {/* Speaker Portrait Layer (No flat white clipping borders) */}
+                {/* ==================== 3. PORTRAIT IMAGE LAYER ==================== */}
+                {/* 
+                  - The mix-blend-mode property allows the portrait image to dynamically blend with the underlying brand colors.
+                  - If you are eventually able to re-upload transparent .png files, this exact tag will seamlessly overlay onto the SVG!
+                */}
                 <img
                   src={speaker.src}
                   alt={speaker.name}
-                  className="w-full h-full object-cover object-top relative z-10 transition-transform duration-700 ease-[0.16,1,0.3,1] group-hover:scale-[1.03]"
+                  className="w-full h-full object-cover object-top relative z-20 mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700 ease-[0.16,1,0.3,1] group-hover:scale-[1.03]"
                 />
               </div>
 
