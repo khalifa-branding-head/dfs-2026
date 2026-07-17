@@ -14,28 +14,28 @@ const SPEAKERS_DATA = [
     role: 'Governor, sovereign regulatory policies & capital frameworks',
     company: 'Sovereign Financial Authority',
     category: 'regulators',
-    image: '/speaker-samir.png',
+    image: 'speaker-samir.png',
   },
   {
     name: 'Elena Rostova',
     role: 'Chief Innovation Officer, digital asset transitions & cross-border hubs',
     company: 'Global Capital Markets',
     category: 'pioneers',
-    image: '/speaker-elena.png',
+    image: 'speaker-elena.png',
   },
   {
     name: 'Marcus Vance',
     role: 'Managing Partner, early-stage scaling & fintech ecosystem funds',
     company: 'Vance Venture Partners',
     category: 'investors',
-    image: '/speaker-marcus.png',
+    image: 'speaker-marcus.png',
   },
   {
     name: 'Aisha Al-Mansoor',
     role: 'Head of Fintech Sandbox & sandboxed corporate frameworks',
     company: 'Regional Regulatory Council',
     category: 'regulators',
-    image: '/speaker-aisha.png',
+    image: 'speaker-aisha.png',
   },
 ];
 

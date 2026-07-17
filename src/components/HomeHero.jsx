@@ -18,7 +18,7 @@ export default function HomeHero() {
           className="w-full h-full object-cover scale-102 transform translate-z-0 object-center video-hero-layer"
           style={{ filter: 'brightness(0.35) contrast(1.1) saturate(0.95)' }}
         >
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="hero-video.mp4" type="video/mp4" />
           <source src="https://dubaifintechsummit.com/wp-content/uploads/2026/01/DFS-Video-mp4.mp4" type="video/mp4" />
         </video>
         {/* Core Design System Vignette Gradient Layer */}

@@ -73,14 +73,14 @@ export default function Footer() {
           {/* Partner Badges */}
           <div className="flex items-center gap-4">
             <img
-              src="/organized-by-trescon.svg"
+              src="organized-by-trescon.svg"
               alt="Organised by DIFC"
               className="h-5 brightness-0 invert opacity-80"
               loading="lazy"
             />
             <div className="w-[1px] height-[14px] bg-white/20 self-stretch" />
             <img
-              src="/part-of.svg"
+              src="part-of.svg"
               alt="Part of Dubai Future Finance Week"
               className="h-5 brightness-0 invert opacity-80"
               loading="lazy"

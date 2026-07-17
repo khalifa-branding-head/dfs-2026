@@ -2,11 +2,11 @@ import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 const partnersData = [
-  { id: 'cbd', name: 'CBD', desc: 'Commercial Bank of Dubai', src: '/assets/logos/cbd.svg' },
-  { id: 'moi', name: 'MINISTRY OF INVESTMENT', desc: 'United Arab Emirates', src: '/assets/logos/ministry-investment.svg' },
-  { id: 'invest', name: 'INVEST UAE', desc: 'Sovereign Alliance', src: '/assets/logos/invest-uae.svg' },
-  { id: 'mawarid', name: 'MAWARID FINANCE', desc: 'Islamic Financial Partner', src: '/assets/logos/mawarid.svg' },
-  { id: 'enbd', name: 'EMIRATES NBD', desc: 'Founding Partner', src: '/assets/logos/emirates-nbd.svg' },
+  { id: 'cbd', name: 'CBD', desc: 'Commercial Bank of Dubai', src: 'assets/logos/cbd.svg' },
+  { id: 'moi', name: 'MINISTRY OF INVESTMENT', desc: 'United Arab Emirates', src: 'assets/logos/ministry-investment.svg' },
+  { id: 'invest', name: 'INVEST UAE', desc: 'Sovereign Alliance', src: 'assets/logos/invest-uae.svg' },
+  { id: 'mawarid', name: 'MAWARID FINANCE', desc: 'Islamic Financial Partner', src: 'assets/logos/mawarid.svg' },
+  { id: 'enbd', name: 'EMIRATES NBD', desc: 'Founding Partner', src: 'assets/logos/emirates-nbd.svg' },
 ];
 
 export default function PartnerShowcase() {

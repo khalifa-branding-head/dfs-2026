@@ -8,7 +8,7 @@ const partners = [
     tier: 'HOST ENTITY',
     name: 'DIFC',
     role: 'Dubai International Financial Centre',
-    src: '/assets/logos/difc.svg',
+    src: 'assets/logos/difc.svg',
     icon: Shield,
     gridClass: 'md:col-span-2 lg:col-span-2 border-[#12E9E9]/30 bg-gradient-to-br from-[#082028] via-[#082028] to-[#12E9E9]/5'
   },
@@ -17,7 +17,7 @@ const partners = [
     tier: 'PREMIUM BANKING PARTNER',
     name: 'Emirates NBD',
     role: 'Principal Banking Consortium',
-    src: '/assets/logos/emirates-nbd.svg',
+    src: 'assets/logos/emirates-nbd.svg',
     icon: Landmark,
     gridClass: 'md:col-span-1 lg:col-span-1'
   },
@@ -26,7 +26,7 @@ const partners = [
     tier: 'STRATEGIC GOVERNMENT PARTNER',
     name: 'Ministry of Investment',
     role: 'Federal Investment Infrastructure',
-    src: '/assets/logos/ministry-investment.svg',
+    src: 'assets/logos/ministry-investment.svg',
     icon: Building2,
     gridClass: 'md:col-span-1 lg:col-span-1'
   },
@@ -35,7 +35,7 @@ const partners = [
     tier: 'COMMERCIAL BANKING PARTNER',
     name: 'CBD',
     role: 'Commercial Banking Sector Lead',
-    src: '/assets/logos/cbd.svg',
+    src: 'assets/logos/cbd.svg',
     icon: Briefcase,
     gridClass: 'md:col-span-1 lg:col-span-1'
   },
@@ -44,7 +44,7 @@ const partners = [
     tier: 'NATIONAL INVESTMENT PARTNER',
     name: 'INVEST UAE',
     role: 'Sovereign Wealth Acceleration',
-    src: '/assets/logos/invest-uae.svg',
+    src: 'assets/logos/invest-uae.svg',
     icon: Globe,
     gridClass: 'md:col-span-1 lg:col-span-1'
   }
