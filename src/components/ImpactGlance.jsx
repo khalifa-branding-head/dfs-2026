@@ -64,8 +64,8 @@ export default function ImpactGlance() {
               {/* High-Performance Native HTML5 Video Stream Pipeline */}
               <video
                 ref={videoRef}
-                src="/hero-video.mp4"
-                poster="/assets/images/showreel-thumbnail.jpg" // Local high-res fallback poster asset
+                src="hero-video.mp4"
+                poster="assets/images/showreel-thumbnail.jpg" // Local high-res fallback poster asset
                 loop
                 playsInline
                 muted // Enforces browser autoplay permission configurations cleanly

@@ -41,14 +41,14 @@ export default function HomeHero() {
         {/* Organizer Partner Badges (Equalized Heights Restored Under Heading) */}
         <div className="flex items-center justify-center gap-6 bg-white/5 backdrop-blur-md px-6 py-3 border border-white/10 rounded-full max-w-full overflow-hidden mx-auto w-fit mt-8 mb-10">
           <img 
-            src="/organized-by-trescon.svg" 
+            src="organized-by-trescon.svg" 
             alt="Organised by DIFC" 
             className="w-auto object-contain opacity-90"
             style={{ height: '20px' }}
           />
           <div className="w-[1px] h-6 bg-white/20" />
           <img 
-            src="/part-of.svg" 
+            src="part-of.svg" 
             alt="Part of Dubai Future Finance Week" 
             className="w-auto object-contain opacity-90"
             style={{ height: '30px' }}

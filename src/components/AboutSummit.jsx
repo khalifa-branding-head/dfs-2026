@@ -94,7 +94,7 @@ export default function AboutSummit() {
             <div className="absolute inset-x-0 bottom-0 h-[3px] bg-gradient-to-r from-transparent via-[#12E9E9] to-transparent z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
             <img 
-              src="/assets/images/summit-showcase.jpg" 
+              src="assets/images/summit-showcase.jpg" 
               alt="Dubai FinTech Summit Floor Interaction Gallery" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
             />

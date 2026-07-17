@@ -2,14 +2,14 @@ import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 const ecosystemPartners = [
-  { id: 'enbd', tier: 'FOUNDING PARTNER', src: '/assets/logos/emirates-nbd.png' },
-  { id: 'mawarid', tier: 'ISLAMIC FINANCIAL PARTNER', src: '/assets/logos/mawarid-finance.png' },
-  { id: 'cbd', tier: 'COMMERCIAL BANKING LEADER', src: '/assets/logos/cbd.png' },
-  { id: 'moi', tier: 'STRATEGIC GOVERNMENT PARTNER', src: '/assets/logos/ministry-of-investment.png' },
-  { id: 'invest', tier: 'NATIONAL INVESTMENT PARTNER', src: '/assets/logos/invest-uae.png' },
-  { id: 'ignyte', tier: 'ECOSYSTEM ALLIANCE', src: '/assets/logos/ignyte.png' },
-  { id: 'ripple', tier: 'ECOSYSTEM ALLIANCE', src: '/assets/logos/ripple.png' },
-  { id: 'partner-pay', tier: 'STRATEGIC PARTNER', src: '/assets/logos/pay.png' }
+  { id: 'enbd', tier: 'FOUNDING PARTNER', src: 'assets/logos/emirates-nbd.png' },
+  { id: 'mawarid', tier: 'ISLAMIC FINANCIAL PARTNER', src: 'assets/logos/mawarid-finance.png' },
+  { id: 'cbd', tier: 'COMMERCIAL BANKING LEADER', src: 'assets/logos/cbd.png' },
+  { id: 'moi', tier: 'STRATEGIC GOVERNMENT PARTNER', src: 'assets/logos/ministry-of-investment.png' },
+  { id: 'invest', tier: 'NATIONAL INVESTMENT PARTNER', src: 'assets/logos/invest-uae.png' },
+  { id: 'ignyte', tier: 'ECOSYSTEM ALLIANCE', src: 'assets/logos/ignyte.png' },
+  { id: 'ripple', tier: 'ECOSYSTEM ALLIANCE', src: 'assets/logos/ripple.png' },
+  { id: 'partner-pay', tier: 'STRATEGIC PARTNER', src: 'assets/logos/pay.png' }
 ];
 
 export default function PartnerEcosystem() {

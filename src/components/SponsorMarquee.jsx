@@ -2,14 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const sponsorLogos = [
-  { id: 'extracted-0', name: 'Mawarid Finance', src: '/assets/logos/mawarid-finance.png' },
-  { id: 'extracted-1', name: 'Emirates NBD', src: '/assets/logos/emirates-nbd.png' },
-  { id: 'extracted-2', name: 'Commercial Bank of Dubai', src: '/assets/logos/cbd.png' },
-  { id: 'extracted-3', name: 'Ministry of Investment', src: '/assets/logos/ministry-of-investment.png' },
-  { id: 'extracted-4', name: 'Ignyte', src: '/assets/logos/ignyte.png' },
-  { id: 'extracted-5', name: 'Ripple', src: '/assets/logos/ripple.png' },
-  { id: 'extracted-6', name: 'Strategic Partner', src: '/assets/logos/pay.png' },
-  { id: 'extracted-7', name: 'Strategic Partner', src: '/assets/logos/sh.png' },
+  { id: 'extracted-0', name: 'Mawarid Finance', src: 'assets/logos/mawarid-finance.png' },
+  { id: 'extracted-1', name: 'Emirates NBD', src: 'assets/logos/emirates-nbd.png' },
+  { id: 'extracted-2', name: 'Commercial Bank of Dubai', src: 'assets/logos/cbd.png' },
+  { id: 'extracted-3', name: 'Ministry of Investment', src: 'assets/logos/ministry-of-investment.png' },
+  { id: 'extracted-4', name: 'Ignyte', src: 'assets/logos/ignyte.png' },
+  { id: 'extracted-5', name: 'Ripple', src: 'assets/logos/ripple.png' },
+  { id: 'extracted-6', name: 'Strategic Partner', src: 'assets/logos/pay.png' },
+  { id: 'extracted-7', name: 'Strategic Partner', src: 'assets/logos/sh.png' },
 ];
 
 // Duplicate list to achieve seamless infinite loop rendering transitions

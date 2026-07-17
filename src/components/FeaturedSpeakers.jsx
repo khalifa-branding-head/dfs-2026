@@ -9,7 +9,7 @@ const headlineSpeakers = [
     title: 'Governor',
     company: 'DIFC',
     country: 'UAE',
-    src: '/assets/speakers/essa-kazim.png'
+    src: 'assets/speakers/essa-kazim.png'
   },
   {
     id: 'noel-quinn',
@@ -17,7 +17,7 @@ const headlineSpeakers = [
     title: 'Chairman of the Board of Directors',
     company: 'Julius Baer Group',
     country: 'UK',
-    src: '/assets/speakers/noel-quinn.png'
+    src: 'assets/speakers/noel-quinn.png'
   },
   {
     id: 'jenny-johnson',
@@ -25,7 +25,7 @@ const headlineSpeakers = [
     title: 'Chief Executive Officer',
     company: 'Franklin Templeton',
     country: 'USA',
-    src: '/assets/speakers/jenny-johnson.png'
+    src: 'assets/speakers/jenny-johnson.png'
   },
   {
     id: 'tan-su-shan',
@@ -33,7 +33,7 @@ const headlineSpeakers = [
     title: 'Chief Executive Officer & Director',
     company: 'DBS Group',
     country: 'SINGAPORE',
-    src: '/assets/speakers/tan-su-shan.png'
+    src: 'assets/speakers/tan-su-shan.png'
   }
 ];
 
