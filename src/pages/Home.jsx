@@ -8,6 +8,7 @@ import SponsorMarquee from '../components/SponsorMarquee';
 import ImpactGlance from '../components/ImpactGlance';
 import CuratedLeadership from '../components/CuratedLeadership';
 import GlobalCapitals from '../components/GlobalCapitals';
+import FeaturedSpeakers from '../components/FeaturedSpeakers';
 
 export default function Home() {
   return (
