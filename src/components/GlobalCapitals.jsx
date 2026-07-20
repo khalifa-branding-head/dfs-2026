@@ -3,20 +3,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Globe, ArrowUpRight } from 'lucide-react';
 
 const financialCapitals = [
-  { id: 'toronto', name: 'Toronto', region: 'AMER', coordinates: { x: '46.8%', y: '40.6%' }, delegates: '420+', highlight: 'InsurTech & Innovation' },
-  { id: 'nyc', name: 'New York City', region: 'AMER', coordinates: { x: '50.7%', y: '44.8%' }, delegates: '1,450+', highlight: 'Capital Markets & PE' },
-  { id: 'mexico-city', name: 'Mexico City', region: 'AMER', coordinates: { x: '45.8%', y: '53.6%' }, delegates: '310+', highlight: 'LATAM Fintech Corridors' },
-  { id: 'london', name: 'London', region: 'EMEA', coordinates: { x: '56.7%', y: '39.8%' }, delegates: '1,200+', highlight: 'Regulators & Banking' },
-  { id: 'stockholm', name: 'Stockholm', region: 'EMEA', coordinates: { x: '60.1%', y: '32.8%' }, delegates: '280+', highlight: 'Nordic WealthTech' },
-  { id: 'paris', name: 'Paris', region: 'EMEA', coordinates: { x: '57.8%', y: '42.9%' }, delegates: '490+', highlight: 'Asset Management' },
-  { id: 'madrid', name: 'Madrid', region: 'EMEA', coordinates: { x: '56.9%', y: '47.5%' }, delegates: '340+', highlight: 'Southern Europe Hub' },
-  { id: 'tel-aviv', name: 'Tel Aviv', region: 'EMEA', coordinates: { x: '62.7%', y: '40.7%' }, delegates: '410+', highlight: 'Cybersecurity & Fraud' },
-  { id: 'dubai', name: 'Dubai', region: 'EMEA', coordinates: { x: '64.7%', y: '57.1%' }, delegates: '2,500+', highlight: 'Summit Host City' },
-  { id: 'mumbai', name: 'Mumbai', region: 'APAC', coordinates: { x: '67.8%', y: '53.5%' }, delegates: '1,100+', highlight: 'Digital Payments & Infrastructure' },
-  { id: 'singapore', name: 'Singapore', region: 'APAC', coordinates: { x: '70.2%', y: '61.7%' }, delegates: '980+', highlight: 'FinTech & WealthTech' },
-  { id: 'hk', name: 'Hong Kong', region: 'APAC', coordinates: { x: '73.2%', y: '51.8%' }, delegates: '820+', highlight: 'Asset Management' },
-  { id: 'tokyo', name: 'Tokyo', region: 'APAC', coordinates: { x: '75.2%', y: '47.8%' }, delegates: '650+', highlight: 'Institutional Banking' },
-  { id: 'sydney', name: 'Sydney', region: 'APAC', coordinates: { x: '76.6%', y: '76.8%' }, delegates: '380+', highlight: 'Cross-Border Rails' },
+  { id: 'toronto', name: 'Toronto', region: 'AMER', coordinates: { x: '27.5%', y: '36.0%' }, delegates: '420+', highlight: 'InsurTech & Innovation' },
+  { id: 'nyc', name: 'New York City', region: 'AMER', coordinates: { x: '29.2%', y: '38.0%' }, delegates: '1,450+', highlight: 'Capital Markets & PE' },
+  { id: 'mexico-city', name: 'Mexico City', region: 'AMER', coordinates: { x: '24.0%', y: '50.0%' }, delegates: '310+', highlight: 'LATAM Fintech Corridors' },
+  { id: 'london', name: 'London', region: 'EMEA', coordinates: { x: '47.5%', y: '32.5%' }, delegates: '1,200+', highlight: 'Regulators & Banking' },
+  { id: 'stockholm', name: 'Stockholm', region: 'EMEA', coordinates: { x: '51.5%', y: '26.0%' }, delegates: '280+', highlight: 'Nordic WealthTech' },
+  { id: 'paris', name: 'Paris', region: 'EMEA', coordinates: { x: '48.5%', y: '35.5%' }, delegates: '490+', highlight: 'Asset Management' },
+  { id: 'madrid', name: 'Madrid', region: 'EMEA', coordinates: { x: '47.2%', y: '39.0%' }, delegates: '340+', highlight: 'Southern Europe Hub' },
+  { id: 'tel-aviv', name: 'Tel Aviv', region: 'EMEA', coordinates: { x: '54.5%', y: '43.0%' }, delegates: '410+', highlight: 'Cybersecurity & Fraud' },
+  { id: 'dubai', name: 'Dubai', region: 'EMEA', coordinates: { x: '58.8%', y: '46.2%' }, delegates: '2,500+', highlight: 'Summit Host City' },
+  { id: 'mumbai', name: 'Mumbai', region: 'APAC', coordinates: { x: '66.2%', y: '50.5%' }, delegates: '1,100+', highlight: 'Digital Payments & Infrastructure' },
+  { id: 'singapore', name: 'Singapore', region: 'APAC', coordinates: { x: '73.2%', y: '61.5%' }, delegates: '980+', highlight: 'FinTech & WealthTech' },
+  { id: 'hk', name: 'Hong Kong', region: 'APAC', coordinates: { x: '75.8%', y: '48.5%' }, delegates: '820+', highlight: 'Asset Management' },
+  { id: 'tokyo', name: 'Tokyo', region: 'APAC', coordinates: { x: '81.5%', y: '37.5%' }, delegates: '650+', highlight: 'Institutional Banking' },
+  { id: 'sydney', name: 'Sydney', region: 'APAC', coordinates: { x: '86.2%', y: '76.5%' }, delegates: '380+', highlight: 'Cross-Border Rails' },
 ];
 
 const regions = [
@@ -81,7 +81,8 @@ export default function GlobalCapitals() {
         </div>
 
         {/* ==================== RIGHT COLUMN: INTERACTIVE VECTOR MAP CANVAS (7-Span) ==================== */}
-        <div className="lg:col-span-7 relative w-full aspect-[16/9] md:aspect-[21/9] rounded-3xl border border-white/[0.08] bg-[#0c2730]/40 backdrop-blur-xl overflow-hidden shadow-[0_30px_60px_rgba(4,16,20,0.5)] flex items-center justify-center p-6">
+        {/* locked aspect ratio to exactly matches the 16:9 map.mp4 video file to prevent any scaling misalignment */}
+        <div className="lg:col-span-7 relative w-full aspect-video rounded-3xl border border-white/[0.08] bg-[#0c2730]/40 backdrop-blur-xl overflow-hidden shadow-[0_30px_60px_rgba(4,16,20,0.5)] flex items-center justify-center">
           
           {/* Official Animated World Map Video Background */}
           <video 
@@ -90,13 +91,14 @@ export default function GlobalCapitals() {
             loop 
             muted 
             playsInline
-            className="absolute inset-0 w-full h-full object-contain pointer-events-none opacity-85"
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-85"
           />
 
           {/* Interactive City Node Overlays */}
           <div className="absolute inset-0 z-20">
             {filteredCities.map((city) => {
               const isSelected = hoveredCity?.id === city.id;
+              const isDubai = city.id === 'dubai';
 
               return (
                 <div
@@ -104,14 +106,21 @@ export default function GlobalCapitals() {
                   style={{ left: city.coordinates.x, top: city.coordinates.y }}
                   onMouseEnter={() => setHoveredCity(city)}
                   onMouseLeave={() => setHoveredCity(null)}
-                  className="absolute -translate-x-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center cursor-pointer z-30"
+                  className="absolute -translate-x-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center cursor-pointer z-30 group"
                 >
                   {/* Glowing/Hover Indicator dot precisely overlaying the pre-rendered city */}
-                  <div className={`w-2.5 h-2.5 rounded-full transition-all duration-300 flex items-center justify-center ${
-                    isSelected 
-                      ? 'bg-[#12E9E9] scale-125 shadow-[0_0_12px_#12E9E9]' 
-                      : 'bg-transparent group-hover:bg-[#12E9E9]/40'
+                  <div className={`rounded-full transition-all duration-300 flex items-center justify-center ${
+                    isDubai 
+                      ? 'w-3 h-3 bg-[#12E9E9] shadow-[0_0_15px_#12E9E9] animate-pulse'
+                      : isSelected
+                        ? 'w-2.5 h-2.5 bg-[#12E9E9] scale-125 shadow-[0_0_12px_#12E9E9]' 
+                        : 'w-2 h-2 bg-[#08BDF4]/80 group-hover:bg-[#12E9E9]'
                   }`} />
+
+                  {/* Pulsing ring for selected or Dubai node */}
+                  {(isSelected || isDubai) && (
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-[#12E9E9]/20 animate-ping pointer-events-none" />
+                  )}
 
                   {/* Hover Floating Telemetry Badge */}
                   <AnimatePresence>
