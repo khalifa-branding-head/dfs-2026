@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
+// Force trigger redeploy: 2026-07-20 
 const headlineSpeakers = [
   {
     id: 'essa-kazim',
