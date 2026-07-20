@@ -7,6 +7,7 @@ import PartnerEcosystem from '../components/PartnerEcosystem';
 import SponsorMarquee from '../components/SponsorMarquee';
 import ImpactGlance from '../components/ImpactGlance';
 import FeaturedSpeakers from '../components/FeaturedSpeakers';
+import CuratedLeadership from '../components/CuratedLeadership';
 
 export default function Home() {
   return (
@@ -28,6 +29,9 @@ export default function Home() {
 
       {/* 5. Featured Keynote Speakers */}
       <FeaturedSpeakers />
+
+      {/* 5.1. Curated Gathering of Global Financial Leadership */}
+      <CuratedLeadership />
 
       {/* 6. Conversion Call to Action */}
       <section className="relative py-28 overflow-hidden bg-gradient-to-br from-brand-dark via-[#020381]/25 to-brand-dark border-t border-brand-teal/10">
