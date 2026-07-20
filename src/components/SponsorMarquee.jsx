@@ -8,7 +8,7 @@ const sponsorLogos = [
   { id: 'media-4', name: 'Media Partner 4', src: 'assets/logos/media-logo-4.svg' },
   { id: 'media-5', name: 'Media Partner 5', src: 'assets/logos/media-logo-5.svg' },
   { id: 'media-6', name: 'Media Partner 6', src: 'assets/logos/media-logo-6.svg' },
-  { id: 'alliance-1', name: 'Fintech Australia', src: 'assets/logos/fintech-australia.svg' },
+  { id: 'alliance-1', name: 'Fintech Association of Malaysia', src: 'assets/logos/fintech-australia.svg' },
   { id: 'alliance-2', name: 'World Alliance', src: 'assets/logos/world-alliance.svg' },
   { id: 'alliance-3', name: 'Finstep Asia', src: 'assets/logos/finstep-asia.svg' },
   { id: 'alliance-4', name: 'AmCham Dubai', src: 'assets/logos/amcham-dubai.svg' },
