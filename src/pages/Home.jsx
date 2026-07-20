@@ -6,8 +6,8 @@ import AboutSummit from '../components/AboutSummit';
 import PartnerEcosystem from '../components/PartnerEcosystem';
 import SponsorMarquee from '../components/SponsorMarquee';
 import ImpactGlance from '../components/ImpactGlance';
-import FeaturedSpeakers from '../components/FeaturedSpeakers';
 import CuratedLeadership from '../components/CuratedLeadership';
+import GlobalCapitals from '../components/GlobalCapitals';
 
 export default function Home() {
   return (
@@ -32,6 +32,9 @@ export default function Home() {
 
       {/* 5.1. Curated Gathering of Global Financial Leadership */}
       <CuratedLeadership />
+
+      {/* 5.2. Connecting the World's Financial Capitals Map */}
+      <GlobalCapitals />
 
       {/* 6. Conversion Call to Action */}
       <section className="relative py-28 overflow-hidden bg-gradient-to-br from-brand-dark via-[#020381]/25 to-brand-dark border-t border-brand-teal/10">
