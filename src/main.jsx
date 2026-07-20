@@ -3,19 +3,29 @@ import ReactDOM from 'react-dom/client';
 import Layout from './components/Layout';
 import './styles/index.css';
 
+// Helper to safely load chunks, catching ChunkLoadErrors and forcing a page reload to get fresh assets
+const safeLazy = (importFn) => {
+  return React.lazy(() =>
+    importFn().catch((err) => {
+      console.error("Chunk load failed, forcing reload to fetch latest assets:", err);
+      window.location.reload();
+    })
+  );
+};
+
 // Lazy load all page components for code splitting
-const Home = React.lazy(() => import('./pages/Home'));
-const About = React.lazy(() => import('./pages/About'));
-const Speakers = React.lazy(() => import('./pages/Speakers'));
-const Agenda = React.lazy(() => import('./pages/Agenda'));
-const Sponsors = React.lazy(() => import('./pages/Sponsors'));
-const Exhibitors = React.lazy(() => import('./pages/Exhibitors'));
-const Registration = React.lazy(() => import('./pages/Registration'));
-const Blog = React.lazy(() => import('./pages/Blog'));
-const Media = React.lazy(() => import('./pages/Media'));
-const FAQs = React.lazy(() => import('./pages/FAQs'));
-const Privacy = React.lazy(() => import('./pages/Privacy'));
-const Terms = React.lazy(() => import('./pages/Terms'));
+const Home = safeLazy(() => import('./pages/Home'));
+const About = safeLazy(() => import('./pages/About'));
+const Speakers = safeLazy(() => import('./pages/Speakers'));
+const Agenda = safeLazy(() => import('./pages/Agenda'));
+const Sponsors = safeLazy(() => import('./pages/Sponsors'));
+const Exhibitors = safeLazy(() => import('./pages/Exhibitors'));
+const Registration = safeLazy(() => import('./pages/Registration'));
+const Blog = safeLazy(() => import('./pages/Blog'));
+const Media = safeLazy(() => import('./pages/Media'));
+const FAQs = safeLazy(() => import('./pages/FAQs'));
+const Privacy = safeLazy(() => import('./pages/Privacy'));
+const Terms = safeLazy(() => import('./pages/Terms'));
 
 const pages = {
   home: Home,
