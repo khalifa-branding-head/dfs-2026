@@ -84,9 +84,10 @@ export default function GlobalCapitals() {
         <div className="lg:col-span-7 relative w-full aspect-[16/9] md:aspect-[21/9] rounded-3xl border border-white/[0.08] bg-[#0c2730]/40 backdrop-blur-xl overflow-hidden shadow-[0_30px_60px_rgba(4,16,20,0.5)] flex items-center justify-center p-6">
           
           {/* Official World Map + Connecting Lines Background Image */}
-          <div 
-            className="absolute inset-0 bg-center bg-no-repeat bg-contain"
-            style={{ backgroundImage: `url('assets/images/world-map.png')` }} 
+          <img 
+            src="assets/images/world-map.png" 
+            alt="World Map Connecting Financial Capitals"
+            className="absolute inset-0 w-full h-full object-contain pointer-events-none opacity-90 p-4"
           />
 
           {/* Interactive City Node Overlays */}
