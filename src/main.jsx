@@ -1,31 +1,22 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Layout from './components/Layout';
 import './styles/index.css';
 
-// Helper to safely load chunks, catching ChunkLoadErrors and forcing a page reload to get fresh assets
-const safeLazy = (importFn) => {
-  return React.lazy(() =>
-    importFn().catch((err) => {
-      console.error("Chunk load failed, forcing reload to fetch latest assets:", err);
-      window.location.reload();
-    })
-  );
-};
-
-// Lazy load all page components for code splitting
-const Home = safeLazy(() => import('./pages/Home'));
-const About = safeLazy(() => import('./pages/About'));
-const Speakers = safeLazy(() => import('./pages/Speakers'));
-const Agenda = safeLazy(() => import('./pages/Agenda'));
-const Sponsors = safeLazy(() => import('./pages/Sponsors'));
-const Exhibitors = safeLazy(() => import('./pages/Exhibitors'));
-const Registration = safeLazy(() => import('./pages/Registration'));
-const Blog = safeLazy(() => import('./pages/Blog'));
-const Media = safeLazy(() => import('./pages/Media'));
-const FAQs = safeLazy(() => import('./pages/FAQs'));
-const Privacy = safeLazy(() => import('./pages/Privacy'));
-const Terms = safeLazy(() => import('./pages/Terms'));
+// Import all page components statically to eliminate code-splitting chunk load issues
+// and ensure compatibility with relative base path configuration ('./')
+import Home from './pages/Home';
+import About from './pages/About';
+import Speakers from './pages/Speakers';
+import Agenda from './pages/Agenda';
+import Sponsors from './pages/Sponsors';
+import Exhibitors from './pages/Exhibitors';
+import Registration from './pages/Registration';
+import Blog from './pages/Blog';
+import Media from './pages/Media';
+import FAQs from './pages/FAQs';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
 const pages = {
   home: Home,
@@ -50,14 +41,7 @@ if (rootEl) {
   ReactDOM.createRoot(rootEl).render(
     <React.StrictMode>
       <Layout page={pageKey}>
-        <Suspense fallback={
-          <div className="h-screen w-screen bg-[#031116] flex flex-col items-center justify-center gap-4 text-white">
-            <div className="w-12 h-12 border-4 border-brand-teal border-t-transparent rounded-full animate-spin"></div>
-            <p className="text-sm font-semibold tracking-widest text-brand-teal/80 uppercase">Loading Dubai FinTech Summit...</p>
-          </div>
-        }>
-          <PageComponent />
-        </Suspense>
+        <PageComponent />
       </Layout>
     </React.StrictMode>
   );
