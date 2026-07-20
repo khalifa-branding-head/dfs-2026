@@ -41,6 +41,16 @@ const headlineSpeakers = [
   }
 ];
 
+// Slices of the official DFS Diamond branding emblem
+const diamondSlices = [
+  "M 45.6 15 L 54.4 15 L 63.1 25 L 36.9 25 Z", // Slice 1 (Top)
+  "M 34.2 28 L 65.8 28 L 74.5 38 L 25.5 38 Z", // Slice 2
+  "M 22.9 41 L 77.1 41 L 84.1 51 L 15.9 51 Z", // Slice 3
+  "M 18.5 54 L 81.5 54 L 72.75 64 L 27.25 64 Z", // Slice 4
+  "M 29.9 67 L 70.1 67 L 61.4 77 L 38.6 77 Z", // Slice 5
+  "M 41.2 80 L 58.8 80 L 50 90 Z"               // Slice 6 (Bottom)
+];
+
 export default function FeaturedSpeakers() {
   return (
     <section className="w-full bg-[#082028] py-28 px-6 md:px-12 relative font-sans antialiased overflow-hidden selection:bg-[#12E9E9]/20">
@@ -72,12 +82,13 @@ export default function FeaturedSpeakers() {
           </div>
         </div>
 
-        {/* ==================== 2. ISOMETRIC & NODE NETWORK MATRIX ==================== */}
+        {/* ==================== 2. BRAND DIAMOND & LASER SCAN MATRIX ==================== */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {headlineSpeakers.map((speaker, idx) => (
             <motion.div
               key={speaker.id}
-              whileHover={{ y: -6 }}
+              initial="initial"
+              whileHover="hover"
               transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
               className="relative rounded-2xl border border-white/[0.05] bg-[#0c2730]/40 backdrop-blur-xl overflow-hidden flex flex-col justify-between h-[460px] group shadow-xl hover:border-white/20 hover:shadow-[0_30px_60px_rgba(4,16,20,0.55)]"
             >
@@ -87,69 +98,63 @@ export default function FeaturedSpeakers() {
               {/* Portrait Container Window */}
               <div className="w-full h-[64%] bg-gradient-to-b from-[#0e2f3b] to-[#082028] relative overflow-hidden flex items-end justify-center border-b border-white/[0.04]">
                 
-                {/* ==================== LAYER 1: ISOMETRIC CUBES & NODE MESH (BEHIND SPEAKER) ==================== */}
+                {/* Horizontal Laser Scanning Line */}
+                <motion.div
+                  variants={{
+                    initial: { y: "-10%", opacity: 0 },
+                    hover: {
+                      y: ["-10%", "110%"],
+                      opacity: [0, 1, 1, 0],
+                      transition: { duration: 1.4, ease: "easeInOut" }
+                    }
+                  }}
+                  className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#12E9E9] to-transparent shadow-[0_0_12px_#12E9E9] z-20 pointer-events-none"
+                />
+
+                {/* ==================== LAYER 1: DFS SLICES DIAMOND (BEHIND SPEAKER) ==================== */}
                 <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
                   
-                  {/* Floating Isometric Wireframe Cube 1 (Primary) */}
-                  <motion.svg
-                    animate={{
-                      y: [-8, 8, -8],
-                      rotate: [0, 4, 0],
-                    }}
-                    transition={{
-                      duration: 8 + idx * 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    className="absolute w-48 h-48 opacity-[0.2] group-hover:opacity-[0.42] transition-opacity duration-500 text-[#12E9E9]"
+                  {/* Slices of DFS Signature Diamond */}
+                  <svg
+                    className="absolute w-56 h-56 text-[#12E9E9]"
                     viewBox="0 0 100 100"
                     fill="none"
                   >
-                    {/* Isometric Cube Geometry */}
-                    <path d="M50 15 L85 32.5 L85 67.5 L50 85 L15 67.5 L15 32.5 Z" stroke="currentColor" strokeWidth="0.75" />
-                    <path d="M50 15 L50 50 L85 32.5" stroke="currentColor" strokeWidth="0.75" />
-                    <path d="M50 50 L15 32.5" stroke="currentColor" strokeWidth="0.75" />
-                    <path d="M50 50 L50 85" stroke="currentColor" strokeWidth="0.75" />
-                    {/* Interior Wireframe Grid Lines */}
-                    <path d="M32.5 23.75 L67.5 41.25" stroke="currentColor" strokeWidth="0.35" strokeDasharray="2 2" opacity="0.6" />
-                    <path d="M67.5 23.75 L32.5 41.25" stroke="currentColor" strokeWidth="0.35" strokeDasharray="2 2" opacity="0.6" />
-                  </motion.svg>
-
-                  {/* Secondary Smaller Offset Cube for Parallax Depth */}
-                  <motion.svg
-                    animate={{
-                      y: [10, -10, 10],
-                      x: [-5, 5, -5],
-                    }}
-                    transition={{
-                      duration: 11 + idx,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                    className="absolute top-4 right-2 w-24 h-24 opacity-[0.12] group-hover:opacity-[0.28] transition-opacity duration-500 text-[#08BDF4]"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                  >
-                    <path d="M50 15 L85 32.5 L85 67.5 L50 85 L15 67.5 L15 32.5 Z" stroke="currentColor" strokeWidth="0.75" />
-                    <path d="M50 15 L50 50 L85 32.5" stroke="currentColor" strokeWidth="0.75" />
-                    <path d="M50 50 L15 32.5" stroke="currentColor" strokeWidth="0.75" />
-                    <path d="M50 50 L50 85" stroke="currentColor" strokeWidth="0.75" />
-                  </motion.svg>
-
-                  {/* Network Node Interconnections */}
-                  <svg className="absolute inset-0 w-full h-full opacity-[0.15] group-hover:opacity-[0.3] transition-opacity duration-500" viewBox="0 0 200 200">
-                    <line x1="30" y1="40" x2="80" y2="90" stroke="#12E9E9" strokeWidth="0.5" strokeDasharray="3 3" />
-                    <line x1="170" y1="50" x2="120" y2="120" stroke="#08BDF4" strokeWidth="0.5" strokeDasharray="3 3" />
-                    {/* Glowing Pulsing Nodes */}
-                    <circle cx="30" cy="40" r="2.5" fill="#12E9E9" className="animate-pulse" />
-                    <circle cx="80" cy="90" r="2" fill="#08BDF4" />
-                    <circle cx="170" cy="50" r="2.5" fill="#12E9E9" className="animate-pulse" />
-                    <circle cx="120" cy="120" r="2" fill="#08BDF4" />
+                    {diamondSlices.map((pathD, sIdx) => (
+                      <motion.path
+                        key={sIdx}
+                        d={pathD}
+                        variants={{
+                          initial: { 
+                            fill: "rgba(18, 233, 233, 0.07)", 
+                            stroke: "rgba(18, 233, 233, 0.15)",
+                            strokeWidth: 0.5
+                          },
+                          hover: { 
+                            fill: [
+                              "rgba(18, 233, 233, 0.07)", 
+                              "rgba(18, 233, 233, 0.45)", 
+                              "rgba(18, 233, 233, 0.16)"
+                            ],
+                            stroke: [
+                              "rgba(18, 233, 233, 0.15)", 
+                              "rgba(18, 233, 233, 0.8)", 
+                              "rgba(18, 233, 233, 0.28)"
+                            ],
+                            transition: { 
+                              duration: 0.6, 
+                              delay: sIdx * 0.12, 
+                              ease: "easeInOut" 
+                            }
+                          }
+                        }}
+                      />
+                    ))}
                   </svg>
 
                   {/* Custom Speaker Ambient Aura Glow */}
                   <div 
-                    className="absolute w-44 h-44 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"
+                    className="absolute w-44 h-44 rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"
                     style={{ backgroundColor: speaker.glowColor }}
                   />
                 </div>
