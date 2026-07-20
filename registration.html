@@ -9,7 +9,23 @@
   <body>
     <a href="#main-content" class="dfs-skip-link">Skip to main content</a>
 
-    <div id="root" data-page="registration"></div>
+    
+    <!-- Skip Link Target & Structured Pre-Rendered Fallback Layout for SEO/Accessibility -->
+    <div id="root" data-page="registration">
+      <div class="min-h-screen bg-[#031116] text-white flex flex-col justify-between">
+        <header class="py-6 px-10 border-b border-white/[0.08] flex justify-between items-center">
+          <div class="text-xl font-bold tracking-widest text-white">DUBAI FINTECH SUMMIT</div>
+          <div class="w-10 h-10 rounded bg-white/5 animate-pulse"></div>
+        </header>
+        <main id="main-content" class="flex-grow flex flex-col items-center justify-center gap-4 py-20">
+          <div class="w-12 h-12 border-4 border-teal-400 border-t-transparent rounded-full animate-spin"></div>
+          <p class="text-sm font-semibold tracking-widest text-teal-400/80 uppercase">Loading Dubai FinTech Summit...</p>
+        </main>
+        <footer class="py-10 border-t border-white/[0.08] text-center text-xs text-white/40">
+          © 2026 Dubai FinTech Summit. All rights reserved.
+        </footer>
+      </div>
+    </div>
 
     <script type="module" src="/src/main.jsx"></script>
   </body>
