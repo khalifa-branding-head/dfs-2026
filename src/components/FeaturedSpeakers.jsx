@@ -9,9 +9,8 @@ const headlineSpeakers = [
     title: 'Governor',
     company: 'DIFC',
     country: 'UAE',
-    // High-resolution live image path matching your GitHub-hosted asset bundle
     src: 'assets/speakers/essa-kazim.png',
-    glowColor: 'from-[#12E9E9] to-transparent'
+    glowColor: '#12E9E9'
   },
   {
     id: 'noel-quinn',
@@ -20,7 +19,7 @@ const headlineSpeakers = [
     company: 'Julius Baer Group',
     country: 'UK',
     src: 'assets/speakers/noel-quinn.png',
-    glowColor: 'from-[#08BDF4] to-transparent'
+    glowColor: '#08BDF4'
   },
   {
     id: 'jenny-johnson',
@@ -29,7 +28,7 @@ const headlineSpeakers = [
     company: 'Franklin Templeton',
     country: 'USA',
     src: 'assets/speakers/jenny-johnson.png',
-    glowColor: 'from-[#c5a059] to-transparent'
+    glowColor: '#c5a059'
   },
   {
     id: 'tan-su-shan',
@@ -38,40 +37,21 @@ const headlineSpeakers = [
     company: 'DBS Group',
     country: 'SINGAPORE',
     src: 'assets/speakers/tan-su-shan.png',
-    glowColor: 'from-[#e11d48] to-transparent'
+    glowColor: '#e11d48'
   }
 ];
-
-// High-end, slow brand aura morph configuration
-const auraAnimationVariants = {
-  animate: {
-    scale: [1, 1.12, 0.93, 1],
-    x: [0, 15, -10, 0],
-    y: [0, -10, 15, 0],
-    borderRadius: [
-      "50% 50% 70% 30% / 50% 60% 40% 50%",
-      "70% 30% 52% 48% / 60% 40% 60% 40%",
-      "45% 55% 40% 60% / 40% 65% 35% 65%",
-      "50% 50% 70% 30% / 50% 60% 40% 50%"
-    ],
-    transition: {
-      duration: 18,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
-};
 
 export default function FeaturedSpeakers() {
   return (
     <section className="w-full bg-[#082028] py-28 px-6 md:px-12 relative font-sans antialiased overflow-hidden selection:bg-[#12E9E9]/20">
-      {/* Background Decorative Element Gradients */}
+      
+      {/* Background Decorative Ambient Flares */}
       <div className="absolute top-1/4 -right-48 w-96 h-96 bg-[#08BDF4]/5 rounded-full blur-[128px] pointer-events-none" />
       <div className="absolute bottom-1/4 -left-48 w-96 h-96 bg-[#12E9E9]/4 rounded-full blur-[140px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto space-y-12 relative z-10">
         
-        {/* ==================== 1. BRAND HEADLINES HEADER ==================== */}
+        {/* ==================== 1. BRAND HEADER ==================== */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/[0.08] pb-8 select-none">
           <div className="space-y-2 text-left">
             <span className="text-xs font-black tracking-[0.25em] text-[#12E9E9] uppercase drop-shadow-[0_2px_8px_rgba(18,233,233,0.2)]">
@@ -82,7 +62,6 @@ export default function FeaturedSpeakers() {
             </h2>
           </div>
           
-          {/* Symmetrical Inline Dynamic Carousel Navs */}
           <div className="flex items-center gap-3">
             <button className="w-10 h-10 rounded-md border border-white/[0.08] bg-[#0c2730]/40 text-white/40 flex items-center justify-center transition-all duration-300 hover:border-[#12E9E9] hover:text-[#12E9E9] cursor-pointer">
               <ChevronLeft className="w-4 h-4" />
@@ -93,7 +72,7 @@ export default function FeaturedSpeakers() {
           </div>
         </div>
 
-        {/* ==================== 2. HIGHLIGHT SPECS PORTRAIT MATRIX ==================== */}
+        {/* ==================== 2. SPEAKER CARDS GRID ==================== */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {headlineSpeakers.map((speaker) => (
             <motion.div
@@ -102,40 +81,63 @@ export default function FeaturedSpeakers() {
               transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
               className="relative rounded-2xl border border-white/[0.05] bg-[#0c2730]/30 overflow-hidden flex flex-col justify-between h-[460px] group shadow-xl hover:border-white/20 hover:shadow-[0_30px_60px_rgba(4,16,20,0.55)]"
             >
-              {/* Dynamic Internal Hover Specular Highlight */}
-              <div className="absolute inset-0 bg-gradient-to-b from-[#12E9E9]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              {/* Top Dynamic Hover Glare */}
+              <div className="absolute inset-0 bg-gradient-to-b from-[#12E9E9]/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-30" />
 
-              {/* Corrected Portrait Window Framework: Restores Native Color with Visual Vignette Edge Blending */}
+              {/* Portrait Container Window */}
               <div className="w-full h-[62%] bg-[#0c2730] relative overflow-hidden flex items-end justify-center border-b border-white/[0.04]">
                 
-                {/* ==================== 1. SLOW DRIFTING AMBIENT AURA BACKDROP ==================== */}
-                {/* Positioned safely behind the portrait layer to create depth */}
-                <div className="absolute inset-0 z-0 flex items-center justify-center select-none opacity-[0.15] group-hover:opacity-[0.25] transition-opacity duration-500">
-                  <motion.div 
-                    variants={auraAnimationVariants}
-                    animate="animate"
-                    className={`absolute w-44 h-44 bg-gradient-to-tr ${speaker.glowColor} blur-2xl`}
+                {/* ==================== A. BRAND LOGO ANIMATED GEOMETRY ==================== */}
+                {/* DFS Diamond Emblem Vector Pattern with continuous pulsing movement */}
+                <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+                  
+                  {/* Rotating Outer Brand Diamond Ring */}
+                  <motion.svg
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+                    className="absolute w-72 h-72 opacity-[0.18] group-hover:opacity-[0.32] transition-opacity duration-500 text-[#12E9E9]"
+                    viewBox="0 0 200 200"
+                    fill="none"
+                  >
+                    <rect x="50" y="50" width="100" height="100" rx="8" transform="rotate(45 100 100)" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6 6" />
+                    <rect x="35" y="35" width="130" height="130" rx="12" transform="rotate(45 100 100)" stroke="currentColor" strokeWidth="0.75" opacity="0.5" />
+                  </motion.svg>
+
+                  {/* Pulsing DFS Chevrons (Inspired by the Dubai FinTech Summit Logo) */}
+                  <motion.div
+                    animate={{
+                      scale: [0.95, 1.08, 0.95],
+                      opacity: [0.12, 0.25, 0.12]
+                    }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-4 right-4 flex flex-col gap-1.5"
+                  >
+                    <div className="w-12 h-2 border-r-2 border-t-2 border-[#12E9E9] transform rotate-45" />
+                    <div className="w-12 h-2 border-r-2 border-t-2 border-[#08BDF4] transform rotate-45 opacity-70" />
+                    <div className="w-12 h-2 border-r-2 border-t-2 border-[#12E9E9] transform rotate-45 opacity-40" />
+                  </motion.div>
+
+                  {/* Subtle Color Aura Glow */}
+                  <div 
+                    className="absolute w-44 h-44 rounded-full blur-2xl opacity-20 group-hover:opacity-35 transition-opacity duration-500"
+                    style={{ backgroundColor: speaker.glowColor }}
                   />
                 </div>
 
-                {/* ==================== 2. PURE FULL-COLOR PORTRAIT IMAGE LAYER ==================== */}
-                {/* Maintained in regular, native color with crisp visual visibility */}
+                {/* ==================== B. FULL-COLOR PORTRAIT ==================== */}
                 <img
                   src={speaker.src}
                   alt={speaker.name}
                   className="w-full h-full object-cover object-top relative z-10 transition-transform duration-700 ease-[0.16,1,0.3,1] group-hover:scale-[1.03]"
                 />
 
-                {/* ==================== 3. PREMIUM GRADIENT VIGNETTE BLUR OVERLAY ==================== */}
-                {/* 
-                  - This overlay features a smooth gradient that blends the sharp bottom and side edges 
-                    of the photo backgrounds into the dark theme of the card plate (#0c2730).
-                */}
+                {/* ==================== C. GRADIENT VIGNETTE BLEND ==================== */}
+                {/* Smooths photo background edges softly into the card plate */}
                 <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-t from-[#0c2730] via-transparent to-transparent opacity-90 group-hover:opacity-75 transition-opacity duration-500" />
-                <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-r from-[#0c2730]/30 via-transparent to-[#0c2730]/30" />
+                <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-r from-[#0c2730]/40 via-transparent to-[#0c2730]/40" />
               </div>
 
-              {/* Informational Metadata Typography Suite */}
+              {/* Informational Text Deck */}
               <div className="p-6 flex flex-col justify-between flex-grow bg-gradient-to-b from-transparent to-[#082028]/30 relative z-10">
                 <div className="space-y-1 text-left">
                   <h4 className="text-lg font-bold text-white tracking-tight leading-snug group-hover:text-[#12E9E9] transition-colors duration-300">
@@ -151,20 +153,19 @@ export default function FeaturedSpeakers() {
                     {speaker.company}
                   </span>
                   
-                  {/* High-Contrast Country Badge Pill */}
                   <div className="text-[9px] font-black tracking-widest text-[#12E9E9] border border-[#12E9E9]/30 rounded-full px-2.5 py-0.5 select-none bg-[#12E9E9]/5 uppercase group-hover:border-[#12E9E9] transition-all duration-300">
                     {speaker.country}
                   </div>
                 </div>
               </div>
 
-              {/* Luminous Flagship Laser Bottom Trim Underline */}
+              {/* Laser Underline Trim */}
               <div className="absolute inset-x-0 bottom-0 h-[3px] bg-gradient-to-r from-[#12E9E9] via-[#08BDF4] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl" />
             </motion.div>
           ))}
         </div>
 
-        {/* ==================== 3. VIEW ALL SPEAKERS ACTION ANCHOR ==================== */}
+        {/* ==================== 3. CALL TO ACTION ==================== */}
         <div className="flex justify-center pt-4 select-none">
           <a
             href="/speakers.html"
