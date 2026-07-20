@@ -9,7 +9,7 @@ const headlineSpeakers = [
     title: 'Governor',
     company: 'DIFC',
     country: 'UAE',
-    src: 'assets/speakers/essa-kazim.png', // Transparent PNG
+    src: 'assets/speakers/essa-kazim.png',
     glowColor: '#12E9E9'
   },
   {
@@ -18,7 +18,7 @@ const headlineSpeakers = [
     title: 'Chairman of the Board of Directors',
     company: 'Julius Baer Group',
     country: 'UK',
-    src: 'assets/speakers/noel-quinn.png', // Transparent PNG
+    src: 'assets/speakers/noel-quinn.png',
     glowColor: '#08BDF4'
   },
   {
@@ -27,7 +27,7 @@ const headlineSpeakers = [
     title: 'Chief Executive Officer',
     company: 'Franklin Templeton',
     country: 'USA',
-    src: 'assets/speakers/jenny-johnson.png', // Transparent PNG
+    src: 'assets/speakers/jenny-johnson.png',
     glowColor: '#c5a059'
   },
   {
@@ -36,7 +36,7 @@ const headlineSpeakers = [
     title: 'Chief Executive Officer & Director',
     company: 'DBS Group',
     country: 'SINGAPORE',
-    src: 'assets/speakers/tan-su-shan.png', // Transparent PNG
+    src: 'assets/speakers/tan-su-shan.png',
     glowColor: '#e11d48'
   }
 ];
@@ -72,9 +72,9 @@ export default function FeaturedSpeakers() {
           </div>
         </div>
 
-        {/* ==================== 2. HEADLINERS TRANSPARENT MATRIX ==================== */}
+        {/* ==================== 2. ISOMETRIC & NODE NETWORK MATRIX ==================== */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {headlineSpeakers.map((speaker) => (
+          {headlineSpeakers.map((speaker, idx) => (
             <motion.div
               key={speaker.id}
               whileHover={{ y: -6 }}
@@ -87,37 +87,69 @@ export default function FeaturedSpeakers() {
               {/* Portrait Container Window */}
               <div className="w-full h-[64%] bg-gradient-to-b from-[#0e2f3b] to-[#082028] relative overflow-hidden flex items-end justify-center border-b border-white/[0.04]">
                 
-                {/* ==================== LAYER 1: ANIMATED BRAND GEOMETRY (BEHIND SPEAKER) ==================== */}
+                {/* ==================== LAYER 1: ISOMETRIC CUBES & NODE MESH (BEHIND SPEAKER) ==================== */}
                 <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
                   
-                  {/* Rotating Outer Brand Diamond Ring */}
+                  {/* Floating Isometric Wireframe Cube 1 (Primary) */}
                   <motion.svg
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
-                    className="absolute w-72 h-72 opacity-[0.22] group-hover:opacity-[0.40] transition-opacity duration-500 text-[#12E9E9]"
-                    viewBox="0 0 200 200"
+                    animate={{
+                      y: [-8, 8, -8],
+                      rotate: [0, 4, 0],
+                    }}
+                    transition={{
+                      duration: 8 + idx * 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="absolute w-48 h-48 opacity-[0.2] group-hover:opacity-[0.42] transition-opacity duration-500 text-[#12E9E9]"
+                    viewBox="0 0 100 100"
                     fill="none"
                   >
-                    <rect x="50" y="50" width="100" height="100" rx="8" transform="rotate(45 100 100)" stroke="currentColor" strokeWidth="1.5" strokeDasharray="6 6" />
-                    <rect x="35" y="35" width="130" height="130" rx="12" transform="rotate(45 100 100)" stroke="currentColor" strokeWidth="0.75" opacity="0.5" />
+                    {/* Isometric Cube Geometry */}
+                    <path d="M50 15 L85 32.5 L85 67.5 L50 85 L15 67.5 L15 32.5 Z" stroke="currentColor" strokeWidth="0.75" />
+                    <path d="M50 15 L50 50 L85 32.5" stroke="currentColor" strokeWidth="0.75" />
+                    <path d="M50 50 L15 32.5" stroke="currentColor" strokeWidth="0.75" />
+                    <path d="M50 50 L50 85" stroke="currentColor" strokeWidth="0.75" />
+                    {/* Interior Wireframe Grid Lines */}
+                    <path d="M32.5 23.75 L67.5 41.25" stroke="currentColor" strokeWidth="0.35" strokeDasharray="2 2" opacity="0.6" />
+                    <path d="M67.5 23.75 L32.5 41.25" stroke="currentColor" strokeWidth="0.35" strokeDasharray="2 2" opacity="0.6" />
                   </motion.svg>
 
-                  {/* Pulsing DFS Chevrons */}
-                  <motion.div
+                  {/* Secondary Smaller Offset Cube for Parallax Depth */}
+                  <motion.svg
                     animate={{
-                      scale: [0.95, 1.08, 0.95],
-                      opacity: [0.2, 0.45, 0.2]
+                      y: [10, -10, 10],
+                      x: [-5, 5, -5],
                     }}
-                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-4 right-4 flex flex-col gap-1.5"
+                    transition={{
+                      duration: 11 + idx,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    className="absolute top-4 right-2 w-24 h-24 opacity-[0.12] group-hover:opacity-[0.28] transition-opacity duration-500 text-[#08BDF4]"
+                    viewBox="0 0 100 100"
+                    fill="none"
                   >
-                    <div className="w-10 h-2 border-r-2 border-t-2 border-[#12E9E9] transform rotate-45" />
-                    <div className="w-10 h-2 border-r-2 border-t-2 border-[#08BDF4] transform rotate-45 opacity-70" />
-                  </motion.div>
+                    <path d="M50 15 L85 32.5 L85 67.5 L50 85 L15 67.5 L15 32.5 Z" stroke="currentColor" strokeWidth="0.75" />
+                    <path d="M50 15 L50 50 L85 32.5" stroke="currentColor" strokeWidth="0.75" />
+                    <path d="M50 50 L15 32.5" stroke="currentColor" strokeWidth="0.75" />
+                    <path d="M50 50 L50 85" stroke="currentColor" strokeWidth="0.75" />
+                  </motion.svg>
+
+                  {/* Network Node Interconnections */}
+                  <svg className="absolute inset-0 w-full h-full opacity-[0.15] group-hover:opacity-[0.3] transition-opacity duration-500" viewBox="0 0 200 200">
+                    <line x1="30" y1="40" x2="80" y2="90" stroke="#12E9E9" strokeWidth="0.5" strokeDasharray="3 3" />
+                    <line x1="170" y1="50" x2="120" y2="120" stroke="#08BDF4" strokeWidth="0.5" strokeDasharray="3 3" />
+                    {/* Glowing Pulsing Nodes */}
+                    <circle cx="30" cy="40" r="2.5" fill="#12E9E9" className="animate-pulse" />
+                    <circle cx="80" cy="90" r="2" fill="#08BDF4" />
+                    <circle cx="170" cy="50" r="2.5" fill="#12E9E9" className="animate-pulse" />
+                    <circle cx="120" cy="120" r="2" fill="#08BDF4" />
+                  </svg>
 
                   {/* Custom Speaker Ambient Aura Glow */}
                   <div 
-                    className="absolute w-44 h-44 rounded-full blur-2xl opacity-25 group-hover:opacity-45 transition-opacity duration-500"
+                    className="absolute w-44 h-44 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"
                     style={{ backgroundColor: speaker.glowColor }}
                   />
                 </div>
@@ -130,7 +162,6 @@ export default function FeaturedSpeakers() {
                 />
 
                 {/* ==================== LAYER 3: SOFT BASE GROUNDING GRADIENT ==================== */}
-                {/* Grounds the lower torso into the card text area */}
                 <div className="absolute inset-x-0 bottom-0 h-16 z-20 pointer-events-none bg-gradient-to-t from-[#082028] via-[#082028]/60 to-transparent" />
               </div>
 
