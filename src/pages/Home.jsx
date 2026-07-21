@@ -11,6 +11,7 @@ import CuratedLeadership from '../components/CuratedLeadership';
 import GlobalCapitals from '../components/GlobalCapitals';
 import ExhibitNetworkGrow from '../components/ExhibitNetworkGrow';
 import InTheNews from '../components/InTheNews';
+import StrategicThemes from '../components/StrategicThemes';
 import FeaturedSpeakers from '../components/FeaturedSpeakers';
 
 export default function Home() {
@@ -48,6 +49,9 @@ export default function Home() {
 
       {/* 5.4. Media & Insights: In The News */}
       <InTheNews />
+
+      {/* 5.5. Strategic Themes & Programme Pillars */}
+      <StrategicThemes />
 
       {/* 6. Conversion Call to Action */}
       <section className="relative py-28 overflow-hidden bg-gradient-to-br from-brand-dark via-[#020381]/25 to-brand-dark border-t border-brand-teal/10">
