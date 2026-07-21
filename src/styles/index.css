@@ -65,10 +65,6 @@ html.light-mode .bg-\[\#0e3542\] {
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04) !important;
 }
 
-html.light-mode .text-white {
-  color: #0F172A !important;
-}
-
 html.light-mode .text-\[\#6D8794\],
 html.light-mode .text-\[\#8fa8b5\],
 html.light-mode .text-\[\#BEC9CB\] {

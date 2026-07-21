@@ -62,7 +62,9 @@ export default function Header({ currentPage }) {
         >
           {/* DFS Brand SVG Text Logo */}
           <svg
-            className="h-10 w-auto text-white fill-current transition-transform duration-300 group-hover:scale-[1.02]"
+            className={`h-10 w-auto fill-current transition-transform duration-300 group-hover:scale-[1.02] ${
+              isScrolled ? 'text-slate-900' : 'text-white'
+            }`}
             viewBox="0 0 1916 303.4"
             aria-hidden="true"
           >
@@ -119,18 +121,22 @@ export default function Header({ currentPage }) {
                 <li key={link.key}>
                   <a
                     href={link.href}
-                    className="relative text-xs tracking-widest font-semibold uppercase px-4 py-2.5 rounded-full transition-colors duration-300 focus:outline-none flex items-center justify-center"
+                    className="relative text-xs tracking-widest font-bold uppercase px-4 py-2.5 rounded-full transition-colors duration-300 focus:outline-none flex items-center justify-center"
                     aria-current={isActive ? 'page' : undefined}
                   >
                     {isActive && (
                       <motion.div
                         layoutId="activeNavIndicator"
-                        className="absolute inset-0 bg-[#12E9E9]/15 border border-[#12E9E9]/30 rounded-full -z-10"
+                        className="absolute inset-0 bg-[#0284C7]/20 border border-[#0284C7]/40 rounded-full -z-10"
                         transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                       />
                     )}
                     <span className={`relative z-10 transition-colors duration-300 ${
-                      isActive ? 'text-[#12E9E9] font-bold' : 'text-[#6D8794] hover:text-[#FFFFFF]'
+                      isActive 
+                        ? 'text-[#0284C7] font-black' 
+                        : isScrolled
+                          ? 'text-slate-800 hover:text-[#0284C7]'
+                          : 'text-white/90 hover:text-white'
                     }`}>
                       {link.name}
                     </span>
