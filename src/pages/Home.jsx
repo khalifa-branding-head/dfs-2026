@@ -10,8 +10,7 @@ import ProgrammeHub from '../components/ProgrammeHub';
 import FeaturedSpeakers from '../components/FeaturedSpeakers';
 import CuratedLeadership from '../components/CuratedLeadership';
 import GlobalCapitals from '../components/GlobalCapitals';
-import EcosystemVentureHub from '../components/EcosystemVentureHub';
-import InTheNews from '../components/InTheNews';
+import CommercialHub from '../components/CommercialHub';
 import PassSelector from '../components/PassSelector';
 
 export default function Home() {
@@ -32,7 +31,7 @@ export default function Home() {
       {/* 4. Statistics Metrics section */}
       <ImpactGlance />
 
-      {/* 4.1. Programme Command Hub (Discussion Topics + Strategic Themes) */}
+      {/* 4.1. Programme Command Hub (15 Discussion Topics + 4 Strategic Themes) */}
       <ProgrammeHub />
 
       {/* 5. Featured Keynote Speakers */}
@@ -44,13 +43,10 @@ export default function Home() {
       {/* 5.2. Connecting the World's Financial Capitals Map */}
       <GlobalCapitals />
 
-      {/* 5.3. Ecosystem & Venture Hub (Commercial Exhibition + FinTech World Cup) */}
-      <EcosystemVentureHub />
+      {/* 5.3. Commercial Command Hub (Exhibition + FinTech World Cup + In The News) */}
+      <CommercialHub />
 
-      {/* 5.4. Media & Insights: In The News */}
-      <InTheNews />
-
-      {/* 5.5. Pass Tier Selector & Registration CTA */}
+      {/* 5.4. Pass Tier Selector & Registration CTA */}
       <PassSelector />
 
       {/* 6. Conversion Call to Action */}
