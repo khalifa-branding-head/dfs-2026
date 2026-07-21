@@ -9,6 +9,7 @@ import ImpactGlance from '../components/ImpactGlance';
 import DiscussionTopics from '../components/DiscussionTopics';
 import CuratedLeadership from '../components/CuratedLeadership';
 import GlobalCapitals from '../components/GlobalCapitals';
+import ExhibitNetworkGrow from '../components/ExhibitNetworkGrow';
 import FeaturedSpeakers from '../components/FeaturedSpeakers';
 
 export default function Home() {
@@ -40,6 +41,9 @@ export default function Home() {
 
       {/* 5.2. Connecting the World's Financial Capitals Map */}
       <GlobalCapitals />
+
+      {/* 5.3. Exhibit. Network. Grow. Ecosystem */}
+      <ExhibitNetworkGrow />
 
       {/* 6. Conversion Call to Action */}
       <section className="relative py-28 overflow-hidden bg-gradient-to-br from-brand-dark via-[#020381]/25 to-brand-dark border-t border-brand-teal/10">
