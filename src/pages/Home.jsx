@@ -6,19 +6,17 @@ import AboutSummit from '../components/AboutSummit';
 import PartnerEcosystem from '../components/PartnerEcosystem';
 import SponsorMarquee from '../components/SponsorMarquee';
 import ImpactGlance from '../components/ImpactGlance';
-import DiscussionTopics from '../components/DiscussionTopics';
+import ProgrammeHub from '../components/ProgrammeHub';
+import FeaturedSpeakers from '../components/FeaturedSpeakers';
 import CuratedLeadership from '../components/CuratedLeadership';
 import GlobalCapitals from '../components/GlobalCapitals';
-import ExhibitNetworkGrow from '../components/ExhibitNetworkGrow';
+import EcosystemVentureHub from '../components/EcosystemVentureHub';
 import InTheNews from '../components/InTheNews';
-import StrategicThemes from '../components/StrategicThemes';
-import FintechWorldCup from '../components/FintechWorldCup';
 import PassSelector from '../components/PassSelector';
-import FeaturedSpeakers from '../components/FeaturedSpeakers';
 
 export default function Home() {
   return (
-    <div className="relative overflow-hidden min-h-screen">
+    <div className="relative overflow-hidden min-h-screen bg-[#F8FAFC]">
       {/* 1. Hero Section */}
       <HomeHero />
 
@@ -34,8 +32,8 @@ export default function Home() {
       {/* 4. Statistics Metrics section */}
       <ImpactGlance />
 
-      {/* 4.1. Official Discussion Topics Grid */}
-      <DiscussionTopics />
+      {/* 4.1. Programme Command Hub (Discussion Topics + Strategic Themes) */}
+      <ProgrammeHub />
 
       {/* 5. Featured Keynote Speakers */}
       <FeaturedSpeakers />
@@ -46,31 +44,22 @@ export default function Home() {
       {/* 5.2. Connecting the World's Financial Capitals Map */}
       <GlobalCapitals />
 
-      {/* 5.3. Exhibit. Network. Grow. Ecosystem */}
-      <ExhibitNetworkGrow />
+      {/* 5.3. Ecosystem & Venture Hub (Commercial Exhibition + FinTech World Cup) */}
+      <EcosystemVentureHub />
 
       {/* 5.4. Media & Insights: In The News */}
       <InTheNews />
 
-      {/* 5.5. Strategic Themes & Programme Pillars */}
-      <StrategicThemes />
-
-      {/* 5.6. FinTech World Cup Startup Arena */}
-      <FintechWorldCup />
-
-      {/* 5.7. Pass Tier Selector & Registration CTA */}
+      {/* 5.5. Pass Tier Selector & Registration CTA */}
       <PassSelector />
 
       {/* 6. Conversion Call to Action */}
-      <section className="relative py-28 overflow-hidden bg-gradient-to-br from-brand-dark via-[#020381]/25 to-brand-dark border-t border-brand-teal/10">
-        {/* Background visual light burst */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-brand-electric/5 rounded-full blur-[160px] pointer-events-none" />
-
+      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-[#0284C7] via-[#0D9488] to-[#0F172A] border-t border-slate-200">
         <div className="max-w-[1300px] mx-auto px-6 md:px-10 relative z-10 text-center flex flex-col items-center">
           <h2 className="text-white text-3xl md:text-4xl font-extrabold mb-4 uppercase">
             Join the Global Financial Dialogue
           </h2>
-          <p className="text-brand-text-muted max-w-2xl text-sm leading-relaxed mb-8">
+          <p className="text-slate-100 max-w-2xl text-sm leading-relaxed mb-8 font-medium">
             Access all panel debates, the exhibition pavilions, and priority network lounges at the Dubai FinTech Summit 2026. Early booking discounts active.
           </p>
 
@@ -78,10 +67,10 @@ export default function Home() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             href="/registration.html"
-            className="px-10 py-4 bg-brand-teal hover:bg-brand-teal/90 text-brand-dark font-extrabold tracking-widest text-xs uppercase rounded-lg shadow-[0_0_25px_rgba(18,233,233,0.3)] transition-all duration-300 flex items-center gap-2 group"
+            className="px-10 py-4 bg-white text-[#0F172A] hover:bg-slate-100 font-extrabold tracking-widest text-xs uppercase rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.2)] transition-all duration-300 flex items-center gap-2 group"
           >
-            Register & Book Pass
-            <ArrowUpRight className="w-4 h-4 text-brand-dark group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <span>Register & Book Pass</span>
+            <ArrowUpRight className="w-4 h-4 text-[#0F172A] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </motion.a>
         </div>
       </section>
