@@ -13,6 +13,7 @@ import ExhibitNetworkGrow from '../components/ExhibitNetworkGrow';
 import InTheNews from '../components/InTheNews';
 import StrategicThemes from '../components/StrategicThemes';
 import FintechWorldCup from '../components/FintechWorldCup';
+import PassSelector from '../components/PassSelector';
 import FeaturedSpeakers from '../components/FeaturedSpeakers';
 
 export default function Home() {
@@ -56,6 +57,9 @@ export default function Home() {
 
       {/* 5.6. FinTech World Cup Startup Arena */}
       <FintechWorldCup />
+
+      {/* 5.7. Pass Tier Selector & Registration CTA */}
+      <PassSelector />
 
       {/* 6. Conversion Call to Action */}
       <section className="relative py-28 overflow-hidden bg-gradient-to-br from-brand-dark via-[#020381]/25 to-brand-dark border-t border-brand-teal/10">
