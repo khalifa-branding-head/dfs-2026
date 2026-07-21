@@ -21,7 +21,7 @@ const strategicPillars = [
     desc: 'Unpacking central bank digital currencies (CBDCs), sovereign wealth allocation strategies, and interest rate telemetry across global reserve currencies.',
     icon: Globe2,
     highlights: ['Wholesale CBDC Settlement', 'Sovereign Reserve Liquidity', 'Macro Inflation Risk Models'],
-    color: 'from-[#12E9E9] to-[#08BDF4]'
+    color: 'from-[#0284C7] to-[#0D9488]'
   },
   {
     id: 'pillar-2',
@@ -31,7 +31,7 @@ const strategicPillars = [
     desc: 'Deploying autonomous LLM agents for real-time algorithmic execution, fraud prevention, credit scoring, and automated compliance telemetry.',
     icon: Bot,
     highlights: ['Autonomous Workflow Agents', 'Algorithmic Credit Scoring', 'Generative Risk Analytics'],
-    color: 'from-[#08BDF4] to-[#12E9E9]'
+    color: 'from-[#0284C7] to-[#0D9488]'
   },
   {
     id: 'pillar-3',
@@ -41,7 +41,7 @@ const strategicPillars = [
     desc: 'Institutional-grade asset tokenisation protocols, private key custody infrastructure, and cross-border regulatory compliance under VARA & MiCA.',
     icon: Coins,
     highlights: ['Real-World Asset (RWA) Tokens', 'Institutional Custody Rails', 'VARA/MiCA Compliance'],
-    color: 'from-[#12E9E9] to-[#08BDF4]'
+    color: 'from-[#0284C7] to-[#0D9488]'
   },
   {
     id: 'pillar-4',
@@ -51,7 +51,7 @@ const strategicPillars = [
     desc: 'Connecting global venture capital funds with high-growth startup ecosystems across MEASA, LATAM, and Southeast Asian financial capitals.',
     icon: Rocket,
     highlights: ['MEASA Growth Corridors', 'FinTech World Cup ($1M Prize)', 'Sovereign Innovation Hubs'],
-    color: 'from-[#08BDF4] to-[#12E9E9]'
+    color: 'from-[#0284C7] to-[#0D9488]'
   }
 ];
 

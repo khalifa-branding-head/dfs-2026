@@ -78,7 +78,7 @@ export default function CuratedLeadership() {
 
           <div className="pt-2 select-none">
             <a
-              href="ecosystem.html"
+              href="sponsors.html"
               className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#0284C7] to-[#0D9488] text-white text-xs font-black tracking-[0.2em] px-7 py-3.5 rounded-xl uppercase transition-all duration-300 shadow-[0_4px_15px_rgba(2,132,199,0.25)] hover:scale-[1.03]"
             >
               <span>Explore Leadership Matrix</span>
