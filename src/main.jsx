@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Layout from './components/Layout';
+import { ThemeProvider } from './context/ThemeContext';
 import './styles/index.css';
 
 // Import all page components statically to eliminate code-splitting chunk load issues
@@ -40,9 +41,11 @@ if (rootEl) {
 
   ReactDOM.createRoot(rootEl).render(
     <React.StrictMode>
-      <Layout page={pageKey}>
-        <PageComponent />
-      </Layout>
+      <ThemeProvider>
+        <Layout page={pageKey}>
+          <PageComponent />
+        </Layout>
+      </ThemeProvider>
     </React.StrictMode>
   );
 }

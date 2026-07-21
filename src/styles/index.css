@@ -27,7 +27,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Custom CSS variables for theme compatibility with old assets */
+/* Custom CSS variables for theme compatibility */
 :root {
   --dfs-color-bg-dark: #031116;
   --dfs-color-accent-cyan: #12E9E9;
@@ -49,6 +49,71 @@
   --dfs-radius-md: 8px;
   --dfs-radius-lg: 12px;
   --dfs-radius-xl: 16px;
+}
+
+/* Clean Executive Light Mode Overrides */
+html.light-mode body {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+html.light-mode .bg-\[\#082028\],
+html.light-mode .bg-\[\#031116\],
+html.light-mode .bg-\[\#041014\],
+html.light-mode .bg-\[\#02090b\] {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+html.light-mode .bg-\[\#0c2730\],
+html.light-mode .bg-\[\#0c2730\]\/40,
+html.light-mode .bg-\[\#0c2730\]\/50,
+html.light-mode .bg-\[\#0c2730\]\/60,
+html.light-mode .bg-\[\#0c2730\]\/80,
+html.light-mode .bg-\[\#0e3542\] {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  color: #0F172A !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light-mode .text-white {
+  color: #0F172A !important;
+}
+
+html.light-mode .text-\[\#6D8794\],
+html.light-mode .text-\[\#8fa8b5\],
+html.light-mode .text-\[\#BEC9CB\] {
+  color: #475569 !important;
+}
+
+html.light-mode .text-\[\#12E9E9\] {
+  color: #0284C7 !important;
+}
+
+html.light-mode .bg-\[\#12E9E9\]\/10 {
+  background-color: rgba(2, 132, 199, 0.1) !important;
+  color: #0284C7 !important;
+  border-color: rgba(2, 132, 199, 0.2) !important;
+}
+
+html.light-mode .border-white\/\[0\.04\],
+html.light-mode .border-white\/\[0\.06\],
+html.light-mode .border-white\/\[0\.08\],
+html.light-mode .border-white\/\[0\.1\],
+html.light-mode .border-white\/\[0\.12\] {
+  border-color: #E2E8F0 !important;
+}
+
+html.light-mode header {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+}
+
+html.light-mode footer {
+  background-color: #F1F5F9 !important;
+  border-top: 1px solid #E2E8F0 !important;
+  color: #0F172A !important;
 }
 
 /* Skip link styling for accessibility compliance */

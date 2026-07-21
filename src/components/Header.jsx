@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 
+import ThemeToggle from './ThemeToggle';
+
 const NAV_LINKS = [
   { name: 'HOME', href: '/index.html', key: 'home' },
   { name: 'ABOUT US', href: '/about.html', key: 'about' },
@@ -140,7 +142,8 @@ export default function Header({ currentPage }) {
         </nav>
 
         {/* Header Action CTAs */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-3">
+          <ThemeToggle />
           <a
             href="/registration.html"
             className="text-xs font-semibold tracking-wider text-white border border-[#BEC9CB]/30 rounded-full px-5 py-2.5 hover:bg-white/5 hover:border-white transition-all duration-200"
@@ -195,6 +198,10 @@ export default function Header({ currentPage }) {
               })}
             </div>
             <div className="flex flex-col gap-3 pt-4">
+              <div className="flex items-center justify-between pb-2 border-b border-white/5">
+                <span className="text-xs font-semibold text-[#6D8794] uppercase tracking-wider">Appearance Theme</span>
+                <ThemeToggle />
+              </div>
               <a 
                 href="/registration.html" 
                 className="w-full text-center text-xs font-semibold tracking-wider text-white border border-[#BEC9CB]/30 rounded-full py-3 hover:bg-white/5 transition-all"
