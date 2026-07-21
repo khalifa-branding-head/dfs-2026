@@ -10,7 +10,7 @@ const headlineSpeakers = [
     company: 'DIFC',
     country: 'UAE',
     src: 'assets/speakers/essa-kazim.png',
-    glowColor: '#12E9E9'
+    glowColor: '#0284C7'
   },
   {
     id: 'noel-quinn',
@@ -19,7 +19,7 @@ const headlineSpeakers = [
     company: 'Julius Baer Group',
     country: 'UK',
     src: 'assets/speakers/noel-quinn.png',
-    glowColor: '#08BDF4'
+    glowColor: '#0D9488'
   },
   {
     id: 'jenny-johnson',
@@ -28,7 +28,7 @@ const headlineSpeakers = [
     company: 'Franklin Templeton',
     country: 'USA',
     src: 'assets/speakers/jenny-johnson.png',
-    glowColor: '#c5a059'
+    glowColor: '#0284C7'
   },
   {
     id: 'tan-su-shan',
@@ -37,7 +37,7 @@ const headlineSpeakers = [
     company: 'DBS Group',
     country: 'SINGAPORE',
     src: 'assets/speakers/tan-su-shan.png',
-    glowColor: '#e11d48'
+    glowColor: '#0D9488'
   }
 ];
 
@@ -53,31 +53,31 @@ const diamondSlices = [
 
 export default function FeaturedSpeakers() {
   return (
-    <section className="w-full bg-[#082028] py-16 md:py-20 px-6 md:px-12 relative font-sans antialiased overflow-hidden selection:bg-[#12E9E9]/20 border-t border-white/[0.06]">
+    <section className="w-full bg-[#F8FAFC] py-16 md:py-20 px-6 md:px-12 relative font-sans antialiased overflow-hidden selection:bg-[#0284C7]/20 border-t border-slate-200/80">
       
       {/* Structural Ambient Section Flares */}
-      <div className="absolute top-1/4 -right-48 w-96 h-96 bg-[#08BDF4]/5 rounded-full blur-[128px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -left-48 w-96 h-96 bg-[#12E9E9]/4 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 -right-48 w-96 h-96 bg-[#0284C7]/5 rounded-full blur-[128px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-48 w-96 h-96 bg-[#0D9488]/5 rounded-full blur-[140px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto space-y-10 relative z-10">
         
         {/* ==================== 1. PRESTIGE HEADER ==================== */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-white/[0.08] pb-6 select-none">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-slate-200/80 pb-6 select-none">
           <div className="space-y-2 text-left">
-            <div className="inline-flex items-center gap-2 bg-[#12E9E9]/10 text-[#12E9E9] text-[10px] font-black tracking-[0.25em] px-3.5 py-1 rounded-md uppercase border border-[#12E9E9]/20">
-              <Sparkles className="w-3 h-3 text-[#12E9E9]" />
+            <div className="inline-flex items-center gap-2 bg-[#0284C7]/10 text-[#0284C7] text-[10px] font-black tracking-[0.25em] px-3.5 py-1 rounded-md uppercase border border-[#0284C7]/20">
+              <Sparkles className="w-3 h-3 text-[#0284C7]" />
               <span>Dubai FinTech Summit</span>
             </div>
-            <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-tight leading-none">
+            <h2 className="text-[#0F172A] text-3xl md:text-5xl font-bold tracking-tight leading-none">
               The Headliners
             </h2>
           </div>
           
           <div className="flex items-center gap-3">
-            <button className="w-9 h-9 rounded-lg border border-white/[0.08] bg-[#0c2730]/40 text-white/40 flex items-center justify-center transition-all duration-300 hover:border-[#12E9E9] hover:text-[#12E9E9] cursor-pointer">
+            <button className="w-9 h-9 rounded-lg border border-slate-200/80 bg-white text-slate-700 flex items-center justify-center transition-all duration-300 hover:border-[#0284C7] hover:text-[#0284C7] cursor-pointer shadow-sm">
               <ChevronLeft className="w-4 h-4" />
             </button>
-            <button className="w-9 h-9 rounded-lg border border-white/[0.08] bg-[#0c2730]/40 text-white/40 flex items-center justify-center transition-all duration-300 hover:border-[#12E9E9] hover:text-[#12E9E9] cursor-pointer">
+            <button className="w-9 h-9 rounded-lg border border-slate-200/80 bg-white text-slate-700 flex items-center justify-center transition-all duration-300 hover:border-[#0284C7] hover:text-[#0284C7] cursor-pointer shadow-sm">
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>
@@ -91,13 +91,13 @@ export default function FeaturedSpeakers() {
               initial="initial"
               whileHover="hover"
               transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-              className="relative rounded-2xl border border-white/[0.08] hover:border-[#12E9E9]/40 bg-[#0c2730]/40 backdrop-blur-xl overflow-hidden flex flex-col justify-between h-[420px] group shadow-[0_15px_35px_rgba(4,16,20,0.45)] transition-all duration-500"
+              className="relative rounded-2xl border border-slate-200/80 hover:border-[#0284C7]/50 bg-white overflow-hidden flex flex-col justify-between h-[420px] group shadow-[0_12px_40px_rgba(15,23,42,0.06)] hover:shadow-[0_20px_45px_rgba(2,132,199,0.12)] transition-all duration-500"
             >
               {/* Top Dynamic Hover Glare */}
-              <div className="absolute inset-0 bg-gradient-to-b from-[#12E9E9]/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-30" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0284C7]/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-30" />
 
               {/* Portrait Container Window */}
-              <div className="w-full h-[62%] bg-gradient-to-b from-[#0e2f3b] to-[#082028] relative overflow-hidden flex items-end justify-center border-b border-white/[0.04]">
+              <div className="w-full h-[62%] bg-slate-100 relative overflow-hidden flex items-end justify-center border-b border-slate-200/80">
                 
                 {/* Horizontal Laser Scanning Line */}
                 <motion.div
@@ -109,13 +109,13 @@ export default function FeaturedSpeakers() {
                       transition: { duration: 1.4, ease: "easeInOut" }
                     }
                   }}
-                  className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#12E9E9] to-transparent shadow-[0_0_12px_#12E9E9] z-20 pointer-events-none"
+                  className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#0284C7] to-transparent shadow-[0_0_12px_#0284C7] z-20 pointer-events-none"
                 />
 
                 {/* LAYER 1: DFS SLICES DIAMOND (BEHIND SPEAKER) */}
                 <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
                   <svg
-                    className="absolute w-52 h-52 text-[#12E9E9]"
+                    className="absolute w-52 h-52 text-[#0284C7]"
                     viewBox="0 0 100 100"
                     fill="none"
                   >
@@ -125,20 +125,20 @@ export default function FeaturedSpeakers() {
                         d={pathD}
                         variants={{
                           initial: { 
-                            fill: "rgba(18, 233, 233, 0.07)", 
-                            stroke: "rgba(18, 233, 233, 0.15)",
+                            fill: "rgba(2, 132, 199, 0.07)", 
+                            stroke: "rgba(2, 132, 199, 0.15)",
                             strokeWidth: 0.5
                           },
                           hover: { 
                             fill: [
-                              "rgba(18, 233, 233, 0.07)", 
-                              "rgba(18, 233, 233, 0.45)", 
-                              "rgba(18, 233, 233, 0.16)"
+                              "rgba(2, 132, 199, 0.07)", 
+                              "rgba(2, 132, 199, 0.35)", 
+                              "rgba(2, 132, 199, 0.16)"
                             ],
                             stroke: [
-                              "rgba(18, 233, 233, 0.15)", 
-                              "rgba(18, 233, 233, 0.8)", 
-                              "rgba(18, 233, 233, 0.28)"
+                              "rgba(2, 132, 199, 0.15)", 
+                              "rgba(2, 132, 199, 0.8)", 
+                              "rgba(2, 132, 199, 0.28)"
                             ],
                             transition: { 
                               duration: 0.6, 
@@ -162,37 +162,37 @@ export default function FeaturedSpeakers() {
                 <img
                   src={speaker.src}
                   alt={speaker.name}
-                  className="w-full h-full object-cover object-top relative z-10 transition-transform duration-700 ease-[0.16,1,0.3,1] group-hover:scale-[1.04] drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
+                  className="w-full h-full object-cover object-top relative z-10 transition-transform duration-700 ease-[0.16,1,0.3,1] group-hover:scale-[1.04] drop-shadow-[0_10px_20px_rgba(15,23,42,0.15)]"
                 />
 
                 {/* LAYER 3: SOFT BASE GROUNDING GRADIENT */}
-                <div className="absolute inset-x-0 bottom-0 h-14 z-20 pointer-events-none bg-gradient-to-t from-[#082028] via-[#082028]/60 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 h-14 z-20 pointer-events-none bg-gradient-to-t from-white via-white/60 to-transparent" />
               </div>
 
               {/* Informational Text Deck (p-5 for tight vertical footprint) */}
-              <div className="p-5 flex flex-col justify-between flex-grow bg-gradient-to-b from-transparent to-[#082028]/40 relative z-20">
+              <div className="p-5 flex flex-col justify-between flex-grow bg-white relative z-20">
                 <div className="space-y-1 text-left">
-                  <h4 className="text-base font-bold text-white tracking-tight leading-snug group-hover:text-[#12E9E9] transition-colors duration-300">
+                  <h4 className="text-base font-bold text-[#0F172A] tracking-tight leading-snug group-hover:text-[#0284C7] transition-colors duration-300">
                     {speaker.name}
                   </h4>
-                  <p className="text-xs font-semibold text-[#6D8794] line-clamp-1">
+                  <p className="text-xs font-semibold text-[#475569] line-clamp-1">
                     {speaker.title}
                   </p>
                 </div>
 
-                <div className="flex items-center justify-between pt-3 border-t border-white/[0.04] mt-auto">
-                  <span className="text-xs font-black tracking-wider text-white uppercase opacity-80">
+                <div className="flex items-center justify-between pt-3 border-t border-slate-100 mt-auto">
+                  <span className="text-xs font-black tracking-wider text-[#0F172A] uppercase opacity-90">
                     {speaker.company}
                   </span>
                   
-                  <div className="text-[9px] font-black tracking-widest text-[#12E9E9] border border-[#12E9E9]/30 rounded-full px-2.5 py-0.5 select-none bg-[#12E9E9]/5 uppercase group-hover:border-[#12E9E9] transition-all duration-300">
+                  <div className="text-[10px] font-black tracking-[0.25em] text-[#0284C7] border border-[#0284C7]/30 rounded-full px-2.5 py-0.5 select-none bg-[#0284C7]/10 uppercase group-hover:border-[#0284C7] transition-all duration-300">
                     {speaker.country}
                   </div>
                 </div>
               </div>
 
               {/* Laser Underline Trim Accent */}
-              <div className="absolute inset-x-0 bottom-0 h-[3px] bg-gradient-to-r from-[#12E9E9] via-[#08BDF4] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl z-30" />
+              <div className="absolute inset-x-0 bottom-0 h-[3px] bg-gradient-to-r from-[#0284C7] via-[#0D9488] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl z-30" />
             </motion.div>
           ))}
         </div>
@@ -201,7 +201,7 @@ export default function FeaturedSpeakers() {
         <div className="flex justify-center pt-2 select-none">
           <a
             href="/speakers.html"
-            className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#12E9E9] to-[#08BDF4] text-[#082028] text-xs font-black tracking-[0.2em] px-8 py-3.5 rounded-xl uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(18,233,233,0.3)] hover:scale-[1.02]"
+            className="inline-flex items-center gap-2.5 bg-gradient-to-r from-[#0284C7] to-[#0D9488] text-white text-xs font-black tracking-[0.2em] px-8 py-3.5 rounded-xl uppercase transition-all duration-300 shadow-[0_4px_15px_rgba(2,132,199,0.25)] hover:scale-[1.02]"
           >
             <span>View All Speakers</span>
             <ArrowUpRight className="w-4 h-4 stroke-[3]" />

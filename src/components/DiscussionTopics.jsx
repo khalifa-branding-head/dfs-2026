@@ -195,52 +195,52 @@ export default function DiscussionTopics() {
   });
 
   return (
-    <section className="w-full bg-[#082028] py-16 md:py-20 px-6 md:px-12 relative font-sans antialiased overflow-hidden selection:bg-[#12E9E9]/20 border-t border-white/[0.06]">
+    <section className="w-full bg-[#F8FAFC] py-16 md:py-20 px-6 md:px-12 relative font-sans antialiased overflow-hidden selection:bg-[#0284C7]/20 border-t border-slate-200/80">
       
       {/* Background Precision Ambient Accents */}
-      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#12E9E9]/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-[#08BDF4]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#0284C7]/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-[#0D9488]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto space-y-10 relative z-10">
         
         {/* ==================== 1. EDITORIAL HEADER & TITLE ==================== */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2 max-w-2xl text-left">
-            <div className="inline-flex items-center gap-2 bg-[#12E9E9]/10 text-[#12E9E9] text-[10px] font-black tracking-[0.25em] px-3.5 py-1 rounded-md uppercase border border-[#12E9E9]/20">
-              <Sparkles className="w-3 h-3 text-[#12E9E9]" />
+            <div className="inline-flex items-center gap-2 bg-[#0284C7]/10 text-[#0284C7] text-[10px] font-black tracking-[0.25em] px-3.5 py-1 rounded-md uppercase border border-[#0284C7]/20">
+              <Sparkles className="w-3 h-3 text-[#0284C7]" />
               <span>Curated Content Pillars</span>
             </div>
-            <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
+            <h2 className="text-[#0F172A] text-3xl md:text-5xl font-bold tracking-tight leading-tight">
               Discussion Topics
             </h2>
-            <p className="text-xs md:text-sm text-[#6D8794] font-medium">
+            <p className="text-xs md:text-sm text-[#475569] font-medium">
               Explore the 15 core strategic themes shaping the agenda of the 4th Dubai FinTech Summit.
             </p>
           </div>
 
           {/* Search Filter Input */}
           <div className="relative w-full md:w-72">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6D8794]" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#475569]" />
             <input 
               type="text"
               placeholder="Search topics or themes..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#0c2730]/60 border border-white/[0.08] focus:border-[#12E9E9]/50 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-[#6D8794] outline-none transition-all duration-300 backdrop-blur-md"
+              className="w-full bg-white border border-slate-200/80 focus:border-[#0284C7] rounded-xl pl-10 pr-4 py-2.5 text-xs text-[#0F172A] placeholder-[#475569] outline-none transition-all duration-300 shadow-sm"
             />
           </div>
         </div>
 
         {/* ==================== 2. CATEGORY TAB FILTER BAR ==================== */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none border-b border-white/[0.06]">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none border-b border-slate-200/80">
           {categoryTabs.map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveCategory(tab.id)}
               className={`whitespace-nowrap px-4 py-2.5 rounded-lg text-xs font-bold tracking-wider uppercase transition-all duration-300 relative ${
                 activeCategory === tab.id
-                  ? 'text-[#082028] bg-gradient-to-r from-[#12E9E9] to-[#08BDF4] shadow-[0_4px_20px_rgba(18,233,233,0.3)]'
-                  : 'text-[#6D8794] hover:text-white bg-[#0c2730]/40 hover:bg-[#0c2730]/80 border border-white/[0.04]'
+                  ? 'text-white bg-gradient-to-r from-[#0284C7] to-[#0D9488] shadow-[0_4px_15px_rgba(2,132,199,0.25)]'
+                  : 'text-[#475569] hover:text-[#0F172A] bg-white border border-slate-200/80 hover:border-[#0284C7]/40'
               }`}
             >
               {tab.label}
@@ -266,50 +266,50 @@ export default function DiscussionTopics() {
                   whileHover={{ y: -5 }}
                   transition={{ duration: 0.3 }}
                   key={topic.id}
-                  className={`group relative rounded-2xl border border-white/[0.08] bg-[#0c2730]/40 backdrop-blur-xl p-6 flex flex-col justify-between transition-all duration-500 hover:border-[#12E9E9]/40 hover:bg-[#0c2730]/80 shadow-[0_15px_35px_rgba(4,16,20,0.4)] ${
-                    topic.featured ? 'lg:col-span-2 bg-gradient-to-br from-[#0c2730]/80 via-[#0c2730]/50 to-[#0e3542]/40' : ''
+                  className={`group relative rounded-2xl border border-slate-200/80 bg-white p-6 flex flex-col justify-between transition-all duration-500 hover:border-[#0284C7]/50 shadow-[0_12px_40px_rgba(15,23,42,0.06)] hover:shadow-[0_20px_45px_rgba(2,132,199,0.12)] ${
+                    topic.featured ? 'lg:col-span-2 bg-gradient-to-br from-white via-white to-sky-50/50' : ''
                   }`}
                 >
                   {/* Top Glowing Laser Accent Border Line */}
-                  <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12E9E9] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-2xl z-20" />
+                  <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#0284C7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-2xl z-20" />
 
                   <div className="space-y-3.5">
                     {/* Header Row: Monospace Badge (01-15) & Category Tag */}
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-mono font-bold tracking-[0.2em] text-[#12E9E9] bg-[#12E9E9]/10 px-2.5 py-1 rounded-md uppercase border border-[#12E9E9]/20">
+                      <span className="text-[10px] font-mono font-black tracking-[0.25em] text-[#0284C7] bg-[#0284C7]/10 px-2.5 py-1 rounded-md uppercase border border-[#0284C7]/20">
                         {topic.num}
                       </span>
-                      <div className="flex items-center gap-1.5 text-[10px] font-bold text-[#6D8794] group-hover:text-white transition-colors">
-                        <IconComp className="w-3.5 h-3.5 text-[#12E9E9]" />
+                      <div className="flex items-center gap-1.5 text-[10px] font-bold text-[#475569] group-hover:text-[#0F172A] transition-colors">
+                        <IconComp className="w-3.5 h-3.5 text-[#0284C7]" />
                         <span>{topic.categoryLabel}</span>
                       </div>
                     </div>
 
                     {/* Topic Title - Zero Truncation */}
-                    <h3 className={`text-white font-semibold tracking-tight leading-snug group-hover:text-[#12E9E9] transition-colors ${
+                    <h3 className={`text-[#0F172A] font-bold tracking-tight leading-snug group-hover:text-[#0284C7] transition-colors ${
                       topic.featured ? 'text-lg md:text-xl' : 'text-base'
                     }`}>
                       {topic.title}
                     </h3>
 
                     {/* Full Description Paragraph - Zero Truncation */}
-                    <p className="text-xs text-[#BEC9CB] font-medium leading-relaxed">
+                    <p className="text-xs text-[#475569] font-medium leading-relaxed">
                       {topic.desc}
                     </p>
                   </div>
 
                   {/* Bottom Footer Accent Line */}
-                  <div className="pt-4 mt-5 border-t border-white/[0.04] flex items-center justify-between">
-                    <span className="text-[10px] font-bold tracking-widest text-[#6D8794] group-hover:text-white uppercase transition-colors">
+                  <div className="pt-4 mt-5 border-t border-slate-100 flex items-center justify-between">
+                    <span className="text-[10px] font-bold tracking-widest text-[#475569] group-hover:text-[#0F172A] uppercase transition-colors">
                       Key Content Pillar
                     </span>
-                    <div className="w-7 h-7 rounded-full bg-white/[0.05] group-hover:bg-[#12E9E9] text-[#6D8794] group-hover:text-[#082028] flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                    <div className="w-7 h-7 rounded-full bg-slate-100 group-hover:bg-[#0284C7] text-[#475569] group-hover:text-white flex items-center justify-center transition-all duration-300 group-hover:scale-110">
                       <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
                     </div>
                   </div>
 
                   {/* Micro Neon Laser Base Accent */}
-                  <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#12E9E9]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl z-30" />
+                  <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#0284C7]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-2xl z-30" />
                 </motion.div>
               );
             })}
@@ -318,8 +318,8 @@ export default function DiscussionTopics() {
 
         {/* Empty State Fallback */}
         {filteredTopics.length === 0 && (
-          <div className="w-full py-16 text-center text-[#6D8794] font-medium space-y-3">
-            <p className="text-base text-white font-semibold">No matching discussion topics found</p>
+          <div className="w-full py-16 text-center text-[#475569] font-medium space-y-3">
+            <p className="text-base text-[#0F172A] font-semibold">No matching discussion topics found</p>
             <p className="text-xs">Try searching for a different keyword or switch category tabs.</p>
           </div>
         )}

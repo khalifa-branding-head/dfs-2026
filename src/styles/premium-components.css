@@ -36,8 +36,8 @@
 
 /* 2. Cards Elevation & Borders */
 .dfs-card {
-  border: 1px solid rgba(0, 0, 0, 0.05) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06) !important;
   transition: transform var(--dfs-motion-time-normal) var(--dfs-ease-primary),
               box-shadow var(--dfs-motion-time-normal) var(--dfs-ease-primary),
               border-color var(--dfs-motion-time-normal) var(--dfs-ease-primary) !important;
@@ -45,8 +45,8 @@
 
 .dfs-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(8, 32, 40, 0.06) !important; /* Dark Teal shadow */
-  border-color: rgba(40, 116, 252, 0.2) !important;
+  box-shadow: 0 20px 45px rgba(2, 132, 199, 0.12) !important;
+  border-color: rgba(2, 132, 199, 0.5) !important;
 }
 
 /* 3. Navigation Links Slide Underlines */
@@ -61,7 +61,7 @@
 .dfs-select:focus,
 .dfs-textarea:focus {
   border-color: var(--dfs-color-primary-blue) !important;
-  box-shadow: 0 0 0 4px rgba(40, 116, 252, 0.1) !important;
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1) !important;
 }
 
 /* 5. Tabs Day navigations line curves */
@@ -88,8 +88,8 @@
 
 /* 7. Footer divider and link highlights */
 .dfs-footer {
-  background-color: #041014 !important; /* Richer Dark Teal */
-  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+  background-color: #F8FAFC !important;
+  border-top: 1px solid rgba(226, 232, 240, 0.8) !important;
 }
 
 .dfs-footer__link {

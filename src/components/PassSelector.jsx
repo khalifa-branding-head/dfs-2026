@@ -86,38 +86,38 @@ export default function PassSelector() {
   const [isGroup, setIsGroup] = useState(false);
 
   return (
-    <section className="w-full bg-[#082028] py-16 md:py-20 px-6 md:px-12 relative font-sans antialiased overflow-hidden selection:bg-[#12E9E9]/20 border-t border-white/[0.06]">
+    <section className="w-full bg-[#F8FAFC] py-16 md:py-20 px-6 md:px-12 relative font-sans antialiased overflow-hidden selection:bg-[#0284C7]/20 border-t border-slate-200/80">
       
       {/* Background Precision Ambient Light Flare */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#12E9E9]/5 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#0284C7]/5 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto space-y-12 relative z-10">
         
         {/* ==================== 1. EDITORIAL HEADER & TOGGLE ==================== */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-2xl space-y-3 text-left">
-            <div className="inline-flex items-center gap-2 bg-[#12E9E9]/10 text-[#12E9E9] text-[10px] font-black tracking-[0.25em] px-3.5 py-1 rounded-md uppercase border border-[#12E9E9]/20">
-              <Zap className="w-3 h-3 text-[#12E9E9]" />
+            <div className="inline-flex items-center gap-2 bg-[#0284C7]/10 text-[#0284C7] text-[10px] font-black tracking-[0.25em] px-3.5 py-1 rounded-md uppercase border border-[#0284C7]/20">
+              <Zap className="w-3 h-3 text-[#0284C7]" />
               <span>Registration & Pass Access</span>
             </div>
 
-            <h2 className="text-white text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
+            <h2 className="text-[#0F172A] text-3xl md:text-5xl font-bold tracking-tight leading-tight">
               Pick Your Pass
             </h2>
 
-            <p className="text-xs md:text-sm text-[#6D8794] font-medium leading-relaxed">
+            <p className="text-xs md:text-sm text-[#475569] font-medium leading-relaxed">
               Select the ideal access pass to join 10,000+ C-Suite leaders, central bankers, and investors at the Dubai FinTech Summit 2026.
             </p>
           </div>
 
           {/* Individual vs Group Pass Switch */}
-          <div className="flex items-center bg-[#0c2730] p-1.5 rounded-2xl border border-white/[0.08] backdrop-blur-xl">
+          <div className="flex items-center bg-slate-200/80 p-1.5 rounded-2xl border border-slate-300/60 backdrop-blur-xl">
             <button
               onClick={() => setIsGroup(false)}
               className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 ${
                 !isGroup
-                  ? 'bg-gradient-to-r from-[#12E9E9] to-[#08BDF4] text-[#082028] shadow-[0_4px_20px_rgba(18,233,233,0.3)]'
-                  : 'text-[#6D8794] hover:text-white'
+                  ? 'bg-gradient-to-r from-[#0284C7] to-[#0D9488] text-white shadow-[0_4px_15px_rgba(2,132,199,0.25)]'
+                  : 'text-[#475569] hover:text-[#0F172A]'
               }`}
             >
               <User className="w-3.5 h-3.5" />
@@ -128,13 +128,13 @@ export default function PassSelector() {
               onClick={() => setIsGroup(true)}
               className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 relative ${
                 isGroup
-                  ? 'bg-gradient-to-r from-[#12E9E9] to-[#08BDF4] text-[#082028] shadow-[0_4px_20px_rgba(18,233,233,0.3)]'
-                  : 'text-[#6D8794] hover:text-white'
+                  ? 'bg-gradient-to-r from-[#0284C7] to-[#0D9488] text-white shadow-[0_4px_15px_rgba(2,132,199,0.25)]'
+                  : 'text-[#475569] hover:text-[#0F172A]'
               }`}
             >
               <Users className="w-3.5 h-3.5" />
               <span>Group Pass (3+)</span>
-              <span className="ml-1 text-[9px] font-black bg-[#12E9E9]/20 text-[#12E9E9] px-1.5 py-0.5 rounded uppercase border border-[#12E9E9]/30">
+              <span className="ml-1 text-[9px] font-black bg-[#0284C7]/20 text-[#0284C7] px-1.5 py-0.5 rounded uppercase border border-[#0284C7]/30">
                 15% OFF
               </span>
             </button>
@@ -152,19 +152,19 @@ export default function PassSelector() {
                 key={tier.id}
                 whileHover={{ y: -5, scale: 1.01 }}
                 transition={{ duration: 0.3 }}
-                className={`group relative rounded-2xl border backdrop-blur-xl p-6 md:p-7 flex flex-col justify-between transition-all duration-500 shadow-[0_15px_35px_rgba(4,16,20,0.4)] ${
+                className={`group relative rounded-2xl border backdrop-blur-xl p-6 md:p-7 flex flex-col justify-between transition-all duration-500 shadow-[0_12px_40px_rgba(15,23,42,0.06)] ${
                   tier.recommended
-                    ? 'bg-gradient-to-b from-[#0e3542] via-[#0c2730] to-[#0c2730] border-[#12E9E9] shadow-[0_0_40px_rgba(18,233,233,0.25)]'
-                    : 'bg-[#0c2730]/40 border-white/[0.08] hover:border-[#12E9E9]/40 hover:bg-[#0c2730]/80'
+                    ? 'bg-gradient-to-b from-sky-50/80 via-white to-white border-2 border-[#0284C7] shadow-[0_20px_50px_rgba(2,132,199,0.18)]'
+                    : 'bg-white border-slate-200/80 hover:border-[#0284C7]/50 hover:shadow-[0_20px_45px_rgba(2,132,199,0.12)]'
                 }`}
               >
                 {/* Top Cyan Accent Laser Line */}
-                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12E9E9] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 rounded-t-2xl" />
+                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#0284C7] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 rounded-t-2xl" />
 
                 {/* Recommended VIP Badge */}
                 {tier.recommended && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#12E9E9] to-[#08BDF4] text-[#082028] text-[9px] font-black tracking-widest px-3.5 py-1 rounded-full uppercase shadow-[0_4px_15px_rgba(18,233,233,0.4)] flex items-center gap-1 z-30">
-                    <Crown className="w-3 h-3 text-[#082028]" />
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#0284C7] to-[#0D9488] text-white text-[9px] font-black tracking-widest px-3.5 py-1 rounded-full uppercase shadow-[0_4px_15px_rgba(2,132,199,0.4)] flex items-center gap-1 z-30">
+                    <Crown className="w-3 h-3 text-white" />
                     <span>MOST POPULAR VIP</span>
                   </div>
                 )}
@@ -172,41 +172,41 @@ export default function PassSelector() {
                 <div className="space-y-5">
                   {/* Tier Badge & Name */}
                   <div className="space-y-2 pt-1">
-                    <span className="text-[9px] font-black tracking-[0.2em] text-[#12E9E9] bg-[#12E9E9]/10 px-2.5 py-1 rounded-md uppercase border border-[#12E9E9]/20">
+                    <span className="text-[9px] font-black tracking-[0.25em] text-[#0284C7] bg-[#0284C7]/10 px-2.5 py-1 rounded-md uppercase border border-[#0284C7]/20">
                       {tier.badge}
                     </span>
-                    <h3 className="text-white text-xl font-bold tracking-tight">
+                    <h3 className="text-[#0F172A] text-xl font-bold tracking-tight">
                       {tier.name}
                     </h3>
-                    <p className="text-xs text-[#6D8794] font-medium leading-relaxed min-h-[36px]">
+                    <p className="text-xs text-[#475569] font-medium leading-relaxed min-h-[36px]">
                       {tier.desc}
                     </p>
                   </div>
 
                   {/* Pricing Box */}
-                  <div className="py-3.5 border-y border-white/[0.06] space-y-1">
+                  <div className="py-3.5 border-y border-slate-100 space-y-1">
                     <div className="flex items-baseline gap-2">
-                      <span className="text-3xl font-extrabold text-white">
+                      <span className="text-3xl font-extrabold text-[#0F172A]">
                         ${finalPrice}
                       </span>
-                      <span className="text-xs text-[#6D8794] line-through">
+                      <span className="text-xs text-[#475569] line-through">
                         ${tier.individualPrice}
                       </span>
-                      <span className="text-[10px] font-bold text-[#12E9E9]">
+                      <span className="text-[10px] font-bold text-[#0284C7]">
                         USD / Pass
                       </span>
                     </div>
-                    <div className="text-[10px] text-[#12E9E9] font-semibold">
+                    <div className="text-[10px] text-[#0284C7] font-bold">
                       Early Bird Rate (Limited Availability)
                     </div>
                   </div>
 
                   {/* Feature Checklist */}
                   <div className="space-y-2.5">
-                    <div className="text-[10px] font-bold tracking-wider text-[#6D8794] uppercase">Pass Includes</div>
+                    <div className="text-[10px] font-bold tracking-wider text-[#475569] uppercase">Pass Includes</div>
                     {tier.features.map((feat, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs text-[#BEC9CB] font-medium">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#12E9E9] shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-2 text-xs text-[#475569] font-medium">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </div>
                     ))}
@@ -219,8 +219,8 @@ export default function PassSelector() {
                     href="/registration.html"
                     className={`w-full py-3 px-4 rounded-xl text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center justify-center gap-2 group ${
                       tier.recommended
-                        ? 'bg-gradient-to-r from-[#12E9E9] to-[#08BDF4] text-[#082028] shadow-[0_4px_25px_rgba(18,233,233,0.35)] hover:scale-102'
-                        : 'bg-[#082028] text-white border border-white/[0.12] hover:border-[#12E9E9] hover:text-[#12E9E9]'
+                        ? 'bg-gradient-to-r from-[#0284C7] to-[#0D9488] text-white shadow-[0_4px_20px_rgba(2,132,199,0.3)] hover:scale-102'
+                        : 'bg-slate-900 text-white hover:bg-[#0284C7] hover:text-white'
                     }`}
                   >
                     <span>{tier.cta}</span>
@@ -234,22 +234,22 @@ export default function PassSelector() {
         </div>
 
         {/* ==================== 3. GROUP & CORPORATE DELEGATION BANNER ==================== */}
-        <div className="p-6 md:p-8 rounded-2xl bg-gradient-to-r from-[#0c2730] via-[#0e3542] to-[#0c2730] border border-[#12E9E9]/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_10px_30px_rgba(18,233,233,0.1)]">
+        <div className="p-6 md:p-8 rounded-2xl bg-gradient-to-r from-sky-900 via-slate-900 to-sky-950 text-white border border-[#0284C7]/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_10px_30px_rgba(2,132,199,0.1)]">
           <div className="space-y-1 text-center md:text-left">
-            <h4 className="text-white text-base md:text-lg font-semibold tracking-tight">
+            <h4 className="text-white text-base md:text-lg font-bold tracking-tight">
               Registering a Corporate Delegation of 5+ Members?
             </h4>
-            <p className="text-xs text-[#6D8794] font-medium">
+            <p className="text-xs text-slate-300 font-medium">
               Unlock customized enterprise pass bundles, invoice billing, and dedicated VIP group lounge access.
             </p>
           </div>
 
           <a
             href="/registration.html"
-            className="px-6 py-3 bg-[#082028] text-white border border-white/[0.12] hover:border-[#12E9E9]/50 text-xs font-bold tracking-widest uppercase rounded-xl flex items-center gap-2 transition-colors whitespace-nowrap"
+            className="px-6 py-3 bg-white text-slate-900 hover:bg-[#0284C7] hover:text-white text-xs font-bold tracking-widest uppercase rounded-xl flex items-center gap-2 transition-colors whitespace-nowrap shadow-sm"
           >
             <span>Inquire for Corporate Delegation</span>
-            <ArrowUpRight className="w-4 h-4 text-[#12E9E9]" />
+            <ArrowUpRight className="w-4 h-4 text-[#0284C7] group-hover:text-white" />
           </a>
         </div>
 

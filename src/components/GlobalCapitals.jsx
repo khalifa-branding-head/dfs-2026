@@ -35,29 +35,29 @@ export default function GlobalCapitals() {
     : financialCapitals.filter(c => c.region === activeRegion);
 
   return (
-    <section className="w-full bg-[#082028] py-28 px-6 md:px-12 relative font-sans antialiased overflow-hidden selection:bg-[#12E9E9]/20 border-t border-white/[0.04]">
+    <section className="w-full bg-[#F8FAFC] py-16 md:py-20 px-6 md:px-12 relative font-sans antialiased overflow-hidden selection:bg-[#0284C7]/20 border-t border-slate-200/80">
       
       {/* Background Soft Glow Orbs */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#12E9E9]/5 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#0284C7]/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
         
         {/* ==================== LEFT COLUMN: EDITORIAL HEADER & REGIONAL CONTROLS (5-Span) ==================== */}
         <div className="lg:col-span-5 space-y-8 text-left">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 bg-[#12E9E9]/10 text-[#12E9E9] text-[10px] font-black tracking-[0.25em] px-4 py-1.5 rounded-md uppercase border border-[#12E9E9]/20">
+            <div className="inline-flex items-center gap-2 bg-[#0284C7]/10 text-[#0284C7] text-[10px] font-black tracking-[0.25em] px-4 py-1.5 rounded-md uppercase border border-[#0284C7]/20">
               <Globe className="w-3.5 h-3.5" />
               Global Convergence Hub
             </div>
             
-            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
+            <h2 className="text-[#0F172A] text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight">
               Connecting the world's <br />
-              <span className="bg-gradient-to-r from-[#12E9E9] via-[#08BDF4] to-white bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#0284C7] to-[#0D9488] bg-clip-text text-transparent">
                 financial capitals
               </span>
             </h2>
             
-            <p className="text-sm md:text-base text-[#6D8794] font-medium leading-relaxed">
+            <p className="text-sm md:text-base text-[#475569] font-medium leading-relaxed">
               CEOs, regulators, founders, and investors from the world's leading financial capitals converge in Dubai to shape the next era of global finance.
             </p>
           </div>
@@ -70,8 +70,8 @@ export default function GlobalCapitals() {
                 onClick={() => setActiveRegion(reg.id)}
                 className={`px-4 py-2 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer ${
                   activeRegion === reg.id
-                    ? 'bg-[#12E9E9] text-[#082028] shadow-[0_4px_20px_rgba(18,233,233,0.3)]'
-                    : 'bg-[#0c2730]/60 text-[#6D8794] border border-white/[0.05] hover:border-white/20 hover:text-white'
+                    ? 'bg-[#0284C7] text-white shadow-[0_4px_15px_rgba(2,132,199,0.25)]'
+                    : 'bg-white text-[#475569] border border-slate-200/80 hover:border-[#0284C7]/40 hover:text-[#0F172A]'
                 }`}
               >
                 {reg.label}
@@ -82,7 +82,7 @@ export default function GlobalCapitals() {
 
         {/* ==================== RIGHT COLUMN: INTERACTIVE VECTOR MAP CANVAS (7-Span) ==================== */}
         {/* locked aspect ratio to exactly matches the 16:9 map.mp4 video file to prevent any scaling misalignment */}
-        <div className="lg:col-span-7 relative w-full aspect-video rounded-3xl border border-white/[0.08] bg-[#0c2730]/40 backdrop-blur-xl overflow-hidden shadow-[0_30px_60px_rgba(4,16,20,0.5)] flex items-center justify-center">
+        <div className="lg:col-span-7 relative w-full aspect-video rounded-3xl border border-slate-800 bg-slate-900 overflow-hidden shadow-[0_12px_40px_rgba(15,23,42,0.12)] flex items-center justify-center">
           
           {/* Official Animated World Map Video Background */}
           <video 
@@ -111,15 +111,15 @@ export default function GlobalCapitals() {
                   {/* Glowing/Hover Indicator dot precisely overlaying the pre-rendered city */}
                   <div className={`rounded-full transition-all duration-300 flex items-center justify-center ${
                     isDubai 
-                      ? 'w-3 h-3 bg-[#12E9E9] shadow-[0_0_15px_#12E9E9] animate-pulse'
+                      ? 'w-3 h-3 bg-[#0284C7] shadow-[0_0_15px_#0284C7] animate-pulse'
                       : isSelected
-                        ? 'w-2.5 h-2.5 bg-[#12E9E9] scale-125 shadow-[0_0_12px_#12E9E9]' 
-                        : 'w-2 h-2 bg-[#08BDF4]/80 group-hover:bg-[#12E9E9]'
+                        ? 'w-2.5 h-2.5 bg-[#0284C7] scale-125 shadow-[0_0_12px_#0284C7]' 
+                        : 'w-2 h-2 bg-[#0284C7]/80 group-hover:bg-[#0284C7]'
                   }`} />
 
                   {/* Pulsing ring for selected or Dubai node */}
                   {(isSelected || isDubai) && (
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-[#12E9E9]/20 animate-ping pointer-events-none" />
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-[#0284C7]/20 animate-ping pointer-events-none" />
                   )}
 
                   {/* Hover Floating Telemetry Badge */}
@@ -129,14 +129,14 @@ export default function GlobalCapitals() {
                         initial={{ opacity: 0, y: -10, scale: 0.95 }}
                         animate={{ opacity: 1, y: -5, scale: 1 }}
                         exit={{ opacity: 0, y: -5, scale: 0.95 }}
-                        className="absolute bottom-6 left-1/2 -translate-x-1/2 w-48 p-3 rounded-xl bg-[#082028]/95 backdrop-blur-xl border border-[#12E9E9]/40 shadow-[0_10px_30px_rgba(4,16,20,0.8)] z-40 text-left space-y-1 pointer-events-none"
+                        className="absolute bottom-6 left-1/2 -translate-x-1/2 w-48 p-3 rounded-xl bg-slate-900/95 backdrop-blur-xl border border-[#0284C7]/40 shadow-xl z-40 text-left space-y-1 pointer-events-none text-white"
                       >
-                        <div className="flex items-center justify-between border-b border-white/10 pb-1">
-                          <span className="text-[10px] font-black text-[#12E9E9] uppercase tracking-wider">{city.name}</span>
-                          <span className="text-[9px] font-bold text-[#6D8794]">{city.region}</span>
+                        <div className="flex items-center justify-between border-b border-slate-700 pb-1">
+                          <span className="text-[10px] font-black text-[#0284C7] uppercase tracking-wider">{city.name}</span>
+                          <span className="text-[9px] font-bold text-slate-400">{city.region}</span>
                         </div>
-                        <div className="text-xs font-black text-white">{city.delegates} <span className="text-[10px] font-normal text-[#6D8794]">Delegates</span></div>
-                        <div className="text-[9px] font-semibold text-[#6D8794] truncate">{city.highlight}</div>
+                        <div className="text-xs font-black text-white">{city.delegates} <span className="text-[10px] font-normal text-slate-400">Delegates</span></div>
+                        <div className="text-[9px] font-semibold text-slate-300 truncate">{city.highlight}</div>
                       </motion.div>
                     )}
                   </AnimatePresence>

@@ -50,7 +50,7 @@ export default function Home() {
       <PassSelector />
 
       {/* 6. Conversion Call to Action */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-[#0284C7] via-[#0D9488] to-[#0F172A] border-t border-slate-200">
+      <section className="relative py-16 md:py-20 overflow-hidden bg-gradient-to-br from-[#0284C7] via-[#0D9488] to-[#0F172A] border-t border-slate-200">
         <div className="max-w-[1300px] mx-auto px-6 md:px-10 relative z-10 text-center flex flex-col items-center">
           <h2 className="text-white text-3xl md:text-4xl font-extrabold mb-4 uppercase">
             Join the Global Financial Dialogue

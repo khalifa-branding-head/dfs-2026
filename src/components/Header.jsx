@@ -48,8 +48,8 @@ export default function Header({ currentPage }) {
       transition={{ duration: 0.25, ease: 'easeInOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-[#082028]/75 backdrop-blur-md border-b border-[#BEC9CB]/15 py-3 shadow-lg shadow-[#082028]/40' 
-          : 'bg-gradient-to-b from-[#082028]/95 via-[#082028]/50 to-transparent py-5'
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200/80 py-3 shadow-[0_4px_20px_rgba(15,23,42,0.04)]' 
+          : 'bg-[#F8FAFC]/90 backdrop-blur-md border-b border-slate-200/60 py-5'
       }`}
     >
       <div className="max-w-[1300px] mx-auto px-6 md:px-10 flex items-center justify-between">
@@ -62,13 +62,11 @@ export default function Header({ currentPage }) {
         >
           {/* DFS Brand SVG Text Logo */}
           <svg
-            className={`h-10 w-auto fill-current transition-transform duration-300 group-hover:scale-[1.02] ${
-              isScrolled ? 'text-slate-900' : 'text-white'
-            }`}
+            className="h-10 w-auto fill-current transition-transform duration-300 group-hover:scale-[1.02] text-[#0F172A]"
             viewBox="0 0 1916 303.4"
             aria-hidden="true"
           >
-            <g className="text-white">
+            <g className="text-[#0F172A]">
               <path d="M359.1,1.7h30.5c29.8,0,44.9,14.9,44.9,40.9v.9c0,26.1-15.5,42-45,42h-30.4V1.7M388.8,67c14.3,0,20.6-7.5,20.6-23.1v-.9c0-15.9-6.3-22.7-20.8-22.7h-5.3v46.8h5.5,0Z" />
               <path d="M446,51.5V1.7h24v48.8c0,11.9,2.9,17.6,13.1,17.6s13.1-5.4,13.1-17.9V1.7h24.3v49.5c0,24.4-14.3,35.7-37.4,35.7s-37-11.9-37.1-35.4h0Z" />
               <path d="M536.6,1.7h37.4c19.8,0,28.2,8.9,28.2,21.9v.5c0,9.4-4.8,15.6-14.2,18.1,10.3,1.8,16.8,8,16.8,19.6v.5c0,15-9.7,23.3-30.5,23.3h-37.7V1.7h0ZM569.2,35c7.5,0,10.3-2.6,10.3-8.5v-.5c0-5.7-3.1-8.3-10.3-8.3h-9.2v17.3h9.2ZM570,69.4c7.6,0,11.1-3.5,11.1-9.7v-.5c0-6.3-3.4-9.6-11.8-9.6h-9.3v19.8h10Z" />
@@ -104,7 +102,7 @@ export default function Header({ currentPage }) {
               <polygon points="144.6 27.3 144.6 1.7 1.5 144.9 27.1 144.9 144.6 27.3" />
               <polygon points="157.8 276.1 157.8 301.7 301.2 158.1 275.7 158.1 157.8 276.1" />
             </g>
-            <g className="text-[#12E9E9] fill-current">
+            <g className="text-[#0284C7] fill-current">
               <path d="M185.1,122.5h-52.6c-3.3,0-6,2.7-6,6.1s2.7,6.1,6,6.1h52.6c3.3,0,6-2.7,6-6.1s-2.7-6.1-6-6.1" />
               <path d="M169.4,145.7h-36.8c-3.3,0-6,2.7-6,6.1s2.7,6.1,6,6.1h36.8c3.3,0,6-2.7,6-6.1s-2.7-6.1-6-6.1" />
               <path d="M139.3,169h-6.8c-3.3,0-6,2.7-6,6.1s2.7,6.1,6,6.1h6.8c3.3,0,6-2.7,6-6.1s-2.7-6.1-6-6.1" />
@@ -127,22 +125,14 @@ export default function Header({ currentPage }) {
                     {isActive && (
                       <motion.div
                         layoutId="activeNavIndicator"
-                        className={`absolute inset-0 rounded-full -z-10 transition-colors duration-300 ${
-                          isScrolled
-                            ? 'bg-[#0284C7]/15 border border-[#0284C7]/35 shadow-sm'
-                            : 'bg-[#12E9E9]/25 border border-[#12E9E9]/60 shadow-[0_0_18px_rgba(18,233,233,0.35)]'
-                        }`}
+                        className="absolute inset-0 rounded-full -z-10 bg-[#0284C7]/15 border border-[#0284C7]/35 shadow-sm"
                         transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                       />
                     )}
                     <span className={`relative z-10 transition-colors duration-300 ${
                       isActive 
-                        ? isScrolled
-                          ? 'text-[#0284C7] font-black'
-                          : 'text-[#12E9E9] font-black drop-shadow-[0_0_10px_rgba(18,233,233,0.5)]' 
-                        : isScrolled
-                          ? 'text-slate-800 hover:text-[#0284C7]'
-                          : 'text-white/90 hover:text-white'
+                        ? 'text-[#0284C7] font-black'
+                        : 'text-slate-700 hover:text-[#0284C7]'
                     }`}>
                       {link.name}
                     </span>
@@ -158,13 +148,13 @@ export default function Header({ currentPage }) {
           <ThemeToggle />
           <a
             href="/registration.html"
-            className="text-xs font-semibold tracking-wider text-white border border-[#BEC9CB]/30 rounded-full px-5 py-2.5 hover:bg-white/5 hover:border-white transition-all duration-200"
+            className="text-xs font-semibold tracking-wider text-slate-700 border border-slate-300 rounded-full px-5 py-2.5 hover:bg-slate-100 hover:text-[#0F172A] transition-all duration-200"
           >
             ENQUIRE NOW
           </a>
           <a
             href="/registration.html"
-            className="group flex items-center gap-1 text-xs font-bold tracking-wider bg-[#12E9E9] text-[#082028] rounded-full px-5 py-2.5 shadow-md shadow-[#12E9E9]/20 hover:bg-[#08BDF4] hover:text-white transition-all duration-300"
+            className="group flex items-center gap-1 text-xs font-bold tracking-wider bg-gradient-to-r from-[#0284C7] to-[#0D9488] text-white rounded-full px-5 py-2.5 shadow-[0_4px_15px_rgba(2,132,199,0.25)] hover:opacity-95 transition-all duration-300"
           >
             BUY A PASS
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -174,9 +164,7 @@ export default function Header({ currentPage }) {
         {/* Mobile Hamburger menu toggle */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`lg:hidden flex items-center justify-center focus:outline-none p-2 rounded-lg transition-colors ${
-            isScrolled ? 'text-slate-800 hover:text-[#0284C7]' : 'text-white/90 hover:text-white'
-          }`}
+          className="lg:hidden flex items-center justify-center focus:outline-none p-2 rounded-lg text-slate-800 hover:text-[#0284C7] transition-colors"
           aria-label={isMobileMenuOpen ? 'Close Menu' : 'Open Menu'}
           aria-expanded={isMobileMenuOpen}
         >
@@ -192,7 +180,7 @@ export default function Header({ currentPage }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 w-full bg-[#082028] border-b border-[#BEC9CB]/15 px-6 py-8 flex flex-col gap-6 lg:hidden shadow-xl"
+            className="absolute top-full left-0 w-full bg-white border-b border-slate-200 px-6 py-8 flex flex-col gap-6 lg:hidden shadow-xl"
           >
             <div className="flex flex-col gap-4">
               {NAV_LINKS.map((link) => {
@@ -202,8 +190,8 @@ export default function Header({ currentPage }) {
                     key={link.key}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className={`text-sm font-semibold tracking-wider py-2 border-b border-white/5 transition-colors ${
-                      isActive ? 'text-[#12E9E9]' : 'text-[#6D8794] hover:text-[#12E9E9]'
+                    className={`text-sm font-semibold tracking-wider py-2 border-b border-slate-100 transition-colors ${
+                      isActive ? 'text-[#0284C7]' : 'text-slate-600 hover:text-[#0284C7]'
                     }`}
                   >
                     {link.name}
@@ -212,19 +200,19 @@ export default function Header({ currentPage }) {
               })}
             </div>
             <div className="flex flex-col gap-3 pt-4">
-              <div className="flex items-center justify-between pb-2 border-b border-white/5">
-                <span className="text-xs font-semibold text-[#6D8794] uppercase tracking-wider">Appearance Theme</span>
+              <div className="flex items-center justify-between pb-2 border-b border-slate-100">
+                <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Appearance Theme</span>
                 <ThemeToggle />
               </div>
               <a 
                 href="/registration.html" 
-                className="w-full text-center text-xs font-semibold tracking-wider text-white border border-[#BEC9CB]/30 rounded-full py-3 hover:bg-white/5 transition-all"
+                className="w-full text-center text-xs font-semibold tracking-wider text-slate-700 border border-slate-300 rounded-full py-3 hover:bg-slate-50 transition-all"
               >
                 ENQUIRE NOW
               </a>
               <a 
                 href="/registration.html" 
-                className="w-full text-center text-xs font-bold tracking-wider bg-[#12E9E9] text-[#082028] rounded-full py-3 hover:bg-[#08BDF4] hover:text-white transition-all"
+                className="w-full text-center text-xs font-bold tracking-wider bg-gradient-to-r from-[#0284C7] to-[#0D9488] text-white rounded-full py-3 shadow-[0_4px_15px_rgba(2,132,199,0.25)] hover:opacity-95 transition-all"
               >
                 BUY A PASS
               </a>

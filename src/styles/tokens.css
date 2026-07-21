@@ -22,21 +22,21 @@
   /* Color Palette (DFS Brand Identity) */
   --dfs-color-white: #ffffff;
   --dfs-color-black: #000000;
-  --dfs-color-bg-dark: #031116; /* Deep Midnight Teal (Primary Background) */
-  --dfs-color-accent-cyan: #12E9E9; /* Electric Turquoise (Primary Brand Accent) */
-  --dfs-color-primary-blue: #08BDF4; /* Accent Blue (Secondary Brand Accent) */
-  --dfs-color-border-gray: #12E9E9;
-  --dfs-color-text-dark: #031116;
+  --dfs-color-bg-dark: #F8FAFC; /* Deep Slate Canvas (Primary Background) */
+  --dfs-color-accent-cyan: #0284C7; /* Electric Blue Accent */
+  --dfs-color-primary-blue: #0D9488; /* Teal Accent */
+  --dfs-color-border-gray: rgba(226, 232, 240, 0.8);
+  --dfs-color-text-dark: #0F172A;
   --dfs-color-text-light: #ffffff;
-  --dfs-color-text-muted: #8fa8b5; /* Slate Grey (Muted typography) */
-  --dfs-color-primary-gradient: linear-gradient(135deg, #031116 0%, #08BDF4 100%);
-  --dfs-color-purple-gradient: linear-gradient(135deg, #08BDF4 0%, #12E9E9 100%);
+  --dfs-color-text-muted: #475569; /* Slate Grey (Muted typography) */
+  --dfs-color-primary-gradient: linear-gradient(135deg, #0284C7 0%, #0D9488 100%);
+  --dfs-color-purple-gradient: linear-gradient(135deg, #0284C7 0%, #0D9488 100%);
 
   /* Drop Shadows */
   --dfs-shadow-none: none;
-  --dfs-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --dfs-shadow-md: 6px 6px 9px rgba(0, 0, 0, 0.15);
-  --dfs-shadow-lg: 12px 12px 50px rgba(0, 0, 0, 0.30);
+  --dfs-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.04);
+  --dfs-shadow-md: 0 4px 20px rgba(15, 23, 42, 0.04);
+  --dfs-shadow-lg: 0 12px 40px rgba(15, 23, 42, 0.06);
 
   /* Motion & Animations */
   --dfs-motion-duration-fast: 150ms;

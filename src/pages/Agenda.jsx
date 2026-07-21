@@ -187,24 +187,24 @@ export default function Agenda() {
     : agendaData[activeDay].filter(s => s.track === activeTrack);
 
   return (
-    <div className="min-h-screen bg-[#082028] text-white pt-32 pb-24 px-6 md:px-12 font-sans selection:bg-[#12E9E9]/30 relative overflow-hidden">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] pt-32 pb-24 px-6 md:px-12 font-sans selection:bg-[#0284C7]/30 relative overflow-hidden">
       
       {/* Background Soft Glow Orbs */}
-      <div className="absolute top-1/4 -right-48 w-96 h-96 bg-[#08BDF4]/4 rounded-full blur-[128px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -left-48 w-96 h-96 bg-[#12E9E9]/4 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/4 -right-48 w-96 h-96 bg-[#0284C7]/5 rounded-full blur-[128px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-48 w-96 h-96 bg-[#0D9488]/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10">
         
         {/* ==================== HEADER ARCHITECTURE ==================== */}
         <div className="mb-12 text-center md:text-left space-y-3">
-          <div className="inline-flex items-center gap-2 bg-[#12E9E9]/10 text-[#12E9E9] text-[10px] font-black tracking-[0.25em] px-4 py-1.5 rounded-md uppercase border border-[#12E9E9]/20">
+          <div className="inline-flex items-center gap-2 bg-[#0284C7]/10 text-[#0284C7] text-[10px] font-black tracking-[0.25em] px-4 py-1.5 rounded-md uppercase border border-[#0284C7]/20">
             <Sparkles className="w-3.5 h-3.5" />
             Knowledge Architecture
           </div>
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight text-[#0F172A]">
             Curated Agenda
           </h1>
-          <p className="text-sm md:text-base text-[#6D8794] max-w-2xl leading-normal">
+          <p className="text-sm md:text-base text-[#475569] max-w-2xl leading-normal font-medium">
             Three action-packed days optimized for global financial leadership. Filter sessions, review panels, and plan your summit experience.
           </p>
         </div>
@@ -212,12 +212,12 @@ export default function Agenda() {
         {/* ==================== FILTER NAVIGATION BAR ==================== */}
         <div className="space-y-6 mb-12">
           {/* Multi-Day Tabs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center border-b border-white/[0.08] pb-6">
-            <div className="flex items-center gap-2 text-xs font-bold text-[#6D8794] uppercase tracking-wider">
-              <Calendar className="w-4 h-4 text-[#12E9E9]" />
+          <div className="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center border-b border-slate-200/80 pb-6">
+            <div className="flex items-center gap-2 text-xs font-bold text-[#475569] uppercase tracking-wider">
+              <Calendar className="w-4 h-4 text-[#0284C7]" />
               Select Date:
             </div>
-            <div className="flex border border-white/[0.06] bg-[#0c2730]/40 p-1 rounded-xl w-full sm:w-auto max-w-md">
+            <div className="flex border border-slate-200/80 bg-slate-100 p-1 rounded-xl w-full sm:w-auto max-w-md">
               {['day1', 'day2', 'day3'].map((day) => (
                 <button
                   key={day}
@@ -226,13 +226,13 @@ export default function Agenda() {
                     setExpandedSession(null); // Clear active expanders to safely switch rendering scopes
                   }}
                   className={`relative w-full sm:w-32 py-2.5 text-[10px] font-bold tracking-widest uppercase transition-colors duration-300 cursor-pointer ${
-                    activeDay === day ? 'text-[#082028]' : 'text-[#6D8794] hover:text-white'
+                    activeDay === day ? 'text-white' : 'text-[#475569] hover:text-[#0F172A]'
                   }`}
                 >
                   {activeDay === day && (
                     <motion.div
                       layoutId="activeDayIndicator"
-                      className="absolute inset-0 bg-gradient-to-r from-[#12E9E9] to-[#08BDF4] rounded-lg -z-10 shadow-[0_4px_20px_rgba(18,233,233,0.25)]"
+                      className="absolute inset-0 bg-gradient-to-r from-[#0284C7] to-[#0D9488] rounded-lg -z-10 shadow-[0_4px_15px_rgba(2,132,199,0.25)]"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -244,8 +244,8 @@ export default function Agenda() {
 
           {/* Track Filters */}
           <div className="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center">
-            <div className="flex items-center gap-2 text-xs font-bold text-[#6D8794] uppercase tracking-wider">
-              <Filter className="w-4 h-4 text-[#08BDF4]" />
+            <div className="flex items-center gap-2 text-xs font-bold text-[#475569] uppercase tracking-wider">
+              <Filter className="w-4 h-4 text-[#0284C7]" />
               Filter Track:
             </div>
             <div className="flex flex-wrap gap-2 w-full sm:w-auto">
@@ -258,8 +258,8 @@ export default function Agenda() {
                   }}
                   className={`px-4 py-2 rounded-xl text-[10px] font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer ${
                     activeTrack === track.id
-                      ? 'bg-[#12E9E9] text-[#082028] shadow-[0_4px_15px_rgba(18,233,233,0.25)]'
-                      : 'bg-[#0c2730]/60 text-[#6D8794] border border-white/[0.05] hover:border-white/20 hover:text-white'
+                      ? 'bg-[#0284C7] text-white shadow-[0_4px_15px_rgba(2,132,199,0.25)]'
+                      : 'bg-white text-[#475569] border border-slate-200/80 hover:border-[#0284C7]/40 hover:text-[#0F172A]'
                   }`}
                 >
                   {track.label}
@@ -272,7 +272,7 @@ export default function Agenda() {
         {/* ==================== TIMELINE ITERATION TRACK ==================== */}
         <motion.div 
           layout 
-          className="space-y-6 relative before:absolute before:inset-y-0 before:left-4 md:before:left-6 before:w-[1px] before:bg-[#BEC9CB]/10 min-h-[300px]"
+          className="space-y-6 relative before:absolute before:inset-y-0 before:left-4 md:before:left-6 before:w-[1px] before:bg-slate-200 min-h-[300px]"
         >
           <AnimatePresence mode="popLayout">
             {filteredSessions.length > 0 ? (
@@ -289,13 +289,13 @@ export default function Agenda() {
                     transition={{ duration: 0.35, ease: "easeInOut" }}
                     className={`group relative ml-10 md:ml-16 border rounded-2xl transition-all duration-300 overflow-hidden ${
                       isOpen 
-                        ? 'border-[#12E9E9]/40 bg-[#0c2730]/80 shadow-[0_15px_30px_rgba(4,16,20,0.55)]' 
-                        : 'border-white/[0.05] bg-[#0c2730]/40 hover:border-white/20'
+                        ? 'border-[#0284C7]/50 bg-white shadow-[0_12px_40px_rgba(15,23,42,0.06)]' 
+                        : 'border-slate-200/80 bg-white hover:border-[#0284C7]/40 shadow-sm'
                     }`}
                   >
                     {/* Timeline Chrono Indicator Node */}
-                    <div className={`absolute -left-[45px] md:-left-[70px] top-8 w-3.5 h-3.5 rounded-full border-2 bg-[#082028] transition-colors duration-300 z-10 ${
-                      isOpen ? 'border-[#12E9E9] shadow-[0_0_10px_#12E9E9]' : 'border-[#6D8794]'
+                    <div className={`absolute -left-[45px] md:-left-[70px] top-8 w-3.5 h-3.5 rounded-full border-2 bg-white transition-colors duration-300 z-10 ${
+                      isOpen ? 'border-[#0284C7] shadow-[0_0_10px_#0284C7]' : 'border-slate-300'
                     }`} />
 
                     {/* Trigger Header Frame */}
@@ -305,20 +305,20 @@ export default function Agenda() {
                     >
                       <div className="space-y-3 flex-grow max-w-3xl">
                         {/* Meta Parameters Block */}
-                        <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-[#6D8794]">
-                          <span className="flex items-center gap-1.5 text-white bg-white/[0.04] px-2.5 py-1 rounded-md">
-                            <Clock className="w-3.5 h-3.5 text-[#12E9E9]" />
+                        <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-[#475569]">
+                          <span className="flex items-center gap-1.5 text-[#0F172A] bg-slate-100 px-2.5 py-1 rounded-md font-bold">
+                            <Clock className="w-3.5 h-3.5 text-[#0284C7]" />
                             {session.time}
                           </span>
-                          <span className="flex items-center gap-1.5 bg-white/[0.04] px-2.5 py-1 rounded-md">
-                            <MapPin className="w-3.5 h-3.5 text-[#08BDF4]" />
+                          <span className="flex items-center gap-1.5 bg-slate-100 px-2.5 py-1 rounded-md text-[#475569]">
+                            <MapPin className="w-3.5 h-3.5 text-[#0D9488]" />
                             {session.stage}
                           </span>
                         </div>
 
                         {/* Main Heading Text */}
-                        <h3 className={`text-lg md:text-xl font-semibold tracking-tight leading-snug transition-colors duration-300 ${
-                          isOpen ? 'text-[#12E9E9]' : 'text-white group-hover:text-[#12E9E9]'
+                        <h3 className={`text-lg md:text-xl font-bold tracking-tight leading-snug transition-colors duration-300 ${
+                          isOpen ? 'text-[#0284C7]' : 'text-[#0F172A] group-hover:text-[#0284C7]'
                         }`}>
                           {session.title}
                         </h3>
@@ -326,7 +326,7 @@ export default function Agenda() {
                         {/* Explicit Interactive Tag Pills */}
                         <div className="flex flex-wrap gap-2 pt-1">
                           {session.tags.map(tag => (
-                            <span key={tag} className="text-[9px] font-black uppercase tracking-wider px-2.5 py-1 bg-[#6D8794]/10 text-[#6D8794] rounded-md">
+                            <span key={tag} className="text-[9px] font-black uppercase tracking-wider px-2.5 py-1 bg-slate-100 text-[#475569] border border-slate-200/60 rounded-md">
                               {tag}
                             </span>
                           ))}
@@ -338,7 +338,7 @@ export default function Agenda() {
                         <button
                           onClick={(e) => downloadICS(session, e)}
                           title="Add to Calendar (.ics)"
-                          className="p-2 rounded-xl border border-white/[0.08] hover:border-[#12E9E9] text-[#6D8794] hover:text-[#12E9E9] bg-white/[0.02] hover:bg-[#12E9E9]/5 transition-all duration-300 flex items-center justify-center cursor-pointer"
+                          className="p-2 rounded-xl border border-slate-200 hover:border-[#0284C7] text-[#475569] hover:text-[#0284C7] bg-slate-50 transition-all duration-300 flex items-center justify-center cursor-pointer shadow-sm"
                         >
                           <Download className="w-4 h-4" />
                         </button>
@@ -347,7 +347,7 @@ export default function Agenda() {
                           animate={{ rotate: isOpen ? 180 : 0 }}
                           transition={{ duration: 0.2 }}
                           className={`p-2 rounded-xl border transition-colors ${
-                            isOpen ? 'border-[#12E9E9]/30 bg-[#12E9E9]/5 text-[#12E9E9]' : 'border-white/[0.08] text-[#6D8794]'
+                            isOpen ? 'border-[#0284C7]/30 bg-[#0284C7]/10 text-[#0284C7]' : 'border-slate-200 text-[#475569]'
                           }`}
                         >
                           <ChevronDown className="w-4 h-4" />
@@ -363,28 +363,28 @@ export default function Agenda() {
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.3, ease: "easeInOut" }}
-                          className="overflow-hidden border-t border-white/[0.06] bg-black/15"
+                          className="overflow-hidden border-t border-slate-100 bg-slate-50/70"
                         >
                           <div className="p-6 md:p-8 space-y-6">
                             {/* Inner Copy Frame */}
                             <div className="space-y-2">
-                              <div className="text-xs font-bold tracking-widest text-[#6D8794] uppercase flex items-center gap-1.5">
-                                <Layers className="w-3.5 h-3.5 text-[#12E9E9]" /> Session Abstract
+                              <div className="text-xs font-bold tracking-widest text-[#475569] uppercase flex items-center gap-1.5">
+                                <Layers className="w-3.5 h-3.5 text-[#0284C7]" /> Session Abstract
                               </div>
-                              <p className="text-sm font-normal text-[#6D8794] leading-relaxed max-w-3xl">
+                              <p className="text-sm font-medium text-[#475569] leading-relaxed max-w-3xl">
                                 {session.description}
                               </p>
                             </div>
 
                             {/* Interactive Panels Array Grid */}
                             <div className="space-y-3">
-                              <div className="text-xs font-bold tracking-widest text-[#6D8794] uppercase flex items-center gap-1.5">
-                                <Users className="w-3.5 h-3.5 text-[#08BDF4]" /> Panelists
+                              <div className="text-xs font-bold tracking-widest text-[#475569] uppercase flex items-center gap-1.5">
+                                <Users className="w-3.5 h-3.5 text-[#0D9488]" /> Panelists
                               </div>
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {session.speakers.map((spk, idx) => (
-                                  <div key={idx} className="flex items-center gap-4 bg-[#082028]/60 p-4 border border-white/[0.04] rounded-xl group/speaker hover:border-white/10 transition-all duration-300">
-                                    <div className="w-10 h-10 rounded-full overflow-hidden border border-[#12E9E9]/30 bg-gradient-to-br from-[#12E9E9]/20 to-[#08BDF4]/20 flex items-center justify-center font-bold text-xs text-[#12E9E9]">
+                                  <div key={idx} className="flex items-center gap-4 bg-white p-4 border border-slate-200/80 rounded-xl group/speaker hover:border-[#0284C7]/40 transition-all duration-300 shadow-sm">
+                                    <div className="w-10 h-10 rounded-full overflow-hidden border border-[#0284C7]/30 bg-gradient-to-br from-[#0284C7]/20 to-[#0D9488]/20 flex items-center justify-center font-bold text-xs text-[#0284C7]">
                                       {spk.avatar ? (
                                         <img src={spk.avatar} alt={spk.name} className="w-full h-full object-cover object-top" />
                                       ) : (
@@ -392,8 +392,8 @@ export default function Agenda() {
                                       )}
                                     </div>
                                     <div>
-                                      <div className="text-sm font-semibold text-white group-hover/speaker:text-[#12E9E9] transition-colors duration-300">{spk.name}</div>
-                                      <div className="text-xs text-[#6D8794]">{spk.role}</div>
+                                      <div className="text-sm font-bold text-[#0F172A] group-hover/speaker:text-[#0284C7] transition-colors duration-300">{spk.name}</div>
+                                      <div className="text-xs text-[#475569] font-medium">{spk.role}</div>
                                     </div>
                                   </div>
                                 ))}
@@ -410,7 +410,7 @@ export default function Agenda() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-center py-20 text-[#6D8794] border border-dashed border-white/[0.08] rounded-2xl bg-[#0c2730]/20 ml-10 md:ml-16"
+                className="text-center py-20 text-[#475569] border border-dashed border-slate-300 rounded-2xl bg-white ml-10 md:ml-16 shadow-sm"
               >
                 No sessions found matching this track selection on this day.
               </motion.div>

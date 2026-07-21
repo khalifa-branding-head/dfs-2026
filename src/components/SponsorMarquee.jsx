@@ -21,7 +21,7 @@ const doubleLogos = [...sponsorLogos, ...sponsorLogos, ...sponsorLogos];
 
 export default function SponsorMarquee() {
   return (
-    <section className="relative w-full bg-[#F8FAFC] py-16 overflow-hidden flex flex-col items-center select-none border-t border-slate-200">
+    <section className="relative w-full bg-[#F8FAFC] py-16 md:py-20 overflow-hidden flex flex-col items-center select-none border-t border-slate-200">
       {/* ==================== 1. EDITORIAL TEXT HEADER ==================== */}
       <div className="w-full max-w-7xl px-6 md:px-12 mb-10 text-center md:text-left">
         <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 select-none">
@@ -55,7 +55,7 @@ export default function SponsorMarquee() {
           {doubleLogos.map((logo, idx) => (
             <div 
               key={`${logo.id}-${idx}`}
-              className="flex items-center justify-center min-w-[140px] md:min-w-[180px] h-12 px-4 rounded-xl bg-white border border-slate-200/80 shadow-sm group transition-all duration-300 hover:shadow-md hover:border-[#0284C7]/40 flex-shrink-0"
+              className="flex items-center justify-center min-w-[140px] md:min-w-[180px] h-14 md:h-16 px-4 rounded-xl bg-white border border-slate-200/80 shadow-sm group transition-all duration-300 hover:shadow-md hover:border-[#0284C7]/40 flex-shrink-0"
             >
               <img 
                 src={logo.src} 

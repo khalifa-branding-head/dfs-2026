@@ -14,7 +14,7 @@ const ecosystemPartners = [
 
 export default function PartnerEcosystem() {
   return (
-    <section className="w-full bg-[#F8FAFC] py-20 px-6 md:px-12 relative font-sans antialiased border-t border-slate-200">
+    <section className="w-full bg-[#F8FAFC] py-16 md:py-20 px-6 md:px-12 relative font-sans antialiased border-t border-slate-200">
       <div className="max-w-7xl mx-auto space-y-10">
         
         {/* ==================== 1. ELITE BRAND HEADER ==================== */}
@@ -28,14 +28,14 @@ export default function PartnerEcosystem() {
               Global Institutional Partners & Sponsors 2026
             </span>
           </div>
-          <a href="/partners.html" className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-[#0284C7] uppercase group transition-colors duration-300 hover:text-[#0D9488]">
+          <a href="/sponsors.html" className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-[#0284C7] uppercase group transition-colors duration-300 hover:text-[#0D9488]">
             <span>View Ecosystem</span>
             <ArrowUpRight className="w-3.5 h-3.5 transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
 
         {/* ==================== 2. BALANCED TOKEN MATRICES ==================== */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {ecosystemPartners.map((partner) => (
             <div
               key={partner.id}
@@ -53,7 +53,7 @@ export default function PartnerEcosystem() {
               <div className="h-16 w-full flex items-center justify-center my-auto overflow-hidden p-2">
                 <img
                   src={partner.src}
-                  alt="Institutional Alliance Logo"
+                  alt={`${partner.tier} - ${partner.id}`}
                   className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </div>

@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 export default function Layout({ children, page }) {
   return (
-    <div className="flex flex-col min-h-screen bg-[#031116] text-white">
+    <div className="flex flex-col min-h-screen bg-[#F8FAFC] text-[#0F172A]">
       {/* Skip to Main Content Link for accessibility */}
       <a href="#main-content" className="dfs-skip-link">
         Skip to main content

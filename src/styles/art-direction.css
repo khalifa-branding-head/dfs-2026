@@ -30,27 +30,27 @@
 /* Material 3: Soft Shadows & Card Surfaces */
 .dfs-card {
   background-color: var(--dfs-color-white);
-  border: 1px solid rgba(0, 0, 0, 0.05) !important;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.02) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06) !important;
   border-radius: var(--dfs-radius-md) !important;
 }
 
 /* Material 4: Elevated Surface on Hover */
 .dfs-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05) !important;
-  border-color: rgba(18, 233, 233, 0.4) !important;
+  box-shadow: 0 20px 45px rgba(2, 132, 199, 0.12) !important;
+  border-color: rgba(2, 132, 199, 0.5) !important;
 }
 
 /* Premium Metal (Buttons background transitions overlay) */
 .dfs-button--primary {
   background: var(--dfs-color-primary-gradient) !important;
   border: none;
-  box-shadow: 0 4px 14px rgba(8, 32, 40, 0.15); /* Dark Teal shadow */
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.25);
 }
 
 .dfs-button--primary:hover {
-  box-shadow: 0 6px 20px rgba(22, 233, 233, 0.25);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
 }
 
 /* Premium Image crops & alignments */
