@@ -59,16 +59,16 @@ const metrics = [
 
 export default function ExhibitNetworkGrow() {
   return (
-    <section className="w-full bg-[#082028] py-28 px-6 md:px-12 relative font-sans antialiased overflow-hidden selection:bg-[#12E9E9]/20 border-t border-white/[0.06]">
+    <section className="w-full bg-[#082028] py-16 md:py-20 px-6 md:px-12 relative font-sans antialiased overflow-hidden selection:bg-[#12E9E9]/20 border-t border-white/[0.06]">
       
       {/* Background Precision Ambient Light Flares */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#12E9E9]/5 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto space-y-16 relative z-10">
+      <div className="max-w-7xl mx-auto space-y-12 relative z-10">
         
         {/* ==================== 1. EDITORIAL HEADER ==================== */}
-        <div className="max-w-3xl space-y-4 text-left">
-          <div className="inline-flex items-center gap-2 bg-[#12E9E9]/10 text-[#12E9E9] text-[10px] font-black tracking-[0.25em] px-4 py-1.5 rounded-md uppercase border border-[#12E9E9]/20">
+        <div className="max-w-3xl space-y-3 text-left">
+          <div className="inline-flex items-center gap-2 bg-[#12E9E9]/10 text-[#12E9E9] text-[10px] font-black tracking-[0.25em] px-3.5 py-1 rounded-md uppercase border border-[#12E9E9]/20">
             <Sparkles className="w-3 h-3 text-[#12E9E9]" />
             <span>Commercial & Exhibition Ecosystem</span>
           </div>
@@ -77,13 +77,13 @@ export default function ExhibitNetworkGrow() {
             Exhibit. Network. Grow.
           </h2>
 
-          <p className="text-sm md:text-base text-[#6D8794] font-medium leading-relaxed">
+          <p className="text-xs md:text-sm text-[#6D8794] font-medium leading-relaxed">
             Position your brand at the centre of global FinTech innovation. Engage with investors, enterprises, and industry leaders, showcase your solutions, and accelerate commercial growth.
           </p>
         </div>
 
         {/* ==================== 2. HIGHLIGHT METRICS STRIP ==================== */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl bg-[#0c2730]/60 border border-white/[0.08] backdrop-blur-xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 rounded-2xl bg-[#0c2730]/60 border border-white/[0.08] backdrop-blur-xl">
           {metrics.map((m, idx) => (
             <div key={idx} className="space-y-1 text-center md:text-left border-r border-white/[0.06] last:border-0 pr-4">
               <div className="text-2xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#12E9E9]">
@@ -96,23 +96,26 @@ export default function ExhibitNetworkGrow() {
           ))}
         </div>
 
-        {/* ==================== 3. 4-PILLAR FEATURE GRID ==================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        {/* ==================== 3. 4-PILLAR COMPACT 2x2 FEATURE GRID ==================== */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
           {pillars.map((pillar) => {
             const IconComp = pillar.icon;
 
             return (
               <motion.div
                 key={pillar.id}
-                whileHover={{ y: -6 }}
+                whileHover={{ y: -5, scale: 1.01 }}
                 transition={{ duration: 0.3 }}
-                className="group relative rounded-2xl border border-white/[0.08] bg-[#0c2730]/40 backdrop-blur-xl overflow-hidden flex flex-col justify-between shadow-[0_20px_40px_rgba(4,16,20,0.4)] hover:border-[#12E9E9]/40 hover:bg-[#0c2730]/80 transition-all duration-500"
+                className="group relative rounded-2xl border border-white/[0.08] bg-[#0c2730]/40 backdrop-blur-xl overflow-hidden flex flex-col justify-between shadow-[0_15px_35px_rgba(4,16,20,0.4)] hover:border-[#12E9E9]/40 hover:bg-[#0c2730]/80 transition-all duration-500"
               >
+                {/* 45° Laser Sweep Line Accent on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#12E9E9]/[0.06] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
+
                 {/* Top Cyan Laser Accent Line */}
                 <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#12E9E9] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20" />
 
-                {/* Top Visual Image Header */}
-                <div className="relative h-48 md:h-56 w-full overflow-hidden">
+                {/* Visual Image Header */}
+                <div className="relative h-44 md:h-48 w-full overflow-hidden">
                   <img 
                     src={pillar.image} 
                     alt={pillar.title} 
@@ -121,23 +124,23 @@ export default function ExhibitNetworkGrow() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0c2730] via-[#0c2730]/40 to-transparent" />
                   
                   {/* Badge */}
-                  <span className="absolute top-4 left-4 text-[10px] font-black tracking-[0.2em] text-[#12E9E9] bg-[#082028]/80 backdrop-blur-md px-3 py-1 rounded-md uppercase border border-[#12E9E9]/30">
+                  <span className="absolute top-4 left-4 text-[10px] font-black tracking-[0.2em] text-[#12E9E9] bg-[#082028]/85 backdrop-blur-md px-3 py-1 rounded-md uppercase border border-[#12E9E9]/30">
                     {pillar.badge}
                   </span>
 
                   {/* Icon */}
-                  <div className="absolute bottom-4 right-4 w-10 h-10 rounded-xl bg-[#082028]/80 border border-white/[0.1] flex items-center justify-center text-[#12E9E9] backdrop-blur-md">
-                    <IconComp className="w-5 h-5" />
+                  <div className="absolute bottom-4 right-4 w-9 h-9 rounded-xl bg-[#082028]/85 border border-white/[0.1] flex items-center justify-center text-[#12E9E9] backdrop-blur-md group-hover:bg-[#12E9E9] group-hover:text-[#082028] transition-all duration-300">
+                    <IconComp className="w-4 h-4" />
                   </div>
                 </div>
 
                 {/* Content Body */}
-                <div className="p-7 space-y-3 flex-1 flex flex-col justify-between">
-                  <div className="space-y-2">
+                <div className="p-6 space-y-3 flex-1 flex flex-col justify-between relative z-20">
+                  <div className="space-y-1.5">
                     <div className="text-xs font-extrabold text-[#12E9E9] tracking-wider uppercase">
                       {pillar.metric}
                     </div>
-                    <h3 className="text-white text-xl font-semibold tracking-tight group-hover:text-[#12E9E9] transition-colors">
+                    <h3 className="text-white text-lg md:text-xl font-semibold tracking-tight group-hover:text-[#12E9E9] transition-colors">
                       {pillar.title}
                     </h3>
                     <p className="text-xs md:text-sm text-[#BEC9CB] font-medium leading-relaxed">
@@ -145,7 +148,7 @@ export default function ExhibitNetworkGrow() {
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-white/[0.04] flex items-center justify-between text-[11px] font-bold text-[#6D8794] group-hover:text-white transition-colors">
+                  <div className="pt-3 border-t border-white/[0.04] flex items-center justify-between text-[11px] font-bold text-[#6D8794] group-hover:text-white transition-colors">
                     <span className="flex items-center gap-1.5">
                       <CheckCircle2 className="w-3.5 h-3.5 text-[#12E9E9]" />
                       Priority Placement Available
@@ -159,9 +162,9 @@ export default function ExhibitNetworkGrow() {
         </div>
 
         {/* ==================== 4. CALL TO ACTION BAR ==================== */}
-        <div className="p-8 rounded-2xl bg-gradient-to-r from-[#0c2730] via-[#0e3542] to-[#0c2730] border border-[#12E9E9]/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_10px_30px_rgba(18,233,233,0.1)]">
+        <div className="p-6 md:p-8 rounded-2xl bg-gradient-to-r from-[#0c2730] via-[#0e3542] to-[#0c2730] border border-[#12E9E9]/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[0_10px_30px_rgba(18,233,233,0.1)]">
           <div className="space-y-1 text-center md:text-left">
-            <h4 className="text-white text-lg font-semibold tracking-tight">
+            <h4 className="text-white text-base md:text-lg font-semibold tracking-tight">
               Ready to showcase your brand to 10,000+ financial leaders?
             </h4>
             <p className="text-xs text-[#6D8794] font-medium">
@@ -174,9 +177,9 @@ export default function ExhibitNetworkGrow() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               href="/exhibitors.html"
-              className="px-6 py-3 bg-gradient-to-r from-[#12E9E9] to-[#08BDF4] text-[#082028] text-xs font-black tracking-widest uppercase rounded-lg shadow-[0_4px_20px_rgba(18,233,233,0.3)] flex items-center gap-2"
+              className="px-6 py-3 bg-gradient-to-r from-[#12E9E9] to-[#08BDF4] text-[#082028] text-xs font-black tracking-widest uppercase rounded-xl shadow-[0_4px_20px_rgba(18,233,233,0.3)] flex items-center gap-2"
             >
-              Reserve Spot
+              <span>Reserve Spot</span>
               <ArrowUpRight className="w-4 h-4 text-[#082028]" />
             </motion.a>
 
@@ -184,10 +187,10 @@ export default function ExhibitNetworkGrow() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               href="#"
-              className="px-6 py-3 bg-[#082028] text-white border border-white/[0.12] hover:border-[#12E9E9]/50 text-xs font-bold tracking-widest uppercase rounded-lg flex items-center gap-2 transition-colors"
+              className="px-6 py-3 bg-[#082028] text-white border border-white/[0.12] hover:border-[#12E9E9]/50 text-xs font-bold tracking-widest uppercase rounded-xl flex items-center gap-2 transition-colors"
             >
               <Download className="w-4 h-4 text-[#12E9E9]" />
-              Sponsorship Prospectus
+              <span>Sponsorship Prospectus</span>
             </motion.a>
           </div>
         </div>
