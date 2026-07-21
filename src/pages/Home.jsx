@@ -6,6 +6,7 @@ import AboutSummit from '../components/AboutSummit';
 import PartnerEcosystem from '../components/PartnerEcosystem';
 import SponsorMarquee from '../components/SponsorMarquee';
 import ImpactGlance from '../components/ImpactGlance';
+import DiscussionTopics from '../components/DiscussionTopics';
 import CuratedLeadership from '../components/CuratedLeadership';
 import GlobalCapitals from '../components/GlobalCapitals';
 import FeaturedSpeakers from '../components/FeaturedSpeakers';
@@ -27,6 +28,9 @@ export default function Home() {
 
       {/* 4. Statistics Metrics section */}
       <ImpactGlance />
+
+      {/* 4.1. Official Discussion Topics Grid */}
+      <DiscussionTopics />
 
       {/* 5. Featured Keynote Speakers */}
       <FeaturedSpeakers />
