@@ -10,6 +10,7 @@ import DiscussionTopics from '../components/DiscussionTopics';
 import CuratedLeadership from '../components/CuratedLeadership';
 import GlobalCapitals from '../components/GlobalCapitals';
 import ExhibitNetworkGrow from '../components/ExhibitNetworkGrow';
+import InTheNews from '../components/InTheNews';
 import FeaturedSpeakers from '../components/FeaturedSpeakers';
 
 export default function Home() {
@@ -44,6 +45,9 @@ export default function Home() {
 
       {/* 5.3. Exhibit. Network. Grow. Ecosystem */}
       <ExhibitNetworkGrow />
+
+      {/* 5.4. Media & Insights: In The News */}
+      <InTheNews />
 
       {/* 6. Conversion Call to Action */}
       <section className="relative py-28 overflow-hidden bg-gradient-to-br from-brand-dark via-[#020381]/25 to-brand-dark border-t border-brand-teal/10">
