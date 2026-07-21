@@ -7,7 +7,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15, // Smooth cadence delay between text tracks
+      staggerChildren: 0.15,
       delayChildren: 0.2
     }
   }
@@ -28,29 +28,35 @@ export default function HeroTypography() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="text-center font-sans antialiased select-none z-20"
+      className="text-center font-sans antialiased select-none z-20 my-2"
     >
       {/* -------------------- LINE 1: HIGH-CONTRAST BRIGHT WHITE HEADLINE -------------------- */}
-      <span className="block overflow-hidden pb-1">
+      <div className="block py-1">
         <motion.span 
           variants={textLineVariants}
-          className="block text-[clamp(2.25rem,7.5vw,4.5rem)] font-extrabold tracking-normal leading-[1.1] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]"
-          style={{ color: '#FFFFFF' }}
+          className="block text-[clamp(2.25rem,7.5vw,4.5rem)] font-extrabold tracking-normal leading-[1.1]"
+          style={{ 
+            color: '#FFFFFF',
+            textShadow: '0 4px 20px rgba(0, 0, 0, 0.85), 0 2px 4px rgba(0, 0, 0, 0.9)'
+          }}
         >
           Connecting Markets
         </motion.span>
-      </span>
+      </div>
       
       {/* -------------------- LINE 2: LUMINOUS ELECTRIC CYAN HEADLINE -------------------- */}
-      <span className="block overflow-hidden pt-1">
+      <div className="block py-1">
         <motion.span 
           variants={textLineVariants}
-          className="block text-[clamp(2.25rem,7.5vw,4.5rem)] font-extrabold tracking-normal leading-[1.1] text-[#12E9E9] drop-shadow-[0_4px_25px_rgba(18,233,233,0.5)]"
-          style={{ color: '#12E9E9' }}
+          className="block text-[clamp(2.25rem,7.5vw,4.5rem)] font-extrabold tracking-normal leading-[1.1]"
+          style={{ 
+            color: '#12E9E9',
+            textShadow: '0 0 35px rgba(18, 233, 233, 0.65), 0 4px 20px rgba(0, 0, 0, 0.9)'
+          }}
         >
           Transforming Economies
         </motion.span>
-      </span>
+      </div>
     </motion.h1>
   );
 }

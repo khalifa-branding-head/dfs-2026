@@ -6,7 +6,7 @@ export default function HomeHero() {
   return (
     <section 
       id="main-content" 
-      className="relative h-[95vh] min-h-[820px] w-full bg-[#082028] flex flex-col justify-between overflow-hidden pt-24 font-sans selection:bg-[#12E9E9]/30"
+      className="relative min-h-screen w-full bg-[#082028] flex flex-col justify-between overflow-hidden pt-24 font-sans selection:bg-[#12E9E9]/30"
     >
       {/* ==================== 1. PRESERVED STAGING MEDIA LAYER ==================== */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
@@ -26,10 +26,10 @@ export default function HomeHero() {
       </div>
 
       {/* ==================== 2. HIERARCHICAL CONTENT LAYER ==================== */}
-      <div className="relative z-30 max-w-5xl mx-auto px-6 md:px-12 text-center flex flex-col items-center my-auto select-none">
+      <div className="relative z-30 max-w-5xl mx-auto px-6 md:px-12 text-center flex flex-col items-center my-auto py-8 select-none">
         
         {/* 1. Meta Context Pill Badge */}
-        <span className="text-[10px] md:text-xs font-black tracking-[0.25em] text-[#12E9E9] uppercase mb-6 drop-shadow-[0_2px_8px_rgba(18,233,233,0.3)]" style={{ color: '#12E9E9' }}>
+        <span className="text-[10px] md:text-xs font-black tracking-[0.25em] text-[#12E9E9] uppercase mb-4 drop-shadow-[0_2px_8px_rgba(18,233,233,0.3)]" style={{ color: '#12E9E9' }}>
           2-3 November 2026 | Madinat Jumeirah, Dubai
         </span>
 
@@ -37,7 +37,7 @@ export default function HomeHero() {
         <HeroTypography />
 
         {/* Organizer Partner Badges */}
-        <div className="flex items-center justify-center gap-6 bg-white/10 backdrop-blur-md px-6 py-3 border border-white/15 rounded-full max-w-full overflow-hidden mx-auto w-fit mt-8 mb-10">
+        <div className="flex items-center justify-center gap-6 bg-white/10 backdrop-blur-md px-6 py-3 border border-white/15 rounded-full max-w-full overflow-hidden mx-auto w-fit mt-6 mb-8">
           <img 
             src="organized-by-trescon.svg" 
             alt="Organised by DIFC" 
@@ -59,7 +59,7 @@ export default function HomeHero() {
             href="/registration.html" 
             className="group relative inline-flex items-center justify-center p-0.5 overflow-hidden text-xs font-bold tracking-[0.15em] rounded-full bg-gradient-to-br from-[#12E9E9] to-[#08BDF4] text-white transition-all duration-300 shadow-[0_0_25px_rgba(18,233,233,0.25)] hover:shadow-[0_0_45px_rgba(18,233,233,0.45)] transform active:scale-98"
           >
-            <span className="relative px-10 py-4 transition-all duration-300 ease-in bg-[#082028] rounded-full group-hover:bg-transparent flex items-center gap-2 text-white">
+            <span className="relative px-10 py-3.5 transition-all duration-300 ease-in bg-[#082028] rounded-full group-hover:bg-transparent flex items-center gap-2 text-white font-bold">
               BUY A PASS
               <ArrowUpRight className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
@@ -68,17 +68,17 @@ export default function HomeHero() {
       </div>
 
       {/* ==================== 3. UNIFIED BRAND TRUST FOOTER ==================== */}
-      <div className="relative z-30 w-full border-t border-white/10 bg-[#082028]/80 backdrop-blur-md py-6 px-6 md:px-12">
+      <div className="relative z-30 w-full border-t border-white/10 bg-[#041014] py-6 px-6 md:px-12 mt-auto">
         <div className="max-w-7xl mx-auto flex flex-col items-center justify-center">
           
           {/* ==================== PREMIUM ROYAL PATRONAGE LAYOUT ==================== */}
-          <div className="w-full text-center flex flex-col items-center select-none drop-shadow-[0_2px_12px_rgba(8,32,40,0.5)]">
+          <div className="w-full text-center flex flex-col items-center select-none">
             
             {/* Minimalist Vector System Accent Pill */}
-            <div className="w-12 h-1 bg-gradient-to-r from-[#12E9E9] to-[#08BDF4] rounded-full mb-4" />
+            <div className="w-12 h-1 bg-gradient-to-r from-[#12E9E9] to-[#08BDF4] rounded-full mb-3" />
 
             {/* 1. Contextual Protocol Prefix Layer */}
-            <span className="text-[10px] md:text-xs font-black tracking-[0.2em] text-[#38BDF8] uppercase mb-2" style={{ color: '#38BDF8' }}>
+            <span className="text-[10px] md:text-xs font-black tracking-[0.2em] text-[#38BDF8] uppercase mb-1.5" style={{ color: '#38BDF8' }}>
               Under the Patronage of
             </span>
 
@@ -88,7 +88,7 @@ export default function HomeHero() {
             </h2>
 
             {/* 3. Official Titles Hierarchy Base Layer (High Contrast Slate-300) */}
-            <p className="mt-2 text-[11px] sm:text-xs font-medium tracking-wide text-slate-300 leading-relaxed max-w-4xl" style={{ color: '#CBD5E1' }}>
+            <p className="mt-1.5 text-[11px] sm:text-xs font-medium tracking-wide text-slate-300 leading-relaxed max-w-4xl" style={{ color: '#CBD5E1' }}>
               First Deputy Ruler of Dubai, Deputy Prime Minister, and Minister of Finance, UAE, and President of DIFC
             </p>
 

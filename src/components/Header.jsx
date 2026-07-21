@@ -168,7 +168,9 @@ export default function Header({ currentPage }) {
         {/* Mobile Hamburger menu toggle */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden text-white/80 hover:text-[#12E9E9] focus:outline-none p-2 rounded-lg hover:bg-white/5 transition-colors"
+          className={`lg:hidden flex items-center justify-center focus:outline-none p-2 rounded-lg transition-colors ${
+            isScrolled ? 'text-slate-800 hover:text-[#0284C7]' : 'text-white/90 hover:text-white'
+          }`}
           aria-label={isMobileMenuOpen ? 'Close Menu' : 'Open Menu'}
           aria-expanded={isMobileMenuOpen}
         >
